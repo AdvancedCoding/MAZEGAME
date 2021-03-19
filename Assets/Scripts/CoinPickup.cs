@@ -16,5 +16,6 @@ public class CoinPickup : MonoBehaviour
     {
         Debug.Log("picked");
         Destroy(gameObject);
+        //GetComponent<AudioSource>().Play;
     }
 }

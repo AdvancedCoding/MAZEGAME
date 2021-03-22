@@ -34,7 +34,11 @@ public class NpcMove : MonoBehaviour
     }
     private void Update()
     {
+        //TODO IF navagent != && Player in radius  setplayerdestplayerfollow
+        
         if (_navMeshAgent != null) SetDestination();
+
+        // Else SetDestPatrol  random int  1-6   pos  Transform _pos1 ... pos6 yms
     }
 
 }

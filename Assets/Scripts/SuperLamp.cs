@@ -6,24 +6,33 @@ public class SuperLamp : MonoBehaviour
 {
     public float fuel = 60;
     public bool superLampIsOn = false;
-    // public Transform enemyBody; //useless ? 
     public GameObject enemyBody;
-    public GameObject newEnemyPos1;
+    // public Transform enemyBody; //useless ? 
+    /*public GameObject newEnemyPos1;
     public GameObject newEnemyPos2;
-    public GameObject newEnemyPos3;
+    public GameObject newEnemyPos3;*/
     public float enemyRespawnTimer = 0.5f;
-    public List<Vector3> spawnpoints;
+    public List<Vector3> spawnpointsV; // DO NOT USE THESE IN EDITOR
+    public Transform[] spawnpoints;
 
 
     private void Start()
     {
-     Vector3 newEnemyVec1 = newEnemyPos1.transform.position;
+        spawnpointsV.Clear();
+    for (int i = 0; i<spawnpoints.Length;i++)
+        {
+            Vector3 newEnemyVec = spawnpoints[i].position;
+            spawnpointsV.Add(newEnemyVec);    //<-- http://prntscr.com/10tp4qq
+        } 
+   
+    // this is manual contsruction 
+   /*  Vector3 newEnemyVec1 = newEnemyPos1.transform.position;
      Vector3 newEnemyVec2 = newEnemyPos2.transform.position;
      Vector3 newEnemyVec3 = newEnemyPos3.transform.position;
     
-    spawnpoints.Add(newEnemyVec1);
-    spawnpoints.Add(newEnemyVec2);
-    spawnpoints.Add(newEnemyVec3);
+    spawnpointsV.Add(newEnemyVec1);
+    spawnpointsV.Add(newEnemyVec2);
+    spawnpointsV.Add(newEnemyVec3);*/
     }
 
     //https://answers.unity.com/questions/753481/ontriggerenter-not-working-tried-everything-c.html
@@ -42,9 +51,9 @@ public class SuperLamp : MonoBehaviour
     {
         Debug.Log("Enemy spawned");
         //Destroy(enemyBody); //delete npc - bugs somehow ? new clone does not work with out the original or stmh
-        int spAmount =  spawnpoints.Count;
+        int spAmount =  spawnpointsV.Count;
         int nextSP = Random.Range(0, spAmount);
-        enemyBody.transform.position = spawnpoints[nextSP];
+        enemyBody.transform.position = spawnpointsV[nextSP];
        //Instantiate(enemyBody, spawnpoints[nextSP], transform.rotation);   //spawns new clone of enemy
     }
 

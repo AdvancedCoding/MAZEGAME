@@ -2201,6 +2201,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6878292599641556289, guid: fa3536a89c5df9f40ae18b65467f31cd, type: 3}
   m_PrefabInstance: {fileID: 6685876912698356820}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1104435513 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4961475582382322786, guid: fa3536a89c5df9f40ae18b65467f31cd, type: 3}
+  m_PrefabInstance: {fileID: 6685876912698356820}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1104619649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3171,6 +3176,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6878292599641556289, guid: fa3536a89c5df9f40ae18b65467f31cd, type: 3}
   m_PrefabInstance: {fileID: 1080799823}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1803377815 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4961475582382322786, guid: fa3536a89c5df9f40ae18b65467f31cd, type: 3}
+  m_PrefabInstance: {fileID: 1080799823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1828220115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3861,6 +3871,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6878292599641556289, guid: fa3536a89c5df9f40ae18b65467f31cd, type: 3}
   m_PrefabInstance: {fileID: 637354113}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2103856471 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4961475582382322786, guid: fa3536a89c5df9f40ae18b65467f31cd, type: 3}
+  m_PrefabInstance: {fileID: 637354113}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2104791699
 GameObject:
   m_ObjectHideFlags: 0
@@ -4100,9 +4115,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1803377814}
     - target: {fileID: 5563249725627714702, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
-      propertyPath: spawnpoints.Array.size
-      value: 0
+      propertyPath: meme.Array.size
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5563249725627714702, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
+      propertyPath: spawnpoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563249725627714702, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
+      propertyPath: spawnpoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1104435513}
+    - target: {fileID: 5563249725627714702, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
+      propertyPath: spawnpoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 2103856471}
+    - target: {fileID: 5563249725627714702, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
+      propertyPath: spawnpoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1803377815}
     - target: {fileID: 5703499214194481545, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
       propertyPath: m_Name
       value: FpsPlayer

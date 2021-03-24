@@ -9,6 +9,13 @@ public class NpcMove : MonoBehaviour
     [SerializeField]
     private Transform _destination;
     private NavMeshAgent _navMeshAgent;
+
+    public Transform[] patrolPoints;
+    public float aiDetectDistance = 60;
+
+    private int nextPP;
+    private bool isInPpDest = false;
+
     void Start()
     {
         _navMeshAgent = this.GetComponent<NavMeshAgent>();
@@ -19,7 +26,8 @@ public class NpcMove : MonoBehaviour
         }
         else
         {
-            SetDestination();
+            nextPP = Random.Range(0, patrolPoints.Length);
+            SetPatrol();
 
         }
     }
@@ -32,13 +40,40 @@ public class NpcMove : MonoBehaviour
             _navMeshAgent.SetDestination(targetVector);
         }
     }
+    private void SetPatrol()
+    {
+        Vector3 targetVector;
+        if (patrolPoints == null) return; //exploding the script
+        float ppdistance = Vector3.Distance(patrolPoints[nextPP].position, _navMeshAgent.transform.position);
+        if (ppdistance <= 1) isInPpDest = true;
+      
+        
+        if (isInPpDest) 
+        { 
+            nextPP = Random.Range(0, patrolPoints.Length);
+           // targetVector = patrolPoints[nextPP].position;
+            isInPpDest = false;
+        }
+     
+             targetVector = patrolPoints[nextPP].position;
+                _navMeshAgent.SetDestination(targetVector);
+        Debug.Log("Im going to:" + nextPP);
+        
+    }
+    private bool PlayerIsInRange()
+    {
+        float distance = Vector3.Distance(_destination.transform.position, _navMeshAgent.transform.position);
+        if (distance <= aiDetectDistance) { return true; }
+        else return false;
+        
+
+    }
+
     private void Update()
     {
-        //TODO IF navagent != && Player in radius  setplayerdestplayerfollow
-        
-        if (_navMeshAgent != null) SetDestination();
+        if (_navMeshAgent != null && PlayerIsInRange()) { SetDestination(); Debug.Log("AI Following player"); }
+        else if (_navMeshAgent != null && !PlayerIsInRange()) SetPatrol(); Debug.Log("AI Patrolling area");
 
-        // Else SetDestPatrol  random int  1-6   pos  Transform _pos1 ... pos6 yms
     }
 
 }

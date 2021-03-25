@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SuperLamp : MonoBehaviour
 {
+[SerializeField] private Animator animator = null; //oton animation
+
     public float fuel = 60;
     public bool superLampIsOn = false;
     public GameObject enemyBody;
@@ -74,6 +76,8 @@ public class SuperLamp : MonoBehaviour
                 Debug.Log(fuel.ToString());  //TODO SHOW UI WITH LAMP FUEL
                 if (fuel > 0f)
                 { 
+                	
+                	animator.SetTrigger("lightOn"); //Plays lantern animation
                     superLampIsOn = true;
                     fuel -= 10*Time.deltaTime;  //fuel nerf 1*time --> 10*time
                     

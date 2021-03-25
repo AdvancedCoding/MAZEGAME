@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class SuperLamp : MonoBehaviour
@@ -14,6 +15,8 @@ public class SuperLamp : MonoBehaviour
     public float enemyRespawnTimer = 0.5f;
     public List<Vector3> spawnpointsV; // DO NOT USE THESE IN EDITOR
     public Transform[] spawnpoints;
+
+    public Inventory inventory;
 
 
     private void Start()
@@ -52,7 +55,7 @@ public class SuperLamp : MonoBehaviour
         Debug.Log("Enemy spawned");
         //Destroy(enemyBody); //delete npc - bugs somehow ? new clone does not work with out the original or stmh
         int spAmount =  spawnpointsV.Count;
-        int nextSP = Random.Range(0, spAmount);
+        int nextSP = UnityEngine.Random.Range(0, spAmount);
         enemyBody.transform.position = spawnpointsV[nextSP];
        //Instantiate(enemyBody, spawnpoints[nextSP], transform.rotation);   //spawns new clone of enemy
     }
@@ -64,14 +67,19 @@ public class SuperLamp : MonoBehaviour
         //THIS NEEDS FIX!!
 
         //Input.getdown   edit -> Project settings -> Input manager  -> Axes all default input buttons
+
         if (Input.GetButtonDown("Fire1"))
-            {
+            {             
+                int fuelAmount = Convert.ToInt32(fuel);
                 Debug.Log(fuel.ToString());  //TODO SHOW UI WITH LAMP FUEL
-                if (fuel > 0f) 
+                if (fuel > 0f)
                 { 
-                    superLampIsOn = true; 
-                    fuel -= 1*Time.deltaTime;
-                }
+                    superLampIsOn = true;
+                    fuel -= 10*Time.deltaTime;  //fuel nerf 1*time --> 10*time
+                    
+                    inventory.UpdateInventory("fuel", fuelAmount);
+
+            }
                 else  {superLampIsOn = false;}   
             }
 

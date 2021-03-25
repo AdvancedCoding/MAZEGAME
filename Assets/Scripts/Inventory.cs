@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -8,6 +9,29 @@ public class Inventory : MonoBehaviour
     //invetory scripti
     public bool invetoryEnabled;
     public GameObject inventory;
+    public GameObject goldCountText;
+    public int goldQuantity = 0;
+    public GameObject fuelAmountText;
+
+    public void UpdateInventory(string itemName, int amount)
+    {
+        switch (itemName)
+        {
+            case "gold":
+                goldQuantity += amount;
+                goldCountText.GetComponent<Text>().text = "Gold: " + goldQuantity;
+                break;
+
+            case "fuel":
+                fuelAmountText.GetComponent<Text>().text = "Fuel amount: " + amount;
+                break;
+
+            default:
+                Debug.Log("Ayy_Lmao"); //En tiiä tarviiks tätä defaulttii en jaksa kattoo =)
+                break;
+
+        }
+    }
 
     void Update()
     {

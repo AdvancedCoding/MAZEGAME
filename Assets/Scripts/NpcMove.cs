@@ -57,7 +57,7 @@ public class NpcMove : MonoBehaviour
      
              targetVector = patrolPoints[nextPP].position;
                 _navMeshAgent.SetDestination(targetVector);
-        Debug.Log("Im going to:" + nextPP);
+       // Debug.Log("Im going to:" + nextPP);
         
     }
     private bool PlayerIsInRange()
@@ -71,8 +71,8 @@ public class NpcMove : MonoBehaviour
 
     private void Update()
     {
-        if (_navMeshAgent != null && PlayerIsInRange()) { SetDestination(); Debug.Log("AI Following player"); }
-        else if (_navMeshAgent != null && !PlayerIsInRange()) SetPatrol(); Debug.Log("AI Patrolling area");
+        if (_navMeshAgent != null && PlayerIsInRange()) { SetDestination(); } //Debug.Log("AI Following player"); 
+        else if (_navMeshAgent != null && !PlayerIsInRange()) SetPatrol(); //Debug.Log("AI Patrolling area");
 
     }
 

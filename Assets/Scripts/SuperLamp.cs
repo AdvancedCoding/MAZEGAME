@@ -17,28 +17,24 @@ public class SuperLamp : MonoBehaviour
     public float enemyRespawnTimer = 0.5f;
     public List<Vector3> spawnpointsV; // DO NOT USE THESE IN EDITOR
     public Transform[] spawnpoints;
-
+    public Light lightStrenght;
+    public int defaultLightStrenght = 2;
     public Inventory inventory;
 
 
     private void Start()
     {
+        lightStrenght.intensity = defaultLightStrenght;
+
         spawnpointsV.Clear();
-    for (int i = 0; i<spawnpoints.Length;i++)
+        for (int i = 0; i<spawnpoints.Length;i++)
         {
             Vector3 newEnemyVec = spawnpoints[i].position;
             spawnpointsV.Add(newEnemyVec);    //<-- http://prntscr.com/10tp4qq
         } 
-   
-    // this is manual contsruction 
-   /*  Vector3 newEnemyVec1 = newEnemyPos1.transform.position;
-     Vector3 newEnemyVec2 = newEnemyPos2.transform.position;
-     Vector3 newEnemyVec3 = newEnemyPos3.transform.position;
-    
-    spawnpointsV.Add(newEnemyVec1);
-    spawnpointsV.Add(newEnemyVec2);
-    spawnpointsV.Add(newEnemyVec3);*/
+
     }
+
 
     //https://answers.unity.com/questions/753481/ontriggerenter-not-working-tried-everything-c.html
     private void OnTriggerEnter(Collider enemyCollision)
@@ -70,7 +66,7 @@ public class SuperLamp : MonoBehaviour
     {
         //CURRENT BUGS IF IN ZONE IN COLLIDER ZONE LIGHT != EFFECT ENEMY!!!!!!!!!!!!!!!!! 
         //THIS NEEDS FIX!!
-     
+        
         //Input.getdown   edit -> Project settings -> Input manager  -> Axes all default input buttons
         if (Input.GetButton("Fire1"))
         {
@@ -78,14 +74,14 @@ public class SuperLamp : MonoBehaviour
             Debug.Log(fuel.ToString());  //TODO SHOW UI WITH LAMP FUEL
             if (fuel > 0f)
             {
-    
+                lightStrenght.intensity = 7;
                 superLampIsOn = true;
                 fuel -= 10 * Time.deltaTime;  //fuel nerf 1*time --> 10*time
 
                 inventory.UpdateInventory("fuel", fuelAmount);
 
             }
-            else if (fuel < 0f) { fuel = 0f; superLampIsOn = false; }
+            else if (fuel < 0f) { fuel = 0f; superLampIsOn = false; lightStrenght.intensity = defaultLightStrenght; }
             else { superLampIsOn = false; }
         }
         if (Input.GetButtonDown("Fire1"))
@@ -96,6 +92,7 @@ public class SuperLamp : MonoBehaviour
         if (Input.GetButtonUp("Fire1"))
         {
             animator.SetTrigger("lightOn");
+            lightStrenght.intensity = defaultLightStrenght;
             superLampIsOn = false;
         }
   

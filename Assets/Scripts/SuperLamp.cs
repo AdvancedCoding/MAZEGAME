@@ -61,6 +61,9 @@ public class SuperLamp : MonoBehaviour
         enemyBody.transform.position = spawnpointsV[nextSP];
        //Instantiate(enemyBody, spawnpoints[nextSP], transform.rotation);   //spawns new clone of enemy
     }
+    
+                   
+        	
 
     // Update is called once per frame
     void Update()
@@ -78,6 +81,9 @@ public class SuperLamp : MonoBehaviour
                 { 
                 	
                 	animator.SetTrigger("lightOn"); //Plays lantern animation
+
+           
+                	
                     superLampIsOn = true;
                     fuel -= 10*Time.deltaTime;  //fuel nerf 1*time --> 10*time
                     

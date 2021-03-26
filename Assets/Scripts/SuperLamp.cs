@@ -70,31 +70,32 @@ public class SuperLamp : MonoBehaviour
     {
         //CURRENT BUGS IF IN ZONE IN COLLIDER ZONE LIGHT != EFFECT ENEMY!!!!!!!!!!!!!!!!! 
         //THIS NEEDS FIX!!
-
+     
         //Input.getdown   edit -> Project settings -> Input manager  -> Axes all default input buttons
+        if (Input.GetButton("Fire1"))
+        {
+            int fuelAmount = Convert.ToInt32(fuel);
+            Debug.Log(fuel.ToString());  //TODO SHOW UI WITH LAMP FUEL
+            if (fuel > 0f)
+            {
+    
+                superLampIsOn = true;
+                fuel -= 10 * Time.deltaTime;  //fuel nerf 1*time --> 10*time
 
+                inventory.UpdateInventory("fuel", fuelAmount);
+
+            }
+            else if (fuel < 0f) { fuel = 0f; superLampIsOn = false; }
+            else { superLampIsOn = false; }
+        }
         if (Input.GetButtonDown("Fire1"))
-            {             
-                int fuelAmount = Convert.ToInt32(fuel);
-                Debug.Log(fuel.ToString());  //TODO SHOW UI WITH LAMP FUEL
-                if (fuel > 0f)
-                { 
-                	
-                	animator.SetTrigger("lightOn"); //Plays lantern animation
-
-           
-                	
-                    superLampIsOn = true;
-                    fuel -= 10*Time.deltaTime;  //fuel nerf 1*time --> 10*time
-                    
-                    inventory.UpdateInventory("fuel", fuelAmount);
-
-            }
-                else  {superLampIsOn = false;}   
-            }
+        {
+            animator.SetTrigger("lightOn"); //Plays lantern animation
+        }
 
         if (Input.GetButtonUp("Fire1"))
         {
+            animator.SetTrigger("lightOn");
             superLampIsOn = false;
         }
   

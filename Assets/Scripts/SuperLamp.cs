@@ -18,8 +18,13 @@ public class SuperLamp : MonoBehaviour
     public List<Vector3> spawnpointsV; // DO NOT USE THESE IN EDITOR
     public Transform[] spawnpoints;
     public Light lightStrenght;
-    public int defaultLightStrenght = 2;
+    public int defaultLightStrenght = 4;
+    public int defaultLightRange = 6;
+    public int powerLightStrenght = 8;
+    public int powerLightRange = 12;
     public Inventory inventory;
+    
+    
 
 
     private void Start()
@@ -74,14 +79,16 @@ public class SuperLamp : MonoBehaviour
             Debug.Log(fuel.ToString());  //TODO SHOW UI WITH LAMP FUEL
             if (fuel > 0f)
             {
-                lightStrenght.intensity = 7;
+                lightStrenght.intensity = powerLightStrenght;
+                lightStrenght.range = powerLightRange;
                 superLampIsOn = true;
                 fuel -= 10 * Time.deltaTime;  //fuel nerf 1*time --> 10*time
 
                 inventory.UpdateInventory("fuel", fuelAmount);
 
             }
-            else if (fuel < 0f) { fuel = 0f; superLampIsOn = false; lightStrenght.intensity = defaultLightStrenght; }
+            else if (fuel < 0f) { fuel = 0f; superLampIsOn = false; lightStrenght.intensity = defaultLightStrenght; 
+            lightStrenght.range = defaultLightRange;}
             else { superLampIsOn = false; }
         }
         if (Input.GetButtonDown("Fire1"))
@@ -93,6 +100,7 @@ public class SuperLamp : MonoBehaviour
         {
             animator.SetTrigger("lightOn");
             lightStrenght.intensity = defaultLightStrenght;
+            lightStrenght.range = defaultLightRange;
             superLampIsOn = false;
         }
   

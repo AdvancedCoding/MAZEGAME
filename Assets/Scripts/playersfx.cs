@@ -16,7 +16,6 @@ private AudioSource audioSource; //oton sfx
     
     private void playerTweakLight()
     {
-    Debug.Log("cunt");
     audioSource.PlayOneShot(clip);
     }
 

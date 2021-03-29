@@ -9787,6 +9787,10 @@ PrefabInstance:
       propertyPath: spawnpoints.Array.data[2]
       value: 
       objectReference: {fileID: 1803377815}
+    - target: {fileID: 5703499213785374489, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
+      propertyPath: mouseSens
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 5703499213785374491, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
       propertyPath: field of view
       value: 50

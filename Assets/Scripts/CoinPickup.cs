@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CoinPickup : MonoBehaviour
 {
+
+[SerializeField] private AudioClip clip; //sfx
+private AudioSource audioSource; //sfx
+
     public Inventory inventory;
 
     private void OnTriggerEnter(Collider other)
@@ -18,7 +22,12 @@ public class CoinPickup : MonoBehaviour
     {
         inventory.UpdateInventory("gold", 1);
         Debug.Log("picked"); // coin++;
+        
+        audioSource = GetComponent<AudioSource>(); //play sfx
+        audioSource.PlayOneShot(clip);
+        
         Destroy(gameObject);
-        //GetComponent<AudioSource>().Play;
+        
+
     }
 }

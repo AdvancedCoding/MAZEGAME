@@ -859,6 +859,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3128338962757721890, guid: 1314093748f7e284c8d5fb4b01239a1d, type: 3}
   m_PrefabInstance: {fileID: 3128338962086780105}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &159804663 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3128338962757721893, guid: 1314093748f7e284c8d5fb4b01239a1d, type: 3}
+  m_PrefabInstance: {fileID: 3128338962086780105}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159804662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 867b12b7ec788b942bd2f224c802fafc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &159804668 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3128338962757721912, guid: 1314093748f7e284c8d5fb4b01239a1d, type: 3}
@@ -893,6 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: oton-kuutio
+  playerImmortality: 1
 --- !u!1001 &162307104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9707,6 +9719,10 @@ PrefabInstance:
       propertyPath: clip
       value: 
       objectReference: {fileID: 8300000, guid: 3128ad53a992e752c9673b0de3cf5768, type: 3}
+    - target: {fileID: 5563249725627714702, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
+      propertyPath: NpcMove
+      value: 
+      objectReference: {fileID: 159804663}
     - target: {fileID: 5563249725627714702, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
       propertyPath: animator
       value: 

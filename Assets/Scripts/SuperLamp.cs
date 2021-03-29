@@ -10,12 +10,8 @@ public class SuperLamp : MonoBehaviour
     public float fuel = 60;
     public bool superLampIsOn = false;
     public GameObject enemyBody;
-    // public Transform enemyBody; //useless ? 
-    /*public GameObject newEnemyPos1;
-    public GameObject newEnemyPos2;
-    public GameObject newEnemyPos3;*/
+   
     public float enemyRespawnTimer = 0.5f;
-    public List<Vector3> spawnpointsV; // DO NOT USE THESE IN EDITOR
     public Transform[] spawnpoints;
     public Light lightStrenght;
     public int defaultLightStrenght = 4;
@@ -23,20 +19,15 @@ public class SuperLamp : MonoBehaviour
     public int powerLightStrenght = 8;
     public int powerLightRange = 12;
     public Inventory inventory;
+    public NpcMove NpcMove;
+    public int patrolTimer = 10;
     
     
 
 
     private void Start()
     {
-        lightStrenght.intensity = defaultLightStrenght;
-
-        spawnpointsV.Clear();
-        for (int i = 0; i<spawnpoints.Length;i++)
-        {
-            Vector3 newEnemyVec = spawnpoints[i].position;
-            spawnpointsV.Add(newEnemyVec);    //<-- http://prntscr.com/10tp4qq
-        } 
+        lightStrenght.intensity = defaultLightStrenght; 
 
     }
 
@@ -47,22 +38,33 @@ public class SuperLamp : MonoBehaviour
         if (enemyCollision.CompareTag("Enemy") && superLampIsOn==true) //requires rigidbody component for ai
         {
             Debug.Log("Enemy destroyed / moved");
-            enemyBody.transform.position = new Vector3(56, 2, -43);  //THROW CUBE somewhere off map 
-            Invoke("enemyDeath", enemyRespawnTimer);  //and wait for timer amount the spawn to new location
+            
+            enemyDeath();
+            //enemyBody.transform.position = new Vector3(56, 2, -43);  //THROW CUBE somewhere off map 
+            //  Invoke("enemyDeath", enemyRespawnTimer);  //and wait for timer amount the spawn to new location
         }
-       
+
     }
 
     void enemyDeath()
     {
         Debug.Log("Enemy spawned");
+        NpcMove.aiDetectDistance = 0.1f;
+        StartCoroutine(timerDetectDistance()); //why is needed to done this way, thanks unity
+
+
+        /* int spAmount =  spawnpoints.Length;
+           int nextSP = UnityEngine.Random.Range(0, spAmount);
+           enemyBody.transform.position = spawnpoints[nextSP].position;*/
+
         //Destroy(enemyBody); //delete npc - bugs somehow ? new clone does not work with out the original or stmh
-        int spAmount =  spawnpointsV.Count;
-        int nextSP = UnityEngine.Random.Range(0, spAmount);
-        enemyBody.transform.position = spawnpointsV[nextSP];
-       //Instantiate(enemyBody, spawnpoints[nextSP], transform.rotation);   //spawns new clone of enemy
+        //Instantiate(enemyBody, spawnpoints[nextSP], transform.rotation);   //spawns new clone of enemy
     }
-    
+    IEnumerator timerDetectDistance()
+    {
+        yield return new WaitForSecondsRealtime(patrolTimer);
+        NpcMove.aiDetectDistance = 5;
+    }
                    
         	
 
@@ -76,7 +78,7 @@ public class SuperLamp : MonoBehaviour
         if (Input.GetButton("Fire1"))
         {
             int fuelAmount = Convert.ToInt32(fuel);
-            Debug.Log(fuel.ToString());  //TODO SHOW UI WITH LAMP FUEL
+           // Debug.Log(fuel.ToString());  
             if (fuel > 0f)
             {
                 lightStrenght.intensity = powerLightStrenght;

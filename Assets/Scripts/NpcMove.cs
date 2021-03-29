@@ -18,6 +18,7 @@ public class NpcMove : MonoBehaviour
 
     void Start()
     {
+
         _navMeshAgent = this.GetComponent<NavMeshAgent>();
 
         if (_navMeshAgent == null)

@@ -20,7 +20,7 @@ public class Inventory : MonoBehaviour
         {
             case "gold":
                 goldQuantity += amount;
-                goldCountText.GetComponent<Text>().text = "Gold: " + goldQuantity;
+                goldCountText.GetComponent<Text>().text = goldQuantity.ToString();
                 break;
 
             case "fuel":

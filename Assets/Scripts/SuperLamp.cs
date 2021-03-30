@@ -36,7 +36,8 @@ public class SuperLamp : MonoBehaviour
 
     private void Start()
     {
-        lightStrenght.intensity = defaultLightStrenght; 
+        lightStrenght.intensity = defaultLightStrenght;
+        if (inventory.fuelAmount!=0) fuel = inventory.fuelAmount;
 
     }
 
@@ -85,7 +86,7 @@ public class SuperLamp : MonoBehaviour
         //Input.getdown   edit -> Project settings -> Input manager  -> Axes all default input buttons
         if (Input.GetButton("Fire1"))
         {
-            int fuelAmount = Convert.ToInt32(fuel);
+            
            // Debug.Log(fuel.ToString());  
             if (fuel > 0f)
             {
@@ -93,6 +94,7 @@ public class SuperLamp : MonoBehaviour
                 lightStrenght.range = powerLightRange;
                 superLampIsOn = true;
                 fuel -= 10 * Time.deltaTime;  //fuel nerf 1*time --> 10*time
+                int fuelAmount = Convert.ToInt32(fuel);
 
                 inventory.UpdateInventory("fuel", fuelAmount);
 

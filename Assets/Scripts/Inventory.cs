@@ -11,8 +11,11 @@ public class Inventory : MonoBehaviour
     public GameObject inventory;
     public GameObject goldCountText;
     public int goldQuantity = 0;
+    public int fuelAmount = 60;
     public GameObject fuelAmountText;
     public FuelBarScript fuelBar;
+
+   
 
     public void UpdateInventory(string itemName, int amount)
     {
@@ -22,10 +25,13 @@ public class Inventory : MonoBehaviour
                 goldQuantity += amount;
                 goldCountText.GetComponent<Text>().text = goldQuantity.ToString();
                 break;
+         
+
 
             case "fuel":
                 fuelAmountText.GetComponent<Text>().text = "Fuel amount: " + amount;
                 fuelBar.SetFuelSlider(amount);
+               
                 break;
 
             default:

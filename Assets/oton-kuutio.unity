@@ -7567,7 +7567,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1666963074
 Transform:
   m_ObjectHideFlags: 0
@@ -10429,6 +10429,10 @@ PrefabInstance:
       propertyPath: lightStrenght
       value: 
       objectReference: {fileID: 1952022351}
+    - target: {fileID: 5563249725627714702, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
+      propertyPath: deathScreechSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: d715ed9df00f1f005a2dd4c8efe7c799, type: 3}
     - target: {fileID: 5563249725627714702, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
       propertyPath: meme.Array.size
       value: 1

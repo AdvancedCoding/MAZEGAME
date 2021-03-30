@@ -21,8 +21,11 @@ public class SuperLamp : MonoBehaviour
     public Inventory inventory;
     public NpcMove NpcMove;
     public int patrolTimer = 10;
-    
-    
+
+    [SerializeField] private AudioClip deathScreechSfx; //sfx
+    private AudioSource audioSource;
+
+
 
 
     private void Start()
@@ -50,6 +53,8 @@ public class SuperLamp : MonoBehaviour
     {
         Debug.Log("Enemy spawned");
         NpcMove.aiDetectDistance = 0.1f;
+        audioSource = GetComponent<AudioSource>(); //play sfx
+        audioSource.PlayOneShot(deathScreechSfx);
         StartCoroutine(timerDetectDistance()); //why is needed to done this way, thanks unity
 
 
@@ -68,12 +73,9 @@ public class SuperLamp : MonoBehaviour
                    
         	
 
-    // Update is called once per frame
+  
     void Update()
-    {
-        //CURRENT BUGS IF IN ZONE IN COLLIDER ZONE LIGHT != EFFECT ENEMY!!!!!!!!!!!!!!!!! 
-        //THIS NEEDS FIX!!
-        
+    {   
         //Input.getdown   edit -> Project settings -> Input manager  -> Axes all default input buttons
         if (Input.GetButton("Fire1"))
         {

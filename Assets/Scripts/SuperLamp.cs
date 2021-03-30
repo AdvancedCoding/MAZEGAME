@@ -7,21 +7,27 @@ public class SuperLamp : MonoBehaviour
 {
 [SerializeField] private Animator animator = null; //oton animation
 
+   
+   
+    
+    [Header("Light stuff")]
     public float fuel = 60;
     public bool superLampIsOn = false;
-    public GameObject enemyBody;
-   
-    public float enemyRespawnTimer = 0.5f;
-    public Transform[] spawnpoints;
     public Light lightStrenght;
     public int defaultLightStrenght = 4;
     public int defaultLightRange = 6;
     public int powerLightStrenght = 8;
     public int powerLightRange = 12;
+    [Space]
+    [Header("Npc")]
+    public Transform[] spawnpoints;
     public Inventory inventory;
     public NpcMove NpcMove;
     public int patrolTimer = 10;
-
+    public GameObject enemyBody;
+    public float enemyRespawnTimer = 0.5f;
+    [Space]
+    [Header("Audio")]
     [SerializeField] private AudioClip deathScreechSfx; //sfx
     private AudioSource audioSource;
 

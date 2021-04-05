@@ -84,7 +84,7 @@ public class SuperLamp : MonoBehaviour
     void Update()
     {   
         //Input.getdown   edit -> Project settings -> Input manager  -> Axes all default input buttons
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && inventory.inventoryEnabled == false) //cant use lamp when inventory is visible
         {
             
            // Debug.Log(fuel.ToString());  
@@ -103,12 +103,12 @@ public class SuperLamp : MonoBehaviour
             lightStrenght.range = defaultLightRange;}
             else { superLampIsOn = false; }
         }
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && inventory.inventoryEnabled == false)
         {
             animator.SetTrigger("lightOn"); //Plays lantern animation
         }
 
-        if (Input.GetButtonUp("Fire1"))
+        if (Input.GetButtonUp("Fire1") && inventory.inventoryEnabled == false)
         {
             animator.SetTrigger("lightOn");
             lightStrenght.intensity = defaultLightStrenght;

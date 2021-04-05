@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour
 {
 
     //invetory scripti
-    public bool invetoryEnabled;
+    public bool inventoryEnabled;
     public GameObject inventory;
     public GameObject goldCountText;
     public int goldQuantity = 0;
@@ -45,18 +45,22 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            invetoryEnabled = !invetoryEnabled;
+            inventoryEnabled = !inventoryEnabled;
         }
 
-        if (invetoryEnabled == true)
+        if (inventoryEnabled == true)
         {
             inventory.SetActive(true);
-
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        
         }
 
         else
         {
             inventory.SetActive(false);
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 }

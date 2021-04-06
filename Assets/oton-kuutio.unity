@@ -11279,6 +11279,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3128338962757721893, guid: 1314093748f7e284c8d5fb4b01239a1d, type: 3}
+      propertyPath: defaultAiDetectDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128338962757721893, guid: 1314093748f7e284c8d5fb4b01239a1d, type: 3}
       propertyPath: patrolPoints.Array.size
       value: 3
       objectReference: {fileID: 0}

@@ -75,7 +75,7 @@ public class SuperLamp : MonoBehaviour
     IEnumerator timerDetectDistance()
     {
         yield return new WaitForSecondsRealtime(patrolTimer);
-        NpcMove.aiDetectDistance = 5;
+        NpcMove.aiDetectDistance = NpcMove.defaultAiDetectDistance;
     }
                    
         	

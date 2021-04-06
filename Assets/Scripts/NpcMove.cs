@@ -11,14 +11,15 @@ public class NpcMove : MonoBehaviour
     private NavMeshAgent _navMeshAgent;
 
     public Transform[] patrolPoints;
-    public float aiDetectDistance = 60;
-
+    public float aiDetectDistance;
+    public float defaultAiDetectDistance = 5;
+  
     private int nextPP;
     private bool isInPpDest = false;
 
     void Start()
     {
-
+      aiDetectDistance = defaultAiDetectDistance;
         _navMeshAgent = this.GetComponent<NavMeshAgent>();
 
         if (_navMeshAgent == null)
@@ -29,7 +30,7 @@ public class NpcMove : MonoBehaviour
         {
             nextPP = Random.Range(0, patrolPoints.Length);
             SetPatrol();
-
+            
         }
     }
 

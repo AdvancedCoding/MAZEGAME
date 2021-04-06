@@ -11,11 +11,14 @@ public class NpcMove : MonoBehaviour
     private NavMeshAgent _navMeshAgent;
 
     public Transform[] patrolPoints;
-    public float aiDetectDistance;
+   
     public float defaultAiDetectDistance = 5;
   
     private int nextPP;
     private bool isInPpDest = false;
+
+    [HideInInspector]
+    public float aiDetectDistance;
 
     void Start()
     {

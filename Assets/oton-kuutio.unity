@@ -2838,9 +2838,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: e7088b828a4e5fc4bb22b5e892c7c38d, type: 3}
-        m_TargetAssemblyTypeName: ShopScript, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1485060247}
+        m_TargetAssemblyTypeName: ShopUIButtonsScript, Assembly-CSharp
+        m_MethodName: BuyFuel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8822,7 +8822,6 @@ MonoBehaviour:
   inventory: {fileID: 774049690}
   goldCountText: {fileID: 1231088137}
   goldQuantity: 0
-  fuelAmount: 60
   fuelAmountText: {fileID: 230868137}
   fuelBar: {fileID: 1506703221}
 --- !u!1 &1666963073

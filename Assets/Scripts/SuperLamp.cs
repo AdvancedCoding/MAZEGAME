@@ -7,11 +7,12 @@ public class SuperLamp : MonoBehaviour
 {
 [SerializeField] private Animator animator = null; //oton animation
 
-   
-   
-    
+
+
+
     [Header("Light stuff")]
-    public float fuel = 60;
+    public static float fuel = 60;
+    // public float fuel = 60;
     public bool superLampIsOn = false;
     public Light lightStrenght;
     public int defaultLightStrenght = 4;
@@ -37,8 +38,7 @@ public class SuperLamp : MonoBehaviour
     private void Start()
     {
         lightStrenght.intensity = defaultLightStrenght;
-        if (inventory.fuelAmount!=0) fuel = inventory.fuelAmount;
-
+        
     }
 
 
@@ -82,7 +82,8 @@ public class SuperLamp : MonoBehaviour
 
   
     void Update()
-    {   
+    {
+      
         //Input.getdown   edit -> Project settings -> Input manager  -> Axes all default input buttons
         if (Input.GetButton("Fire1") && inventory.inventoryEnabled == false) //cant use lamp when inventory is visible
         {

@@ -11,9 +11,10 @@ public class Inventory : MonoBehaviour
     public GameObject inventory;
     public GameObject goldCountText;
     public int goldQuantity = 0;
-    public int fuelAmount = 60;
+  //  public static float fuelAmount = 60;
     public GameObject fuelAmountText;
     public FuelBarScript fuelBar;
+   // public SuperLamp superLamp;
 
    
 
@@ -31,7 +32,13 @@ public class Inventory : MonoBehaviour
             case "fuel":
                 fuelAmountText.GetComponent<Text>().text = "Fuel amount: " + amount;
                 fuelBar.SetFuelSlider(amount);
-               
+                break;
+
+
+            case "buyFuel":
+                fuelAmountText.GetComponent<Text>().text = "Fuel amount: " + amount;
+                SuperLamp.fuel = amount;
+                fuelBar.SetFuelSlider(amount);    
                 break;
 
             default:

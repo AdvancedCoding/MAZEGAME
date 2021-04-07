@@ -5,20 +5,14 @@ using UnityEngine;
 public class ShopScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Inventory Inventory;
+   
     private bool ShopEnabled;
     public GameObject ShopUIObject;
     public GameObject ShopToolTip;
     public bool playerIsInShop = false;
   //  public Collider ShopCollider;
 
-    public void BuyFuel()
-    {
-        Inventory.UpdateInventory("fuel", 60);
-        Inventory.UpdateInventory("gold", -1);
-        Debug.Log("IM A GENIIUS");
-    }
-
+ 
     public void Start()
     {
          ShopToolTip.SetActive(false);
@@ -59,7 +53,7 @@ public class ShopScript : MonoBehaviour
 
         if (ShopEnabled == true)
         {
-
+            Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Confined; //cursor locked to screen 
             ShopUIObject.SetActive(true);
             ShopToolTip.SetActive(false);
@@ -67,11 +61,13 @@ public class ShopScript : MonoBehaviour
 
         if (!ShopEnabled && playerIsInShop)
         {
+            Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             ShopUIObject.SetActive(false);
             ShopToolTip.SetActive(true);
         }
         if (!playerIsInShop) {
+            Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             ShopUIObject.SetActive(false); 
             ShopToolTip.SetActive(false);

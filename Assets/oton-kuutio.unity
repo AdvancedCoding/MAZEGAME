@@ -2838,9 +2838,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11500000, guid: e7088b828a4e5fc4bb22b5e892c7c38d, type: 3}
         m_TargetAssemblyTypeName: ShopScript, Assembly-CSharp
-        m_MethodName: BuyFuel
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3213,7 +3213,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 560496566}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1485060247}
+        m_TargetAssemblyTypeName: ShopUIButtonsScript, Assembly-CSharp
+        m_MethodName: BuyFuel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &560496566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6574,7 +6586,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0287b47516a8acd4ea2c5e4bb074ef27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Inventory: {fileID: 1626729850}
   ShopUIObject: {fileID: 942301210}
   ShopToolTip: {fileID: 1390905361}
   playerIsInShop: 0
@@ -8001,6 +8012,7 @@ GameObject:
   - component: {fileID: 1485060250}
   - component: {fileID: 1485060249}
   - component: {fileID: 1485060248}
+  - component: {fileID: 1485060247}
   m_Layer: 5
   m_Name: Storecanvas
   m_TagString: Untagged
@@ -8008,6 +8020,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1485060247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485060246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7088b828a4e5fc4bb22b5e892c7c38d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Inventory: {fileID: 1626729850}
 --- !u!114 &1485060248
 MonoBehaviour:
   m_ObjectHideFlags: 0

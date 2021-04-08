@@ -22,10 +22,12 @@ private AudioSource audioSource; //sfx
     {
         inventory.UpdateInventory("gold", 1);
         Debug.Log("picked"); // coin++;
-        
-        audioSource = GetComponent<AudioSource>(); //play sfx
-        audioSource.PlayOneShot(clip);
-        
+
+        // audioSource = GetComponent<AudioSource>(); //play sfx
+        // audioSource.PlayOneShot(clip);
+
+        AudioSource.PlayClipAtPoint(clip, gameObject.transform.position);
+
         Destroy(gameObject);
         
 

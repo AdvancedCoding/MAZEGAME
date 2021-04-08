@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 5814c1e8d4d01fe4eae3e59219b59e94
+  - enabled: 1
     path: Assets/oton-kuutio.unity
     guid: cdf02a6d522b7e2cd9d50d0d528549a1
   - enabled: 1

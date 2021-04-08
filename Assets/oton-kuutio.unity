@@ -26944,7 +26944,7 @@ MonoBehaviour:
   inventoryEnabled: 0
   inventory: {fileID: 774049690}
   goldCountText: {fileID: 1231088137}
-  goldQuantity: 90
+  goldQuantity: 0
   fuelAmountText: {fileID: 230868137}
   fuelBar: {fileID: 1506703221}
   MaximumFuel: 60

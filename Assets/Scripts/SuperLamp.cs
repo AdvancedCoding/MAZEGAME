@@ -38,7 +38,7 @@ public class SuperLamp : MonoBehaviour
     private void Start()
     {
         lightStrenght.intensity = defaultLightStrenght;
-        
+        fuel = 60; // when level is restarted this value is loaded
     }
 
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,12 +12,12 @@ public class Inventory : MonoBehaviour
     public GameObject inventory;
     public GameObject goldCountText;
     public int goldQuantity = 0;
-  //  public static float fuelAmount = 60;
     public GameObject fuelAmountText;
     public FuelBarScript fuelBar;
-   // public SuperLamp superLamp;
+    public int MaximumFuel = 60;
+    // public SuperLamp superLamp;
+  
 
-   
 
     public void UpdateInventory(string itemName, int amount)
     {
@@ -26,20 +27,30 @@ public class Inventory : MonoBehaviour
                 goldQuantity += amount;
                 goldCountText.GetComponent<Text>().text = goldQuantity.ToString();
                 break;
-         
-
-
+  
+                // USED TO UPDATE FUELBAR WHEN FUEL IS USED
             case "fuel":
                 fuelAmountText.GetComponent<Text>().text = "Fuel amount: " + amount;
-                fuelBar.SetFuelSlider(amount);
+                fuelBar.SetFuelSlider(amount); 
                 break;
 
-
+                //REFUEL FUEL
             case "buyFuel":
                 fuelAmountText.GetComponent<Text>().text = "Fuel amount: " + amount;
-                SuperLamp.fuel = amount;
-                fuelBar.SetFuelSlider(amount);    
+                SuperLamp.fuel += amount;
+                if (SuperLamp.fuel > MaximumFuel) SuperLamp.fuel = MaximumFuel;
+                fuelBar.SetFuelSlider(Convert.ToInt32(SuperLamp.fuel));
                 break;
+
+                //BUY BIGGER CAN OF FUEL
+            case "buyCanister":
+                fuelAmountText.GetComponent<Text>().text = "Fuel amount: " + amount;
+                MaximumFuel = amount;
+                SuperLamp.fuel = amount;
+                fuelBar.SetMaxFuelSlider(amount); //This fills the slider fully aswell as setting the max amount
+                break;
+
+                
 
             default:
                 Debug.Log("Ayy_Lmao"); //En tiiä tarviiks tätä defaulttii en jaksa kattoo =)

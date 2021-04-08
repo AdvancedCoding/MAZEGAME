@@ -6506,13 +6506,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258126696}
-  m_LocalRotation: {x: -0.036246207, y: 0.30559412, z: -0.013894473, w: 0.95137024}
-  m_LocalPosition: {x: 0.09896231, y: -0.08636832, z: 2.5334463}
+  m_LocalRotation: {x: -0.038594775, y: 0.051998913, z: -0.0041578114, w: 0.99789244}
+  m_LocalPosition: {x: -0.14, y: -0.26, z: 0.25}
   m_LocalScale: {x: 1, y: 1.4178, z: 2.6957}
   m_Children: []
   m_Father: {fileID: 1326685726}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -3.467, y: 35.7, z: -2.79}
+  m_LocalEulerAnglesHint: {x: -4.393, y: 5.993, z: -0.708}
 --- !u!65 &258126698
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7323,7 +7323,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359823984}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -13529,7 +13529,7 @@ GameObject:
   - component: {fileID: 519840981}
   - component: {fileID: 519840980}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ButtonBuySmallOil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13631,7 +13631,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7605fe1b53164fc469d33f589fbc9bf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9019f5d3147d2042879c07b04717d60, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14096,7 +14096,7 @@ GameObject:
   - component: {fileID: 560496566}
   - component: {fileID: 560496565}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: ButtonBuyBigOIl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14168,7 +14168,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1485060247}
         m_TargetAssemblyTypeName: ShopUIButtonsScript, Assembly-CSharp
-        m_MethodName: BuyFuel
+        m_MethodName: BuyBigFuelCanister
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14198,7 +14198,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 53bdb1299db4f964ab5a1dfb8f8c99fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 50b36fd5c00920d4895643abf05bee9b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18545,6 +18545,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fbdfd6f6f8e7b8459e7ec638775fbcc, type: 3}
+--- !u!4 &1262776479 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4961475582382322786, guid: fa3536a89c5df9f40ae18b65467f31cd, type: 3}
+  m_PrefabInstance: {fileID: 877464481}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1264019605
 GameObject:
   m_ObjectHideFlags: 0
@@ -18832,15 +18837,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326685725}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.39, y: 2.626, z: 10.758}
+  m_LocalRotation: {x: -0, y: 0.21864682, z: -0, w: 0.97580415}
+  m_LocalPosition: {x: -6.03, y: 3, z: 13.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 258126697}
   - {fileID: 1726056520}
   m_Father: {fileID: 0}
   m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 25.259, z: 0}
 --- !u!65 &1326685727
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18852,8 +18857,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.96967, y: 2.5191374, z: 3.8892822}
-  m_Center: {x: 0.31496894, y: 0.7595687, z: 0.043961525}
+  m_Size: {x: 2.96967, y: 2.6339908, z: 3.8892822}
+  m_Center: {x: 0.31496894, y: 0.702142, z: 0.043961525}
 --- !u!114 &1326685728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20960,6 +20965,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Inventory: {fileID: 1626729850}
+  FuelPrice: 1
+  FuelCanisterPrice: 5
 --- !u!114 &1485060248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26937,9 +26944,10 @@ MonoBehaviour:
   inventoryEnabled: 0
   inventory: {fileID: 774049690}
   goldCountText: {fileID: 1231088137}
-  goldQuantity: 0
+  goldQuantity: 90
   fuelAmountText: {fileID: 230868137}
   fuelBar: {fileID: 1506703221}
+  MaximumFuel: 60
 --- !u!1 &1627781676 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7146521406498821007, guid: f218372702996ba9589eab1fb2789f53, type: 3}
@@ -27470,43 +27478,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68ff44545a0f714e7b24642959754963, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.6408081
+      value: -1.113
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68ff44545a0f714e7b24642959754963, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.20216274
+      value: -0.331
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68ff44545a0f714e7b24642959754963, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.267887
+      value: 0.617
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68ff44545a0f714e7b24642959754963, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.44353464
+      value: 0.6628115
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68ff44545a0f714e7b24642959754963, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.031130103
+      value: 0.027184904
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68ff44545a0f714e7b24642959754963, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8956502
+      value: 0.7480596
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68ff44545a0f714e7b24642959754963, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.010896979
+      value: -0.018676413
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68ff44545a0f714e7b24642959754963, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 2.702
+      value: 3.668
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68ff44545a0f714e7b24642959754963, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 127.372
+      value: 96.945
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68ff44545a0f714e7b24642959754963, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 2.645
+      value: 0.914
       objectReference: {fileID: 0}
     - target: {fileID: -4502901282409785108, guid: 68ff44545a0f714e7b24642959754963, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -33880,7 +33888,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847446548}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -36189,7 +36197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3128338962757721893, guid: 1314093748f7e284c8d5fb4b01239a1d, type: 3}
       propertyPath: patrolPoints.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3128338962757721893, guid: 1314093748f7e284c8d5fb4b01239a1d, type: 3}
       propertyPath: patrolPoints.Array.data[0]
@@ -36203,6 +36211,10 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[2]
       value: 
       objectReference: {fileID: 1803377815}
+    - target: {fileID: 3128338962757721893, guid: 1314093748f7e284c8d5fb4b01239a1d, type: 3}
+      propertyPath: patrolPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 1262776479}
     - target: {fileID: 3128338962757721894, guid: 1314093748f7e284c8d5fb4b01239a1d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

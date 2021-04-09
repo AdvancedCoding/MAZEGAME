@@ -10,13 +10,14 @@ public class ShopScript : MonoBehaviour
     public GameObject ShopUIObject;
     public GameObject ShopToolTip;
     public bool playerIsInShop = false;
-  //  public Collider ShopCollider;
+    //  public Collider ShopCollider;
+    MouseLook ML;
 
- 
     public void Start()
     {
          ShopToolTip.SetActive(false);
          ShopUIObject.SetActive(false);
+         ML = GameObject.Find("Main Camera").GetComponent<MouseLook>();
     }
 
 
@@ -55,18 +56,23 @@ public class ShopScript : MonoBehaviour
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Confined; //cursor locked to screen 
+            
+            //You need to disable and re enable char contrler in order to move player, nice one ...
+            ML.enabled = false;
             ShopUIObject.SetActive(true);
             ShopToolTip.SetActive(false);
         }
 
         if (!ShopEnabled && playerIsInShop)
         {
+            if (!ML.enabled) { ML.enabled = true; }
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             ShopUIObject.SetActive(false);
             ShopToolTip.SetActive(true);
         }
         if (!playerIsInShop) {
+            if (!ML.enabled) { ML.enabled = true; }
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             ShopUIObject.SetActive(false); 

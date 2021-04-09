@@ -55,7 +55,7 @@ public class Inventory : MonoBehaviour
             default:
                 Debug.Log("Ayy_Lmao"); //En tiiä tarviiks tätä defaulttii en jaksa kattoo =)
                 break;
-
+                
         }
     }
 

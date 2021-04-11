@@ -28033,7 +28033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2069edbc9945379a4a954eae5740bcd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxGold: 0
+  maxGold: 3
   inventory: {fileID: 1626729850}
   cutsceneCam: {fileID: 1816103584}
   cutsceneCam2: {fileID: 1046066469}

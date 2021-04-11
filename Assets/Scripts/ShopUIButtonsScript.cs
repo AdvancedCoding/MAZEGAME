@@ -7,19 +7,34 @@ public class ShopUIButtonsScript : MonoBehaviour
     public Inventory Inventory;
     public int FuelPrice = 1;
     public int FuelCanisterPrice = 5;
-    
-    
+    public GameObject storeObject;
+    public GameObject NotEnoughGoldText;
+
+    public AudioClip SmallOilAudio;
+    public AudioClip BigOilAudio;
+
+    public AudioClip NotEnoughGoldAudio;
+
+   private void Start()
+    {
+        NotEnoughGoldText.SetActive(false);
+    }
+
     public void BuyFuel()
     {
         if (Inventory.goldQuantity >= FuelPrice)
         {
             Inventory.UpdateInventory("buyFuel", 60);
             Inventory.UpdateInventory("gold", -FuelPrice);
-            Debug.Log("ÖLJYY OSTETTU: "+60);
+            Debug.Log("ÖLJYY OSTETTU: "+60);        
+
+            AudioSource.PlayClipAtPoint(SmallOilAudio, storeObject.transform.position);
         }
         else
         {
             Debug.Log("EI OO TARPEEKS RAHAA (HIENO TEKSTI TÄHÄN) "); //joku UI juttu tähän joku saa tehdä
+            AudioSource.PlayClipAtPoint(NotEnoughGoldAudio, storeObject.transform.position);
+            NotEnoughGoldText.SetActive(true);
         }
     }
 
@@ -30,16 +45,20 @@ public class ShopUIButtonsScript : MonoBehaviour
             Inventory.UpdateInventory("buyCanister", 120);
             Inventory.UpdateInventory("gold", -FuelCanisterPrice);
             Debug.Log("Kanisteri OSTETTU: " + 120);
+
+            AudioSource.PlayClipAtPoint(BigOilAudio, storeObject.transform.position);
         }
         else
         {
-            Debug.Log("EI OO TARPEEKS RAHAA (HIENO TEKSTI TÄHÄN) "); 
+            Debug.Log("EI OO TARPEEKS RAHAA (HIENO TEKSTI TÄHÄN) ");
+            AudioSource.PlayClipAtPoint(NotEnoughGoldAudio, storeObject.transform.position);
+            NotEnoughGoldText.SetActive(true);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       // NotEnoughGoldText.SetActive(false);
     }
 }

@@ -10,8 +10,13 @@ public class ShopScript : MonoBehaviour
     public GameObject ShopUIObject;
     public GameObject ShopToolTip;
     public bool playerIsInShop = false;
+
+    public ShopUIButtonsScript shopUIButtonsScript;
+    
     //  public Collider ShopCollider;
     MouseLook ML;
+    public AudioClip _ac;
+    public GameObject storeObject;
 
     public void Start()
     {
@@ -20,10 +25,6 @@ public class ShopScript : MonoBehaviour
          ML = GameObject.Find("Main Camera").GetComponent<MouseLook>();
     }
 
-
-
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -31,6 +32,8 @@ public class ShopScript : MonoBehaviour
             //show ui tip press e to open store
             ShopToolTip.SetActive(true);
             playerIsInShop = true;
+            AudioSource.PlayClipAtPoint(_ac, storeObject.transform.position);
+
 
         }
     }
@@ -38,9 +41,9 @@ public class ShopScript : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
-           
+        {          
             playerIsInShop = false;
+            shopUIButtonsScript.NotEnoughGoldText.SetActive(false);
         }
     }
 

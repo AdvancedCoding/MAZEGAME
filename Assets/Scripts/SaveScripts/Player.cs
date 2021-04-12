@@ -13,11 +13,19 @@ public class Player : MonoBehaviour
 
     [Header("Garbage dependencies (fps player both)")]
     public Inventory inventory;
-    
+
 
     // Update is called once per frame
 
-
+    public void Start()
+    {
+        if (Globals.SMENULOADPRESSED == true)
+        {
+            LoadPlayer();
+            Globals.SMENULOADPRESSED = false;
+            Debug.Log("Loaded saved game");
+        }
+    }
 
     public void SavePlayer()
     {
@@ -35,7 +43,8 @@ public class Player : MonoBehaviour
     {
         PlayerData data = SaveSystem.LoadPlayer();
 
-        inventory.goldQuantity = data.goldAmount;
+       // inventory.goldQuantity = data.goldAmount;
+        inventory.UpdateInventory("gold", data.goldAmount);
         inventory.MaximumFuel = data.MaxGasAmount;
        // Debug.Log(data.GasAmount);
         SuperLamp.fuel = data.GasAmount;

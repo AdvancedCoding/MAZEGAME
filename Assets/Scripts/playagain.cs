@@ -15,11 +15,18 @@ public AudioClip clickFx;
 public void PlayAgain()
 {
 gunSfx.PlayOneShot (clickFx);
-
-    SceneManager.LoadScene(sceneName);
+        Globals.SMENULOADPRESSED = false;
+        SceneManager.LoadScene(sceneName);
 }
 
-void Start() {
+public void LoadGame()
+{
+    gunSfx.PlayOneShot(clickFx);
+    Globals.SMENULOADPRESSED = true;
+    SceneManager.LoadScene(sceneName);
+
+}
+    void Start() {
 
 Cursor.lockState = CursorLockMode.Confined;
 }

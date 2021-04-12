@@ -15,6 +15,7 @@ public class ShopScript : MonoBehaviour
     
     //  public Collider ShopCollider;
     MouseLook ML;
+    SuperLamp SL;
     public AudioClip _ac;
     public GameObject storeObject;
 
@@ -23,6 +24,8 @@ public class ShopScript : MonoBehaviour
          ShopToolTip.SetActive(false);
          ShopUIObject.SetActive(false);
          ML = GameObject.Find("Main Camera").GetComponent<MouseLook>();
+        SL = GameObject.Find("HITBOXFORLIGHT").GetComponent<SuperLamp>();
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -62,6 +65,7 @@ public class ShopScript : MonoBehaviour
             
             //You need to disable and re enable char contrler in order to move player, nice one ...
             ML.enabled = false;
+            SL.enabled = false;
             ShopUIObject.SetActive(true);
             ShopToolTip.SetActive(false);
         }
@@ -69,6 +73,7 @@ public class ShopScript : MonoBehaviour
         if (!ShopEnabled && playerIsInShop)
         {
             if (!ML.enabled) { ML.enabled = true; }
+            if (!SL.enabled) { SL.enabled = true; }
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             ShopUIObject.SetActive(false);
@@ -76,6 +81,7 @@ public class ShopScript : MonoBehaviour
         }
         if (!playerIsInShop) {
             if (!ML.enabled) { ML.enabled = true; }
+            if (!SL.enabled) { SL.enabled = true; }
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             ShopUIObject.SetActive(false); 

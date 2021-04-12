@@ -18,7 +18,6 @@ public class Inventory : MonoBehaviour
     // public SuperLamp superLamp;
   
 
-
     public void UpdateInventory(string itemName, int amount)
     {
         switch (itemName)

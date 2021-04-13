@@ -22947,6 +22947,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3737436155545155504, guid: e0320bc40c32f5092992a242ea439348, type: 3}
+      propertyPath: m_TagString
+      value: Pickaxe
+      objectReference: {fileID: 0}
     - target: {fileID: -3108906503199566267, guid: e0320bc40c32f5092992a242ea439348, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

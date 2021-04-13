@@ -9,14 +9,39 @@ public class CoinPickup : MonoBehaviour
 private AudioSource audioSource; //sfx
 
     public Inventory inventory;
+    public float timeToBreakGold = 30f; // 3 Sec
+    private float counter = 0f;
 
-    private void OnTriggerEnter(Collider other)
+      private void OnTriggerEnter(Collider other) //old code
+      {
+          if (other.CompareTag("Player"))
+          {
+            //SHOW   UI HINT  ( PRESS MOUSE 2 TO MINE)
+            // Pickup();
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player") && Input.GetButton("Fire2"))
+        {
+            counter += Time.deltaTime;
+            if ( counter > timeToBreakGold)
+            {
+                counter = 0;
+                Pickup();
+                //HIDE UI ( PRESS MOUSE 2 TO MINE)
+            }
+            
+        }
+    }
+    private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Pickup();
+            //HIDE UI ( PRESS MOUSE 2 TO MINE)
         }
     }
+
 
     void Pickup()
     {

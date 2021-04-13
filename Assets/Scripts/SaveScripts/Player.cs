@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     {
         PlayerData data = SaveSystem.LoadPlayer();
 
-       // inventory.goldQuantity = data.goldAmount;
+        inventory.goldQuantity = 0;
         inventory.UpdateInventory("gold", data.goldAmount);
         inventory.MaximumFuel = data.MaxGasAmount;
         SuperLamp.fuel = data.GasAmount;

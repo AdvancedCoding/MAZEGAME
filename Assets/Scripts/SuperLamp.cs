@@ -111,10 +111,21 @@ public class SuperLamp : MonoBehaviour
 
         if (Input.GetButtonUp("Fire1") && inventory.inventoryEnabled == false)
         {
-            animator.SetTrigger("lightOn");
+            animator.SetTrigger("lightOff"); //Stops lantern animation
             lightStrenght.intensity = defaultLightStrenght;
             lightStrenght.range = defaultLightRange;
             superLampIsOn = false;
+        }
+        
+        //Mining
+        if (Input.GetButtonDown("Fire2") && inventory.inventoryEnabled == false)
+        {
+            animator.SetTrigger("miningOn"); //Plays mining animation
+        }
+        
+         if (Input.GetButtonUp("Fire2") && inventory.inventoryEnabled == false)
+        {
+            animator.SetTrigger("miningOff"); //stops mining animation
         }
   
     }

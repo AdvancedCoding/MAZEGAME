@@ -5,21 +5,27 @@ using UnityEngine;
 public class playersfx : MonoBehaviour
 {
 
-[SerializeField] private AudioClip clip; //oton animation sfx
+[SerializeField] private AudioClip lanternTweak; //oton animation sfx
+[SerializeField] private AudioClip pickaxeHit; //oton animation sfx
 private AudioSource audioSource; //oton sfx
-    // Start is called before the first frame update
+
+
     void Start()
     {
      audioSource = GetComponent<AudioSource>(); //oton sfx tweak lamppu
         
     }
     
-    private void playerTweakLight()
+    private void lightOnSFX() //(tweak) animaatiossa oleva event kutsuu tätä
     {
-    audioSource.PlayOneShot(clip);
+    audioSource.PlayOneShot(lanternTweak);
+    }
+    
+    private void pickHitSFX() //(tweak) animaatiossa oleva event kutsuu tätä
+    {
+    audioSource.PlayOneShot(pickaxeHit);
     }
 
-    // Update is called once per frame
     void Update()
     {
     

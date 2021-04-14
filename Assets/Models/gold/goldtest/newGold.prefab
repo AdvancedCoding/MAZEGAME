@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8372519990722964925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.4507, y: 2.8797, z: 11.955}
-  m_LocalScale: {x: 0.81691825, y: 0.81691825, z: 0.81691825}
+  m_LocalScale: {x: 1.1659477, y: 1.1659477, z: 1.1659477}
   m_Children:
   - {fileID: 5519456186391248862}
   m_Father: {fileID: 0}
@@ -96,7 +96,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.2, y: 1.2, z: 1.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &1587520396262149538
 AudioSource:
@@ -208,6 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 2ce3b7cbca9bd0a07a2a4afc511f81c8, type: 3}
   inventory: {fileID: 0}
+  timeToBreakGold: 3
 --- !u!1001 &5409866954105411637
 PrefabInstance:
   m_ObjectHideFlags: 0

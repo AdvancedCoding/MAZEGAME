@@ -9,7 +9,7 @@ public class CoinPickup : MonoBehaviour
 private AudioSource audioSource; //sfx
 
     public Inventory inventory;
-    public float timeToBreakGold = 30f; // 3 Sec
+    public float timeToBreakGold = 3f; // 3 Sec
     private float counter = 0f;
 
       private void OnTriggerEnter(Collider other) //old code

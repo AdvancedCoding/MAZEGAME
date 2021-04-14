@@ -60,6 +60,7 @@ public class SuperLamp : MonoBehaviour
     {
         Debug.Log("Enemy spawned");
         NpcMove.aiDetectDistance = 0.1f;
+        NpcAttack.npcIsDead = true;
         audioSource = GetComponent<AudioSource>(); //play sfx
         audioSource.PlayOneShot(deathScreechSfx);
         StartCoroutine(timerDetectDistance()); //why is needed to done this way, thanks unity
@@ -76,6 +77,8 @@ public class SuperLamp : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(patrolTimer);
         NpcMove.aiDetectDistance = NpcMove.defaultAiDetectDistance;
+    
+        NpcAttack.npcIsDead = false;
     }
                    
         	

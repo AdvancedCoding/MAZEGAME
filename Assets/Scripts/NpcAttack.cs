@@ -11,8 +11,9 @@ public class NpcAttack : MonoBehaviour
     private int PlayerRemainingHP;
 
     public GameObject BloodStain;
-    public AudioClip NpcAttackAudio; 
+    public AudioClip NpcAttackAudio;
 
+    public static bool npcIsDead = false;
     // public Object resetToScene;
     // Start is called before the first frame update
 
@@ -25,7 +26,7 @@ public class NpcAttack : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         
-        if (collision.collider.tag == "Player")
+        if (collision.collider.tag == "Player" && !npcIsDead)
         {
          
             if (PlayerRemainingHP == PlayerHP)

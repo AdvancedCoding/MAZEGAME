@@ -37,7 +37,6 @@ public class ShopScript : MonoBehaviour
             playerIsInShop = true;
             AudioSource.PlayClipAtPoint(_ac, storeObject.transform.position);
 
-
         }
     }
 
@@ -53,7 +52,7 @@ public class ShopScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) && playerIsInShop)
+        if (Input.GetKeyDown(KeyCode.E) && playerIsInShop)
         {
             ShopEnabled = !ShopEnabled;
         }

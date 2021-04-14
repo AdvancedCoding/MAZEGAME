@@ -11,11 +11,18 @@ private AudioSource audioSource; //sfx
     public Inventory inventory;
     public float timeToBreakGold = 3f; // 3 Sec
     private float counter = 0f;
+    public GameObject MineText;
 
-      private void OnTriggerEnter(Collider other) //old code
+    private void Start()
+    {
+        MineText.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider other) //old code
       {
           if (other.CompareTag("Player"))
           {
+            MineText.SetActive(true);
             //SHOW   UI HINT  ( PRESS MOUSE 2 TO MINE)
             // Pickup();
         }
@@ -24,6 +31,7 @@ private AudioSource audioSource; //sfx
     {
         if (other.CompareTag("Player") && Input.GetButton("Fire2"))
         {
+            MineText.SetActive(false);
             counter += Time.deltaTime;
             if ( counter > timeToBreakGold)
             {
@@ -36,9 +44,10 @@ private AudioSource audioSource; //sfx
     }
     private void OnTriggerExit(Collider other)
     {
+        
         if (other.CompareTag("Player"))
         {
-            //HIDE UI ( PRESS MOUSE 2 TO MINE)
+            MineText.SetActive(false);
         }
     }
 

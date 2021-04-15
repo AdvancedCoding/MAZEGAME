@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class SuperLamp : MonoBehaviour
 {
-[SerializeField] private Animator animator = null; //oton animation
+[SerializeField] private Animator animator = null; //P animation
+[SerializeField] public Animator klonkkuAnimator = null; //klonkun animation controller
 
 
 
@@ -59,6 +60,7 @@ public class SuperLamp : MonoBehaviour
     void enemyDeath()
     {
         Debug.Log("Enemy spawned");
+        klonkkuAnimator.SetTrigger("blindMonster");
         NpcMove.aiDetectDistance = 0.1f;
         NpcAttack.npcIsDead = true;
         audioSource = GetComponent<AudioSource>(); //play sfx

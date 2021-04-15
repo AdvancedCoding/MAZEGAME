@@ -18,6 +18,7 @@ public class NpcAttack : MonoBehaviour
     private bool NpcHasAttacked;
 
     public static bool npcIsDead = false;
+     [SerializeField] public Animator klonkkuAnimator = null; //klonkun animation controller
     // public Object resetToScene;
     // Start is called before the first frame update
 
@@ -40,6 +41,7 @@ public class NpcAttack : MonoBehaviour
 
             if (PlayerRemainingHP == PlayerHP)
             {
+            klonkkuAnimator.SetTrigger("punchMonster");
                 PlayerRemainingHP--;
                 BloodStain.SetActive(true);
                 Debug.Log("HP: " + PlayerRemainingHP);

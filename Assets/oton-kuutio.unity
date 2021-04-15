@@ -45558,7 +45558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3128338962757721892, guid: 1314093748f7e284c8d5fb4b01239a1d, type: 3}
       propertyPath: m_Speed
-      value: 4
+      value: 3.6
       objectReference: {fileID: 0}
     - target: {fileID: 3128338962757721892, guid: 1314093748f7e284c8d5fb4b01239a1d, type: 3}
       propertyPath: m_Radius
@@ -45967,7 +45967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5703499213785374491, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
       propertyPath: field of view
-      value: 26.991467
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 5703499213785374491, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
       propertyPath: far clip plane
@@ -46043,7 +46043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5703499214194481550, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
       propertyPath: speed
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5703499214194481551, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
       propertyPath: m_Radius

@@ -1,5 +1,41 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8672356421694117444
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
+  m_Name: Vignette
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  color:
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    hdr: 0
+    showAlpha: 0
+    showEyeDropper: 1
+  center:
+    m_OverrideState: 0
+    m_Value: {x: 0.5, y: 0.5}
+  intensity:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 1
+  smoothness:
+    m_OverrideState: 0
+    m_Value: 0.2
+    min: 0.01
+    max: 1
+  rounded:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!114 &-730333396987644108
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -16,7 +52,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.7
+    m_Value: 1
     min: 0
     max: 1
 --- !u!114 &-715608007131988090
@@ -35,7 +71,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.25
+    m_Value: 0.4
     min: -1
     max: 1
   xMultiplier:
@@ -99,6 +135,6 @@ MonoBehaviour:
     max: 1
   clamp:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0
     min: 0
     max: 0.2

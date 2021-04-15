@@ -5597,7 +5597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &80597387
 Transform:
   m_ObjectHideFlags: 0
@@ -5622,7 +5622,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: df6cbb7912303926f8266cb0b714e0cb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a5e452cd742b05f42aeb397b65515af3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.664
   m_Pitch: 1
@@ -6462,6 +6462,20 @@ MonoBehaviour:
   BloodStain: {fileID: 924571432}
   NpcAttackAudio: {fileID: 8300000, guid: 1bbf274d2363a9d4fb2f0bc017998ad1, type: 3}
   klonkkuAnimator: {fileID: 1700926829}
+--- !u!114 &159804671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159804662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ac8967ef66cf06f9ef5489f073740f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scream: {fileID: 8300000, guid: a5e452cd742b05f42aeb397b65515af3, type: 3}
+  soundRange: {fileID: 2018232056}
 --- !u!1001 &162307104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43652,7 +43666,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 03d9b0bd3ede5f8c5af28e8940560275, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 246e6c73d933cadc6add99f3fa6a6ff6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -44451,6 +44465,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5a1612b88a3c493119b2225aa182c61e, type: 3}
   m_PrefabInstance: {fileID: 2012029836}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2018232056 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3561298575063655066, guid: 1314093748f7e284c8d5fb4b01239a1d, type: 3}
+  m_PrefabInstance: {fileID: 3128338962086780105}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2027765458
 PrefabInstance:

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NpcAttack : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class NpcAttack : MonoBehaviour
     public GameObject BloodStain;
     public AudioClip NpcAttackAudio;
 
+    private float TimeToEscape;
+    private bool NpcHasAttacked;
+
     public static bool npcIsDead = false;
     // public Object resetToScene;
     // Start is called before the first frame update
@@ -20,7 +24,11 @@ public class NpcAttack : MonoBehaviour
     void Start()
     {
         BloodStain.SetActive(false);
+        
         PlayerRemainingHP = PlayerHP;
+        NpcHasAttacked = false;
+        TimeToEscape = 3.0f;
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -28,17 +36,18 @@ public class NpcAttack : MonoBehaviour
         
         if (collision.collider.tag == "Player" && !npcIsDead)
         {
-         
+            NpcHasAttacked = true;
+
             if (PlayerRemainingHP == PlayerHP)
             {
                 PlayerRemainingHP--;
-                BloodStain.SetActive(true);          
+                BloodStain.SetActive(true);
                 Debug.Log("HP: " + PlayerRemainingHP);
                 AudioSource.PlayClipAtPoint(NpcAttackAudio, gameObject.transform.position);
-           
+                
             }
 
-            else if (PlayerRemainingHP < PlayerHP)
+            else if (PlayerRemainingHP < PlayerHP && playerImmortality == false)
             {
                 SceneManager.LoadScene(sceneName);
             }
@@ -50,16 +59,32 @@ public class NpcAttack : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         if (collision.collider.tag == "Player")
-        {
-            BloodStain.SetActive(false);
+        {         
             Debug.Log("Escaped");
         }
     }
 
-
     // Update is called once per frame
     void Update()
     {
-       
+        if (NpcHasAttacked)
+        {
+            TimeToEscape -= Time.deltaTime;       
+        }
+
+        if (TimeToEscape > 0f)
+        {
+            playerImmortality = true; 
+        }
+
+        else if (TimeToEscape <= 0f)
+        {
+            BloodStain.SetActive(false);
+           
+            NpcHasAttacked = false;
+            playerImmortality = false;
+           
+        }
+
     }
 }

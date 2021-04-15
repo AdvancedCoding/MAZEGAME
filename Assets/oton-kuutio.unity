@@ -20323,7 +20323,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press Mouse 2 to mine
+  m_Text: Hold (E) to mine
 --- !u!222 &1184374611
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20483,11 +20483,11 @@ MonoBehaviour:
     your mouse to USE the LANTERN
 
 
-    - Right click with your mouse for MINING
-    when NEAR GOLD!
+    - Hold (E) for MINING when NEAR GOLD!
 
 
-    -I for Inventory
+    -I
+    for Inventory
 
 
 '

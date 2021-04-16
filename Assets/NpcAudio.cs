@@ -7,11 +7,13 @@ public class NpcAudio : MonoBehaviour
  public AudioClip scream;
  public GameObject soundRange;
 
-  /*  void OnTriggerEnter (){ //kun osut kuutioon tarkistaa onko kultaa tarpeeksi
-    AudioSource.PlayClipAtPoint(scream, soundRange.transform.position);
-    }*/
+  void Update(){
+      AudioSource.PlayClipAtPoint(scream, soundRange.transform.position);
+  }
+
     
-    private void OnTriggerEnter(Collider other)
+    
+   /* private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -19,5 +21,5 @@ public class NpcAudio : MonoBehaviour
             AudioSource.PlayClipAtPoint(scream, soundRange.transform.position);
 
         }
-    }
+    }*/
 }

@@ -5,13 +5,18 @@ using UnityEngine;
 public class ShopUIButtonsScript : MonoBehaviour
 {
     public Inventory Inventory;
+
+    //prices
     public int FuelPrice = 1;
     public int FuelCanisterPrice = 5;
+    public int HealItemPrice = 3;
+
     public GameObject storeObject;
     public GameObject NotEnoughGoldText;
 
     public AudioClip SmallOilAudio;
     public AudioClip BigOilAudio;
+    public AudioClip HealItemAudio;
 
     public AudioClip NotEnoughGoldAudio;
 
@@ -56,9 +61,28 @@ public class ShopUIButtonsScript : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void BuyHealItem()
     {
-       // NotEnoughGoldText.SetActive(false);
+        if (Inventory.goldQuantity >= HealItemPrice)
+        {
+            Inventory.UpdateInventory("buyHeal", 1);
+            Inventory.UpdateInventory("gold", HealItemPrice);
+            Debug.Log("Heal OSTETTU");
+
+            AudioSource.PlayClipAtPoint(HealItemAudio, storeObject.transform.position);
+
+        }
+        else
+        {
+            Debug.Log("EI OO TARPEEKS RAHAA (HIENO TEKSTI TÄHÄN) ");
+            AudioSource.PlayClipAtPoint(NotEnoughGoldAudio, storeObject.transform.position);
+            NotEnoughGoldText.SetActive(true);
+        }
+    }
+
+        // Update is called once per frame
+        void Update()
+    {
+       
     }
 }

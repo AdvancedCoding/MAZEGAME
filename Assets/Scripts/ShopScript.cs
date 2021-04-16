@@ -89,8 +89,6 @@ public class ShopScript : MonoBehaviour
         }
 
        //cursor locked to screen 
-     
-
     }
 
 

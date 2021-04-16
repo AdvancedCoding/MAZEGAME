@@ -8,7 +8,7 @@ public class NpcAudio : MonoBehaviour
  public GameObject soundRange;
 
   void Update(){
-      AudioSource.PlayClipAtPoint(scream, soundRange.transform.position);
+     // AudioSource.PlayClipAtPoint(scream, soundRange.transform.position);
   }
 
     

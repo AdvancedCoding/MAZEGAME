@@ -8,8 +8,8 @@ public class NpcAttack : MonoBehaviour
 {
     public string sceneName = "oton-kuutio";
     public bool playerImmortality = false;
-    public int PlayerHP = 2; 
-    private int PlayerRemainingHP;
+    public int PlayerMaxHP = 2; 
+    public int PlayerRemainingHP;
 
     public GameObject BloodStain;
     public AudioClip NpcAttackAudio;
@@ -18,7 +18,7 @@ public class NpcAttack : MonoBehaviour
     private bool NpcHasAttacked;
 
     public static bool npcIsDead = false;
-     [SerializeField] public Animator klonkkuAnimator = null; //klonkun animation controller
+    [SerializeField] public Animator klonkkuAnimator = null; //klonkun animation controller
     // public Object resetToScene;
     // Start is called before the first frame update
 
@@ -26,7 +26,7 @@ public class NpcAttack : MonoBehaviour
     {
         BloodStain.SetActive(false);
         
-        PlayerRemainingHP = PlayerHP;
+        PlayerRemainingHP = PlayerMaxHP;
         NpcHasAttacked = false;
         TimeToEscape = 3.0f;
         
@@ -39,9 +39,9 @@ public class NpcAttack : MonoBehaviour
         {
             NpcHasAttacked = true;
 
-            if (PlayerRemainingHP == PlayerHP)
+            if (PlayerRemainingHP == PlayerMaxHP)
             {
-            klonkkuAnimator.SetTrigger("punchMonster");
+                klonkkuAnimator.SetTrigger("punchMonster");
                 PlayerRemainingHP--;
                 BloodStain.SetActive(true);
                 Debug.Log("HP: " + PlayerRemainingHP);
@@ -49,8 +49,9 @@ public class NpcAttack : MonoBehaviour
                 
             }
 
-            else if (PlayerRemainingHP < PlayerHP && playerImmortality == false)
+            else if (PlayerRemainingHP < PlayerMaxHP && playerImmortality == false)
             {
+                klonkkuAnimator.SetTrigger("punchMonster");
                 SceneManager.LoadScene(sceneName);
             }
 

@@ -15,6 +15,9 @@ public class Inventory : MonoBehaviour
     public GameObject fuelAmountText;
     public FuelBarScript fuelBar;
     public int MaximumFuel = 60;
+
+    public int HealItemAmount = 0;
+    public GameObject HealItemAmountText;
     // public SuperLamp superLamp;
   
 
@@ -49,7 +52,15 @@ public class Inventory : MonoBehaviour
                 fuelBar.SetMaxFuelSlider(amount); //This fills the slider fully aswell as setting the max amount
                 break;
 
-                
+            case "buyHeal":
+                HealItemAmount += amount;
+                HealItemAmountText.GetComponent<Text>().text = HealItemAmount.ToString();
+                break;
+
+            case "useHeal":
+                HealItemAmount -= amount;
+                HealItemAmountText.GetComponent<Text>().text = HealItemAmount.ToString();
+                break;
 
             default:
                 Debug.Log("Ayy_Lmao"); //En tiiä tarviiks tätä defaulttii en jaksa kattoo =)

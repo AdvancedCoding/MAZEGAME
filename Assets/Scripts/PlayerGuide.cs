@@ -7,6 +7,8 @@ public class PlayerGuide : MonoBehaviour
 
 public GameObject thePlayer;
 public GameObject hernandezCam;
+public GameObject hernandezText;
+public GameObject inventory;
 public int shopCheck = 0;
 
 /*
@@ -22,13 +24,17 @@ void OnTriggerEnter (Collider other){	//kun pelaaja kollidee ekan kerran näytt�
 if (shopCheck == 0){
 hernandezCam.SetActive(true);
 thePlayer.SetActive(false);
+inventory.SetActive(false);
+hernandezText.SetActive(true); //show hernandez text
 StartCoroutine(FinishCut());
 shopCheck=1;
 
 IEnumerator FinishCut(){ //Kameran vaihto takaisin 6s jälkeen
 yield return new WaitForSeconds(6);
 thePlayer.SetActive(true);
+hernandezText.SetActive(false); //hide hernandez text
 hernandezCam.SetActive(false);
+inventory.SetActive(true);
 }
 
 }

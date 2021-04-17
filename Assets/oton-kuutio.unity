@@ -19490,7 +19490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1035076543
 Transform:
   m_ObjectHideFlags: 0
@@ -22462,10 +22462,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0287b47516a8acd4ea2c5e4bb074ef27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShopEnabled: 0
   ShopUIObject: {fileID: 1110959776}
   ShopToolTip: {fileID: 1390905361}
   playerIsInShop: 0
   shopUIButtonsScript: {fileID: 1485060247}
+  inventory: {fileID: 1626729850}
+  shopInventoryEnabled: 0
   _ac: {fileID: 8300000, guid: 51e02afb12fc11e4499078ccc4296283, type: 3}
   storeObject: {fileID: 1326685725}
 --- !u!1 &1328105353 stripped
@@ -31726,6 +31729,8 @@ MonoBehaviour:
   fuelAmountText: {fileID: 230868137}
   fuelBar: {fileID: 1506703221}
   MaximumFuel: 60
+  shopScript: {fileID: 1326685728}
+  ShopInventory: 0
   HealItemAmount: 0
   HealItemAmountText: {fileID: 2084371804}
 --- !u!114 &1626729851

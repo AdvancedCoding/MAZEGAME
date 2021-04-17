@@ -16,6 +16,10 @@ public class Inventory : MonoBehaviour
     public FuelBarScript fuelBar;
     public int MaximumFuel = 60;
 
+    public ShopScript shopScript;
+
+    public bool ShopInventory = false;
+
     public int HealItemAmount = 0;
     public GameObject HealItemAmountText;
     // public SuperLamp superLamp;
@@ -71,7 +75,22 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKey(KeyCode.Tab) && !ShopInventory)
+        {
+            inventoryEnabled = true;
+        }
+
+        else if (!shopScript.playerIsInShop)
+        {
+            inventoryEnabled = false;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Tab) && !ShopInventory)
+        {
+            inventoryEnabled = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && shopScript.playerIsInShop)
         {
             inventoryEnabled = !inventoryEnabled;
         }
@@ -86,11 +105,13 @@ public class Inventory : MonoBehaviour
         
         }
 
-       if (!inventoryEnabled)
+        if (!inventoryEnabled)
         {
             inventory.SetActive(false);
          //   Cursor.visible = false;
           //  Cursor.lockState = CursorLockMode.Locked;
         }
+
+       
     }
 }

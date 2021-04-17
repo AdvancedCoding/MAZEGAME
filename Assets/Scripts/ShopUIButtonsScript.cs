@@ -66,7 +66,7 @@ public class ShopUIButtonsScript : MonoBehaviour
         if (Inventory.goldQuantity >= HealItemPrice)
         {
             Inventory.UpdateInventory("buyHeal", 1);
-            Inventory.UpdateInventory("gold", HealItemPrice);
+            Inventory.UpdateInventory("gold", -HealItemPrice);
             Debug.Log("Heal OSTETTU");
 
             AudioSource.PlayClipAtPoint(HealItemAudio, storeObject.transform.position);

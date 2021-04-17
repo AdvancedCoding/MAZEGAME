@@ -6,12 +6,14 @@ public class ShopScript : MonoBehaviour
 {
     // Start is called before the first frame update
    
-    private bool ShopEnabled;
+    public bool ShopEnabled;
     public GameObject ShopUIObject;
     public GameObject ShopToolTip;
     public bool playerIsInShop = false;
 
     public ShopUIButtonsScript shopUIButtonsScript;
+
+    public Inventory inventory;
     
     //  public Collider ShopCollider;
     MouseLook ML;
@@ -54,7 +56,8 @@ public class ShopScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && playerIsInShop)
         {
-            ShopEnabled = !ShopEnabled;
+            ShopEnabled = !ShopEnabled;          
+            
         }
 
         if (ShopEnabled == true)
@@ -67,6 +70,9 @@ public class ShopScript : MonoBehaviour
             SL.enabled = false;
             ShopUIObject.SetActive(true);
             ShopToolTip.SetActive(false);
+
+            inventory.ShopInventory = true; //cant open/close inventory
+
         }
 
         if (!ShopEnabled && playerIsInShop)
@@ -76,7 +82,9 @@ public class ShopScript : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             ShopUIObject.SetActive(false);
-            ShopToolTip.SetActive(true);
+            ShopToolTip.SetActive(true);            
+
+
         }
         if (!playerIsInShop) {
             if (!ML.enabled) { ML.enabled = true; }
@@ -86,6 +94,9 @@ public class ShopScript : MonoBehaviour
             ShopUIObject.SetActive(false); 
             ShopToolTip.SetActive(false);
             ShopEnabled = false;
+
+            inventory.ShopInventory = false; //inventory works normalluy
+          
         }
 
        //cursor locked to screen 

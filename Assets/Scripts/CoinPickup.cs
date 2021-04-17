@@ -7,6 +7,7 @@ public class CoinPickup : MonoBehaviour
 
 [SerializeField] private AudioClip clip; //sfx
 private AudioSource audioSource; //sfx
+public Animator animator; //for mining animation
 
     public Inventory inventory;
     public float timeToBreakGold = 3f; // 3 Sec
@@ -31,38 +32,59 @@ private AudioSource audioSource; //sfx
     {
         if (other.CompareTag("Player") && Input.GetButton("Fire2"))
         {
+
+            animator.SetTrigger("miningOn"); //stops mining animation
+            
             MineText.SetActive(false);
             counter += Time.deltaTime;
             if ( counter > timeToBreakGold)
             {
+            
+            //animator.SetTrigger("miningOff");
+            animator.Rebind();
+            animator.Update(0f);
+            
                 counter = 0;
                 Pickup();
+            
+
                 //HIDE UI ( PRESS MOUSE 2 TO MINE)
             }
             
         }
+          else if (other.CompareTag("Player")){	//if player does not hold long enough to get gold -> show gold ui
+            MineText.SetActive(true);
+            counter = 0;
+             
+            animator.Rebind();
+            animator.Update(0f);
+
+            }
     }
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other) //player leaves the gold
     {
         
         if (other.CompareTag("Player"))
         {
             MineText.SetActive(false);
+            
+           // animator.SetTrigger("miningOff");
+            animator.Rebind();
+            animator.Update(0f);
         }
     }
 
 
     void Pickup()
     {
+     
         inventory.UpdateInventory("gold", 1);
         Debug.Log("picked"); // coin++;
-
-        // audioSource = GetComponent<AudioSource>(); //play sfx
-        // audioSource.PlayOneShot(clip);
 
         AudioSource.PlayClipAtPoint(clip, gameObject.transform.position);
 
         Destroy(gameObject);
+
         
 
     }

@@ -124,7 +124,7 @@ public class SuperLamp : MonoBehaviour
             superLampIsOn = false;
         }
         
-        //Mining
+    /*    //Mining
         if (Input.GetButtonDown("Fire2"))
         {
             animator.Rebind();
@@ -137,7 +137,7 @@ public class SuperLamp : MonoBehaviour
         {
            
             animator.SetTrigger("miningOff"); //stops mining animation
-        }
+        }*/
   
     }
 }

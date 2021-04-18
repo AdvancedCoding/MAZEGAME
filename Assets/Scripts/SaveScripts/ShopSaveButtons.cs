@@ -7,7 +7,10 @@ public class ShopSaveButtons : MonoBehaviour
     // Start is called before the first frame update
    
     public Player player;
-  
+    private bool saveMenuActive = false;
+    public GameObject saveSlots;
+    public GameObject loadSlots;
+
 
     public void saveSlot1()
     {
@@ -44,5 +47,12 @@ public class ShopSaveButtons : MonoBehaviour
     {
         Globals.slot = "slot3";
         player.LoadPlayer();
+    }
+
+ public void openSaveMenus()
+    {
+        loadSlots.SetActive(!saveMenuActive);
+        saveSlots.SetActive(!saveMenuActive);
+        saveMenuActive = !saveMenuActive;
     }
 }

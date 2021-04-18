@@ -35,13 +35,13 @@ public class Player : MonoBehaviour
         GasAmount = SuperLamp.fuel;
 
 
-        SaveSystem.SavePlayer(this);
-
+        SaveSystem.SavePlayer(this,Globals.slot);
+      
     }
 
     public void LoadPlayer()
     {
-        PlayerData data = SaveSystem.LoadPlayer();
+        PlayerData data = SaveSystem.LoadPlayer(Globals.slot);
 
         inventory.goldQuantity = 0;
         inventory.UpdateInventory("gold", data.goldAmount);

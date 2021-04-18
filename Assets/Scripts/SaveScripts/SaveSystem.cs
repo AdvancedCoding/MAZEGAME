@@ -5,11 +5,12 @@ using UnityEngine;
 public static class SaveSystem 
 {
  
-    public static void SavePlayer (Player player)
+    public static void SavePlayer (Player player,string saveslot)
     {
         BinaryFormatter formatter = new BinaryFormatter();
 
-        string path = Application.persistentDataPath + "/player.fun";
+        string path = Application.persistentDataPath + "/"+saveslot;
+        // string path = Application.persistentDataPath + "/player.fun";
         FileStream stream = new FileStream(path, FileMode.Create);
 
         PlayerData data = new PlayerData(player);
@@ -18,9 +19,10 @@ public static class SaveSystem
 
     }
 
-    public static PlayerData LoadPlayer()
+    public static PlayerData LoadPlayer(string saveslot)
     {
-        string path = Application.persistentDataPath + "/player.fun";
+        string path = Application.persistentDataPath + "/"+saveslot;
+        // string path = Application.persistentDataPath + "/player.fun";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();

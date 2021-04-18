@@ -14,8 +14,12 @@ public class playagain : MonoBehaviour
     [Header("Main menu garbage (credits ignore these)")]
     private GameObject playB;
     private GameObject loadB;
+
+    public GameObject buttonslots;
     public GameObject credBox;
+
     private bool credActive = false;
+    private bool buttonMenuOpened = false;
 
     public void PlayAgain()
     {
@@ -24,13 +28,38 @@ public class playagain : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void LoadGame()
+    public void openSlotMenu()
+    {
+        
+        buttonMenuOpened = !buttonMenuOpened;
+        buttonslots.SetActive(buttonMenuOpened);
+    }
+
+    private void LoadGame()
     {
         gunSfx.PlayOneShot(clickFx);
         Globals.SMENULOADPRESSED = true;
         SceneManager.LoadScene(sceneName);
 
     }
+    public void loadSlot1()
+    {
+        Globals.slot = "slot1";
+        LoadGame();
+    }
+    public void loadSlot2()
+    {
+        Globals.slot = "slot2";
+        LoadGame();
+    }
+
+    public void loadSlot3()
+    {
+        Globals.slot = "slot3";
+        LoadGame();
+    }
+
+
     public void ShowCredits()
     {
    
@@ -44,6 +73,8 @@ public class playagain : MonoBehaviour
     {
         playB = GameObject.Find("ButtonPlay");
         loadB = GameObject.Find("ButtonLoad");
+
+       
 
         Cursor.lockState = CursorLockMode.Confined;
     }

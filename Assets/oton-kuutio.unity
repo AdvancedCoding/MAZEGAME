@@ -6475,6 +6475,7 @@ MonoBehaviour:
   BloodStain: {fileID: 924571432}
   NpcAttackAudio: {fileID: 8300000, guid: 1bbf274d2363a9d4fb2f0bc017998ad1, type: 3}
   klonkkuAnimator: {fileID: 1700926829}
+  playerShake: {fileID: 1445677564}
 --- !u!114 &159804671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24485,6 +24486,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1445677564
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445677561}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1f4816dc526d76dc5824df677f5d6fde, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1450238013 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000010140763972, guid: b12c8b6046ef0604b96e60fe14b9c16e, type: 3}
@@ -25231,7 +25251,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3128ad53a992e752c9673b0de3cf5768, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -25346,7 +25366,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 94a04e079b92efb82b3deaa3c5a67666, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -48069,6 +48089,34 @@ PrefabInstance:
       propertyPath: spawnpoints.Array.data[2]
       value: 
       objectReference: {fileID: 1803377815}
+    - target: {fileID: 5703499213785374488, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5703499213785374488, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5703499213785374488, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5703499213785374488, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5703499213785374488, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 13.92507
+      objectReference: {fileID: 0}
+    - target: {fileID: 5703499213785374488, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -15.036231
+      objectReference: {fileID: 0}
+    - target: {fileID: 5703499213785374488, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -4.8647923
+      objectReference: {fileID: 0}
     - target: {fileID: 5703499213785374489, guid: 3a29b0c7a21f3dc49bae4398ab66db23, type: 3}
       propertyPath: mouseSens
       value: 300

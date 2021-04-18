@@ -19,6 +19,7 @@ public class NpcAttack : MonoBehaviour
 
     public static bool npcIsDead = false;
     [SerializeField] public Animator klonkkuAnimator = null; //klonkun animation controller
+    public Animator playerShake; //kamera shake
     // public Object resetToScene;
     // Start is called before the first frame update
 
@@ -41,11 +42,12 @@ public class NpcAttack : MonoBehaviour
 
             if (PlayerRemainingHP == PlayerMaxHP)
             {
-                klonkkuAnimator.SetTrigger("punchMonster");
+                klonkkuAnimator.SetTrigger("punchMonster"); //monster punch animation
                 PlayerRemainingHP--;
                 BloodStain.SetActive(true);
                 Debug.Log("HP: " + PlayerRemainingHP);
                 AudioSource.PlayClipAtPoint(NpcAttackAudio, gameObject.transform.position);
+                playerShake.SetTrigger("shakeCam"); //tärisevä kamera
                 
             }
 

@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public int goldAmount;
     public float GasAmount;
     public int MaxGasAmount;
-    
+    public string slotName;
 
     [Header("Garbage dependencies (fps player both)")]
     public Inventory inventory;
@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     {
         goldAmount = inventory.goldQuantity;
         MaxGasAmount = inventory.MaximumFuel;
+        slotName = "OSSIN SAVEN";  //save here
         //GasAmount = Convert.ToInt32(SuperLamp.fuel);
         GasAmount = SuperLamp.fuel;
 
@@ -48,7 +49,7 @@ public class Player : MonoBehaviour
         inventory.MaximumFuel = data.MaxGasAmount;
         SuperLamp.fuel = data.GasAmount;
         inventory.UpdateInventory("fuel", Convert.ToInt32(SuperLamp.fuel));
-
+        slotName = data.slotName;
         Vector3 position;
         CharacterController cc = GetComponent<CharacterController>(); 
         //You need to disable and re enable char contrler in order to move player, nice one ...

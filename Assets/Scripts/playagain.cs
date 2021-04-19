@@ -21,6 +21,10 @@ public class playagain : MonoBehaviour
     private bool credActive = false;
     private bool buttonMenuOpened = false;
 
+    private string slotName1;
+    private string slotName2;
+    private string slotName3;
+
     public void PlayAgain()
     {
         gunSfx.PlayOneShot(clickFx);
@@ -67,6 +71,18 @@ public class playagain : MonoBehaviour
         loadB.SetActive(credActive);
         credBox.SetActive(!credActive);
         credActive = !credActive;
+    }
+
+    public void loadSlotsNames()
+    {
+        PlayerData data1 = SaveSystem.LoadPlayer("slot1");
+        PlayerData data2 = SaveSystem.LoadPlayer("slot2");
+        PlayerData data3 = SaveSystem.LoadPlayer("slot3");
+
+        slotName1 = data1.slotName;
+        slotName2 = data2.slotName;
+        slotName3 = data3.slotName;
+
     }
 
     void Start()

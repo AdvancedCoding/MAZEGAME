@@ -9,6 +9,7 @@ public class PlayerData
     public float GasAmount;
     public int MaxGasAmount;
     public float[] position;
+    public string slotName;
 
     public PlayerData (Player player)
     {
@@ -16,6 +17,7 @@ public class PlayerData
         MaxGasAmount = player.MaxGasAmount;
         GasAmount = player.GasAmount;
         position = new float[3];
+        slotName = player.slotName;
 
         position[0] = player.transform.position.x;
         position[1] = player.transform.position.y;

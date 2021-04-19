@@ -11,6 +11,10 @@ public class ShopScript : MonoBehaviour
     public GameObject ShopToolTip;
     public bool playerIsInShop = false;
 
+    public AudioClip HernandezShowsHisGratitude;
+
+    public ItemPickup Ring;
+
     public ShopUIButtonsScript shopUIButtonsScript;
 
     public Inventory inventory;
@@ -38,6 +42,15 @@ public class ShopScript : MonoBehaviour
             ShopToolTip.SetActive(true);
             playerIsInShop = true;
             AudioSource.PlayClipAtPoint(_ac, storeObject.transform.position);
+
+            if (Ring.RingCollected)
+            {
+                AudioSource.PlayClipAtPoint(HernandezShowsHisGratitude, storeObject.transform.position);
+
+                inventory.UpdateInventory("OldKey", 1);
+
+
+            }
 
         }
     }

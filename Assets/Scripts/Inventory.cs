@@ -16,6 +16,9 @@ public class Inventory : MonoBehaviour
     public FuelBarScript fuelBar;
     public int MaximumFuel = 60;
 
+    public GameObject WeddingRingSprite;
+    public GameObject OldKeySprite;
+
     public ShopScript shopScript;
 
     public bool ShopInventory = false;
@@ -23,7 +26,14 @@ public class Inventory : MonoBehaviour
     public int HealItemAmount = 0;
     public GameObject HealItemAmountText;
     // public SuperLamp superLamp;
-  
+
+
+    private void Start()
+    {
+        WeddingRingSprite.SetActive(false);
+        OldKeySprite.SetActive(false);
+
+    }
 
     public void UpdateInventory(string itemName, int amount)
     {
@@ -66,12 +76,22 @@ public class Inventory : MonoBehaviour
                 HealItemAmountText.GetComponent<Text>().text = HealItemAmount.ToString();
                 break;
 
+            case "WeddingRing":
+                WeddingRingSprite.SetActive(true);
+                break;
+
+            case "OldKey":
+                WeddingRingSprite.SetActive(false);
+                OldKeySprite.SetActive(true);
+                break;
+
             default:
                 Debug.Log("Ayy_Lmao"); //En tiiä tarviiks tätä defaulttii en jaksa kattoo =)
                 break;
                 
         }
     }
+
 
     void Update()
     {

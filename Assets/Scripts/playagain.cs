@@ -17,19 +17,32 @@ public class playagain : MonoBehaviour
 
     public GameObject buttonslots;
     public GameObject credBox;
+    public GameObject IPfieldObject;
+    public InputField inputField;
+    public GameObject stNewGameButton;
+    public Button butS1;
+    public Button butS2;
+    public Button butS3;
 
     private bool credActive = false;
     private bool buttonMenuOpened = false;
 
-    private string slotName1;
-    private string slotName2;
-    private string slotName3;
 
     public void PlayAgain()
     {
         gunSfx.PlayOneShot(clickFx);
         Globals.SMENULOADPRESSED = false;
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void StartNewAdventure()
+    {
+        IPfieldObject.SetActive(true);
+        stNewGameButton.SetActive(true);
+    }
+    public void SaveNewAdventurerName()
+    {
+    Globals.NewAdventurerName = inputField.text;
     }
 
     public void openSlotMenu()
@@ -79,9 +92,10 @@ public class playagain : MonoBehaviour
         PlayerData data2 = SaveSystem.LoadPlayer("slot2");
         PlayerData data3 = SaveSystem.LoadPlayer("slot3");
 
-        slotName1 = data1.slotName;
-        slotName2 = data2.slotName;
-        slotName3 = data3.slotName;
+
+        butS1.GetComponentInChildren<Text>().text = data1.slotName;
+        butS2.GetComponentInChildren<Text>().text = data2.slotName;
+        butS3.GetComponentInChildren<Text>().text = data3.slotName;
 
     }
 
@@ -89,7 +103,9 @@ public class playagain : MonoBehaviour
     {
         playB = GameObject.Find("ButtonPlay");
         loadB = GameObject.Find("ButtonLoad");
+        loadSlotsNames();
 
+        
        
 
         Cursor.lockState = CursorLockMode.Confined;

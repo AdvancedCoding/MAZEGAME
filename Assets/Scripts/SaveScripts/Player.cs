@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 
     public void Start()
     {
+        slotName = Globals.NewAdventurerName;
         if (Globals.SMENULOADPRESSED == true)
         {
             LoadPlayer();
@@ -31,7 +32,7 @@ public class Player : MonoBehaviour
     {
         goldAmount = inventory.goldQuantity;
         MaxGasAmount = inventory.MaximumFuel;
-        slotName = "OSSIN SAVEN";  //save here
+      //  slotName = "OSSIN SAVEN";  //save here
         //GasAmount = Convert.ToInt32(SuperLamp.fuel);
         GasAmount = SuperLamp.fuel;
 

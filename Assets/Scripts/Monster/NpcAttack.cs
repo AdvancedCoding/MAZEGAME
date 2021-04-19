@@ -18,7 +18,7 @@ public class NpcAttack : MonoBehaviour
     private bool NpcHasAttacked;
 
     public static bool npcIsDead = false;
-    [SerializeField] public Animator klonkkuAnimator = null; //klonkun animation controller
+    public Animator klonkkuAnimator = null; //klonkun animation controller
     public Animator playerShake; //kamera shake
     // public Object resetToScene;
     // Start is called before the first frame update
@@ -30,7 +30,7 @@ public class NpcAttack : MonoBehaviour
         PlayerRemainingHP = PlayerMaxHP;
         NpcHasAttacked = false;
         TimeToEscape = 3.0f;
-        
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -39,21 +39,21 @@ public class NpcAttack : MonoBehaviour
         if (collision.collider.tag == "Player" && !npcIsDead)
         {
             NpcHasAttacked = true;
+            klonkkuAnimator.SetTrigger("punchMonster"); //monster punch animation
 
-            if (PlayerRemainingHP == PlayerMaxHP)
+            if (PlayerRemainingHP <= PlayerMaxHP && PlayerRemainingHP > 0)
             {
-                klonkkuAnimator.SetTrigger("punchMonster"); //monster punch animation
                 PlayerRemainingHP--;
                 BloodStain.SetActive(true);
                 Debug.Log("HP: " + PlayerRemainingHP);
                 AudioSource.PlayClipAtPoint(NpcAttackAudio, gameObject.transform.position);
                 playerShake.SetTrigger("shakeCam"); //tärisevä kamera
-                
+                           
             }
 
-            else if (PlayerRemainingHP < PlayerMaxHP && playerImmortality == false)
+            if (PlayerRemainingHP <= 0 && playerImmortality == false)
             {
-                klonkkuAnimator.SetTrigger("punchMonster");
+                //klonkkuAnimator.SetTrigger("punchMonster");
                 SceneManager.LoadScene(sceneName);
             }
 
@@ -72,9 +72,11 @@ public class NpcAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (NpcHasAttacked)
         {
-            TimeToEscape -= Time.deltaTime;       
+            TimeToEscape -= Time.deltaTime;
+           
         }
 
         if (TimeToEscape > 0f)
@@ -88,7 +90,7 @@ public class NpcAttack : MonoBehaviour
            
             NpcHasAttacked = false;
             playerImmortality = false;
-           
+         
         }
 
     }

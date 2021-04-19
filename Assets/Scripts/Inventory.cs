@@ -98,16 +98,24 @@ public class Inventory : MonoBehaviour
         if (inventoryEnabled == true)
         {
             inventory.SetActive(true);
-
+            if (!shopScript.ShopEnabled)
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.Confined;
+            }
             //Cursor does not work in update method if use in 2 update methods  ( Store and Inventory (cancels eachother))
-       //     Cursor.visible = true;
-      //      Cursor.lockState = CursorLockMode.None;
-        
+            //     
+
         }
 
         if (!inventoryEnabled)
         {
             inventory.SetActive(false);
+            if (!shopScript.ShopEnabled)
+            {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
          //   Cursor.visible = false;
           //  Cursor.lockState = CursorLockMode.Locked;
         }

@@ -9,7 +9,7 @@ public class ShopUIButtonsScript : MonoBehaviour
     //prices
     public int FuelPrice = 1;
     public int FuelCanisterPrice = 5;
-    public int HealItemPrice = 3;
+    public int HealItemPrice;
 
     public GameObject storeObject;
     public GameObject NotEnoughGoldText;
@@ -23,6 +23,7 @@ public class ShopUIButtonsScript : MonoBehaviour
    private void Start()
     {
         NotEnoughGoldText.SetActive(false);
+        HealItemPrice = 2;
     }
 
     public void BuyFuel()
@@ -67,6 +68,7 @@ public class ShopUIButtonsScript : MonoBehaviour
         {
             Inventory.UpdateInventory("buyHeal", 1);
             Inventory.UpdateInventory("gold", -HealItemPrice);
+            Debug.Log("Heal price: " + HealItemPrice);
             Debug.Log("Heal OSTETTU");
 
             AudioSource.PlayClipAtPoint(HealItemAudio, storeObject.transform.position);

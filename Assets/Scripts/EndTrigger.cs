@@ -15,6 +15,10 @@ public GameObject PlayerCam;
 public AudioSource music;
 public AudioSource bgrmusic;
 
+public GameObject inventoryUI;
+public GameObject title;
+public GameObject cinematiBars;
+
 
 
 void OnTriggerEnter (){ //kun osut kuutioon tarkistaa onko kultaa tarpeeksi
@@ -22,6 +26,9 @@ void OnTriggerEnter (){ //kun osut kuutioon tarkistaa onko kultaa tarpeeksi
 if (inventory.goldQuantity >= maxGold){
 Debug.Log("you won");
 cutsceneCam.SetActive(true);
+inventoryUI.SetActive(false);
+cinematiBars.SetActive(true); //cinematic bars
+
 PlayerCam.SetActive(false);
 bgrmusic.Stop();
 music.Play();
@@ -30,6 +37,7 @@ StartCoroutine(FinishCut());
 IEnumerator FinishCut(){ //Kameran vaihto 5s jälkeen
 yield return new WaitForSeconds(15);
 cutsceneCam2.SetActive(true);
+title.SetActive(true);	//TOTW title
 cutsceneCam.SetActive(false);
 }
 

@@ -11,6 +11,7 @@ public class NpcAttack : MonoBehaviour
     public int PlayerMaxHP = 2; 
     public int PlayerRemainingHP;
 
+    public float timerInsideMonster = 3f;
     public GameObject BloodStain;
     public AudioClip NpcAttackAudio;
 
@@ -22,7 +23,7 @@ public class NpcAttack : MonoBehaviour
     public Animator playerShake; //kamera shake
     // public Object resetToScene;
     // Start is called before the first frame update
-
+     private float counter = 0f;
     void Start()
     {
         BloodStain.SetActive(false);
@@ -33,37 +34,62 @@ public class NpcAttack : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    // private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
+        //&& collision.GetType() == typeof(CapsuleCollider)
         
-        if (collision.collider.tag == "Player" && !npcIsDead)
-        {
-            NpcHasAttacked = true;
-            klonkkuAnimator.SetTrigger("punchMonster"); //monster punch animation
-
-            if (PlayerRemainingHP <= PlayerMaxHP && PlayerRemainingHP > 0)
+            if (collision.tag == "Player" && !npcIsDead )
             {
-                PlayerRemainingHP--;
-                BloodStain.SetActive(true);
-                Debug.Log("HP: " + PlayerRemainingHP);
-                AudioSource.PlayClipAtPoint(NpcAttackAudio, gameObject.transform.position);
-                playerShake.SetTrigger("shakeCam"); //tärisevä kamera
-                           
+           // Debug.Log(collision.);
+                NpcHasAttacked = true;
+                klonkkuAnimator.SetTrigger("punchMonster"); //monster punch animation
+
+                if (PlayerRemainingHP <= PlayerMaxHP && PlayerRemainingHP > 0)
+                {
+                    PlayerRemainingHP--;
+                    BloodStain.SetActive(true);
+                    Debug.Log("HP: " + PlayerRemainingHP);
+                    AudioSource.PlayClipAtPoint(NpcAttackAudio, gameObject.transform.position);
+                    playerShake.SetTrigger("shakeCam"); //tärisevä kamera
+
+                }
+
+                if (PlayerRemainingHP <= 0 && playerImmortality == false)
+                {
+                    //klonkkuAnimator.SetTrigger("punchMonster");
+                    SceneManager.LoadScene(sceneName);
+                }
+
             }
+        
+    }
+    private void OnTriggerStay(Collider collision)
+    {
+        if (collision.tag == "Player" && !npcIsDead)
+        {
+            counter += Time.deltaTime;
+            if (counter>timerInsideMonster) PlayerRemainingHP--; counter = 0f;
 
             if (PlayerRemainingHP <= 0 && playerImmortality == false)
             {
+                Debug.Log("KILLED BY ON TRIGGER STAY");
                 //klonkkuAnimator.SetTrigger("punchMonster");
                 SceneManager.LoadScene(sceneName);
             }
 
         }
 
+  
+
+
     }
 
-    private void OnCollisionExit(Collision collision)
+    // private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collision)
     {
-        if (collision.collider.tag == "Player")
+
+        if (collision.tag == "Player")
         {         
             Debug.Log("Escaped");
         }

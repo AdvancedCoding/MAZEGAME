@@ -48,7 +48,7 @@ public class SuperLamp : MonoBehaviour
     { 
         if (enemyCollision.CompareTag("Enemy") && superLampIsOn==true) //requires rigidbody component for ai
         {
-            Debug.Log("Enemy destroyed / moved");
+            Debug.Log("Enemy destroyed /moved by  ENTER");
             
             enemyDeath();
             //enemyBody.transform.position = new Vector3(56, 2, -43);  //THROW CUBE somewhere off map 
@@ -56,6 +56,18 @@ public class SuperLamp : MonoBehaviour
         }
 
     }
+
+    private void OnTriggerStay(Collider enemyCollision)
+    {
+        if (enemyCollision.CompareTag("Enemy") && superLampIsOn == true) //requires rigidbody component for ai
+        {
+            Debug.Log("Enemy destroyed / moved by ontriggre stay");
+
+            enemyDeath();
+        }
+
+    }
+
 
     void enemyDeath()
     {

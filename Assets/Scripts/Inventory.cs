@@ -17,6 +17,7 @@ public class Inventory : MonoBehaviour
     public int MaximumFuel = 60;
 
     public GameObject WeddingRingSprite;
+    public GameObject RingHelpText;
     public GameObject OldKeySprite;
 
     public ShopScript shopScript;
@@ -26,13 +27,13 @@ public class Inventory : MonoBehaviour
     public int HealItemAmount = 0;
     public GameObject HealItemAmountText;
     // public SuperLamp superLamp;
-
+    MouseLook ML;
 
     private void Start()
     {
         WeddingRingSprite.SetActive(false);
         OldKeySprite.SetActive(false);
-
+        ML = GameObject.Find("Main Camera").GetComponent<MouseLook>();
     }
 
     public void UpdateInventory(string itemName, int amount)
@@ -81,6 +82,7 @@ public class Inventory : MonoBehaviour
                 break;
 
             case "OldKey":
+                RingHelpText.SetActive(false);
                 WeddingRingSprite.SetActive(false);
                 OldKeySprite.SetActive(true);
                 break;
@@ -98,6 +100,7 @@ public class Inventory : MonoBehaviour
         if (Input.GetKey(KeyCode.Tab) && !ShopInventory)
         {
             inventoryEnabled = true;
+           
         }
 
         else if (!shopScript.playerIsInShop)
@@ -117,6 +120,7 @@ public class Inventory : MonoBehaviour
 
         if (inventoryEnabled == true)
         {
+            ML.enabled = false;
             inventory.SetActive(true);
             if (!shopScript.ShopEnabled)
             {
@@ -131,6 +135,7 @@ public class Inventory : MonoBehaviour
         if (!inventoryEnabled)
         {
             inventory.SetActive(false);
+            ML.enabled = true;
             if (!shopScript.ShopEnabled)
             {
                 Cursor.visible = false;

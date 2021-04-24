@@ -15,7 +15,7 @@ public class ShopSaveButtons : MonoBehaviour
     public void saveCurrentSlot()
     {
         player.SavePlayer();
-    }
+    } //this function is literally and player player  depency is the only thing in this script that is currently being used :D
 
     public void saveSlot1()
     {

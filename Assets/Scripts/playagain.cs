@@ -62,20 +62,56 @@ public class playagain : MonoBehaviour
     public void loadSlot1()
     {
         Globals.slot = "slot1";
-        LoadGame();
+        if (butS1.GetComponentInChildren<Text>().text == "")
+        {
+            Globals.loadnewgame = true;
+            StartNewAdventure();
+        }
+        else
+        { 
+            Globals.loadnewgame = false;
+            LoadGame(); 
+        }    
     }
     public void loadSlot2()
     {
         Globals.slot = "slot2";
-        LoadGame();
+        if (butS2.GetComponentInChildren<Text>().text == "") 
+        {   
+            Globals.loadnewgame = true;
+            StartNewAdventure();
+        }
+        else 
+        { 
+            Globals.loadnewgame = false;
+            LoadGame();
+        }
+       
+    
     }
 
     public void loadSlot3()
     {
+        if (butS3.GetComponentInChildren<Text>().text == "") { Globals.loadnewgame = true; }
+        else { Globals.loadnewgame = false; }
         Globals.slot = "slot3";
         LoadGame();
     }
 
+    public void delSlot1()
+    {
+        butS1.GetComponentInChildren<Text>().text = "";
+        
+
+    }
+    public void delSlot2()
+    {
+        butS2.GetComponentInChildren<Text>().text = "";
+    }
+    public void delSlot3()
+    {
+        butS3.GetComponentInChildren<Text>().text = "";
+    }
 
     public void ShowCredits()
     {

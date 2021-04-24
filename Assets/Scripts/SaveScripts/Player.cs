@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     public void Start()
     {
         slotName = Globals.NewAdventurerName;
-        if (Globals.SMENULOADPRESSED == true)
+        if (Globals.SMENULOADPRESSED == true && !Globals.loadnewgame)
         {
             LoadPlayer();
             Globals.SMENULOADPRESSED = false;

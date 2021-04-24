@@ -12,6 +12,11 @@ public class ShopSaveButtons : MonoBehaviour
     public GameObject loadSlots;
 
 
+    public void saveCurrentSlot()
+    {
+        player.SavePlayer();
+    }
+
     public void saveSlot1()
     {
         Globals.slot = "slot1";

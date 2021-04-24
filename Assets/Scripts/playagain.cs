@@ -92,10 +92,18 @@ public class playagain : MonoBehaviour
 
     public void loadSlot3()
     {
-        if (butS3.GetComponentInChildren<Text>().text == "") { Globals.loadnewgame = true; }
-        else { Globals.loadnewgame = false; }
         Globals.slot = "slot3";
-        LoadGame();
+        if (butS3.GetComponentInChildren<Text>().text == "") 
+        { 
+            Globals.loadnewgame = true;
+            StartNewAdventure();
+        }
+        else 
+        { 
+            Globals.loadnewgame = false;
+            LoadGame();
+        }
+        
     }
 
     public void delSlot1()

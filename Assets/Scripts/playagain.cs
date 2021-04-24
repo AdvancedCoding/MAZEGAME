@@ -135,7 +135,7 @@ public class playagain : MonoBehaviour
         PlayerData data1 = SaveSystem.LoadPlayer("slot1");
         PlayerData data2 = SaveSystem.LoadPlayer("slot2");
         PlayerData data3 = SaveSystem.LoadPlayer("slot3");
-
+      
 
         butS1.GetComponentInChildren<Text>().text = data1.slotName;
         butS2.GetComponentInChildren<Text>().text = data2.slotName;
@@ -148,7 +148,7 @@ public class playagain : MonoBehaviour
         playB = GameObject.Find("ButtonPlay");
         loadB = GameObject.Find("ButtonLoad");
         loadSlotsNames();
-
+       
         
        
 

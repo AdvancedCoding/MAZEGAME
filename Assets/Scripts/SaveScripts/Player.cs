@@ -20,11 +20,13 @@ public class Player : MonoBehaviour
     public void Start()
     {
         slotName = Globals.NewAdventurerName;
+        Debug.Log(slotName);
         if (Globals.SMENULOADPRESSED == true && !Globals.loadnewgame)
         {
             LoadPlayer();
             Globals.SMENULOADPRESSED = false;
             Debug.Log("Loaded saved game");
+            Debug.Log(slotName);
         }
     }
 

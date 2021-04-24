@@ -156,7 +156,6 @@ RectTransform:
   - {fileID: 839241977}
   - {fileID: 2012440580}
   - {fileID: 254418933}
-  - {fileID: 1975694299}
   m_Father: {fileID: 1664959263}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -576,6 +575,7 @@ RectTransform:
   m_Children:
   - {fileID: 360847450}
   - {fileID: 1350552446}
+  - {fileID: 1975694299}
   m_Father: {fileID: 3515700}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -601,12 +601,12 @@ MonoBehaviour:
   clickFx: {fileID: 8300000, guid: a4dde28756bb1e4ccbca47ae24318ed4, type: 3}
   buttonslots: {fileID: 386566704}
   credBox: {fileID: 1975694298}
-  IPfieldObject: {fileID: 0}
-  inputField: {fileID: 0}
-  stNewGameButton: {fileID: 0}
-  butS1: {fileID: 0}
-  butS2: {fileID: 0}
-  butS3: {fileID: 0}
+  IPfieldObject: {fileID: 766819942}
+  inputField: {fileID: 766819943}
+  stNewGameButton: {fileID: 885435523}
+  butS1: {fileID: 780840510}
+  butS2: {fileID: 2126637898}
+  butS3: {fileID: 429659196}
 --- !u!82 &254418935
 AudioSource:
   m_ObjectHideFlags: 0
@@ -747,7 +747,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2012440582}
+      - m_Target: {fileID: 254418934}
         m_TargetAssemblyTypeName: playagain, Assembly-CSharp
         m_MethodName: ShowCredits
         m_Mode: 1
@@ -3571,17 +3571,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975694298}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -331.01862}
+  m_LocalScale: {x: 1.7990142, y: 1.7990142, z: 1.7990142}
   m_Children:
   - {fileID: 1676597590}
-  m_Father: {fileID: 3515700}
-  m_RootOrder: 4
+  m_Father: {fileID: 254418933}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -805.9584, y: 402.9792}
   m_SizeDelta: {x: 900, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1975694300

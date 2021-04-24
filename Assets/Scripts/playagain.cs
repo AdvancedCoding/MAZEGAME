@@ -12,7 +12,7 @@ public class playagain : MonoBehaviour
     public AudioClip clickFx;
 
     [Header("Main menu garbage (credits ignore these)")]
-    private GameObject playB;
+   // private GameObject playB;
     private GameObject loadB;
 
     public GameObject buttonslots;
@@ -124,7 +124,7 @@ public class playagain : MonoBehaviour
     public void ShowCredits()
     {
    
-        playB.SetActive(credActive);
+      //  playB.SetActive(credActive);
         loadB.SetActive(credActive);
         credBox.SetActive(!credActive);
         credActive = !credActive;
@@ -145,7 +145,7 @@ public class playagain : MonoBehaviour
 
     void Start()
     {
-        playB = GameObject.Find("ButtonPlay");
+     //   playB = GameObject.Find("ButtonPlay");
         loadB = GameObject.Find("ButtonLoad");
         loadSlotsNames();
        

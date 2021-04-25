@@ -26097,12 +26097,24 @@ MonoBehaviour:
   ShopUIObject: {fileID: 1110959776}
   ShopToolTip: {fileID: 1390905361}
   playerIsInShop: 0
-  HernandezShowsHisGratitude: {fileID: 8300000, guid: 5d9876624cdcdee48ab166b4c06b3998, type: 3}
+  HernandezShowsHisGratitude: {fileID: 8300000, guid: 0a79a612c8015904eb8cec85ff3bef89, type: 3}
+  audioClipsGreet:
+  - {fileID: 8300000, guid: ebeb6a0aa4da77342ba53645d5b38d49, type: 3}
+  - {fileID: 8300000, guid: 65006a2167295bf4a8db3d84c170bf0a, type: 3}
+  - {fileID: 8300000, guid: dcd269580c48263448e08a3eb73817cc, type: 3}
+  audioClipsThanks:
+  - {fileID: 8300000, guid: 80c16f83d3f0100409836b7832255f76, type: 3}
+  - {fileID: 8300000, guid: 7bd5006ad96de7d47addcfb82ca3e5b7, type: 3}
+  - {fileID: 8300000, guid: 33a4ea04ef625694dbda84893cdd800e, type: 3}
+  audioClipsChatter:
+  - {fileID: 8300000, guid: 24965e2f27c568543822c7dd54c98f5e, type: 3}
+  - {fileID: 8300000, guid: 94233c8bdfe36464084ae5b857221dc2, type: 3}
+  - {fileID: 8300000, guid: a746ac15d167b8a4ab298896af50f1ba, type: 3}
+  Hernandez: {fileID: 1726056523}
   Ring: {fileID: 1543624620}
   shopUIButtonsScript: {fileID: 1485060247}
   inventory: {fileID: 1626729850}
-  doorOpen: {fileID: 0}
-  _ac: {fileID: 8300000, guid: 51e02afb12fc11e4499078ccc4296283, type: 3}
+  doorOpen: {fileID: 2121378830}
   storeObject: {fileID: 1326685725}
 --- !u!1 &1327978579
 GameObject:
@@ -42177,15 +42189,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68ff44545a0f714e7b24642959754963, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.113
+      value: -1.12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68ff44545a0f714e7b24642959754963, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.331
+      value: -0.33
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68ff44545a0f714e7b24642959754963, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.617
+      value: 0.62
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68ff44545a0f714e7b24642959754963, type: 3}
       propertyPath: m_LocalRotation.w
@@ -42261,21 +42273,21 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726056521}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3f7dd8e3d52a1c78ea90a8d6814a1a13, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.97
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 163
+  Priority: 84
   DopplerLevel: 1
   MinDistance: 1.372899
-  MaxDistance: 4
+  MaxDistance: 11
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -42285,22 +42297,49 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.76594627
-      value: 0.9737396
-      inSlope: -1.2960274
-      outSlope: -1.2960274
+      time: 0.08608729
+      value: 0.7936554
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.35077196
+      value: 0.6231331
+      inSlope: -1.5698792
+      outSlope: -1.5698792
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5627032
+      value: 0.5043163
+      inSlope: -0.616484
+      outSlope: -0.616484
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.77624387
+      value: 0.18833704
+      inSlope: -1.090092
+      outSlope: -1.090092
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.74223363
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -0.772205
-      outSlope: -0.772205
+      inSlope: 0.0927052
+      outSlope: 0.0927052
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.17770116
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -42860,7 +42899,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1759977907
 Transform:
   m_ObjectHideFlags: 0
@@ -53000,7 +53039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GetKeyText: {fileID: 1585719257}
   OpenDoorText: {fileID: 2056787394}
-  PlayerHasKey: 0
+  PlayerHasKey: 1
   inventory: {fileID: 1626729850}
 --- !u!65 &2121378831
 BoxCollider:

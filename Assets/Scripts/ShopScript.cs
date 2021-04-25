@@ -13,6 +13,12 @@ public class ShopScript : MonoBehaviour
 
     public AudioClip HernandezShowsHisGratitude;
 
+    public AudioClip[] audioClipsGreet;
+    public AudioClip[] audioClipsThanks;
+    public AudioClip[] audioClipsChatter;
+
+    public AudioSource Hernandez;
+
     public ItemPickup Ring;
 
     public ShopUIButtonsScript shopUIButtonsScript;
@@ -21,10 +27,11 @@ public class ShopScript : MonoBehaviour
 
     public DoorOpen doorOpen;
     
+    
     //  public Collider ShopCollider;
     MouseLook ML;
     SuperLamp SL;
-    public AudioClip _ac;
+    //public AudioClip _ac;
     public GameObject storeObject;
 
     public void Start()
@@ -43,27 +50,56 @@ public class ShopScript : MonoBehaviour
             //show ui tip press e to open store
             ShopToolTip.SetActive(true);
             playerIsInShop = true;
-            AudioSource.PlayClipAtPoint(_ac, storeObject.transform.position);
-
-            if (Ring.RingCollected)
+            
+            //Hernandez voice lines
+            if (Hernandez.isPlaying)
             {
-                AudioSource.PlayClipAtPoint(HernandezShowsHisGratitude, storeObject.transform.position);
+                Hernandez.Stop();
+            }
 
+            if (Ring.RingCollected && !doorOpen.PlayerHasKey)
+            {
+
+                AudioSource.PlayClipAtPoint(HernandezShowsHisGratitude, Hernandez.transform.position);
+                
                 inventory.UpdateInventory("OldKey", 1);
 
                 doorOpen.PlayerHasKey = true;
             }
 
+            else
+            {
+                Hernandez.PlayOneShot(audioClipsGreet[Random.Range(0, audioClipsGreet.Length)]);
+                StartCoroutine(HernandezTimer());
+            }
+
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-        {          
+        {
+            if (Hernandez.isPlaying) {
+                Hernandez.Stop();
+            }
+            
+            Hernandez.PlayOneShot(audioClipsThanks[Random.Range(0, audioClipsThanks.Length)]);
             playerIsInShop = false;
             shopUIButtonsScript.NotEnoughGoldText.SetActive(false);
         }
+    }
+
+    IEnumerator HernandezTimer()
+    {
+        while (playerIsInShop) {
+            yield return new WaitForSeconds(8);
+                if (!Hernandez.isPlaying)
+                {
+                    Hernandez.PlayOneShot(audioClipsChatter[Random.Range(0, audioClipsChatter.Length)]);
+                }
+            yield return new WaitForSeconds(5);
+        }
+        
     }
 
 

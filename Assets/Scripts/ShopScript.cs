@@ -18,6 +18,8 @@ public class ShopScript : MonoBehaviour
     public ShopUIButtonsScript shopUIButtonsScript;
 
     public Inventory inventory;
+
+    public DoorOpen doorOpen;
     
     //  public Collider ShopCollider;
     MouseLook ML;
@@ -49,7 +51,7 @@ public class ShopScript : MonoBehaviour
 
                 inventory.UpdateInventory("OldKey", 1);
 
-
+                doorOpen.PlayerHasKey = true;
             }
 
         }

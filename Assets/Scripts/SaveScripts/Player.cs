@@ -10,15 +10,17 @@ public class Player : MonoBehaviour
     public float GasAmount;
     public int MaxGasAmount;
     public string slotName;
+    public bool[] golds;
 
     [Header("Garbage dependencies (fps player both)")]
     public Inventory inventory;
-
+    public GoldCheck GoldCheck;
 
     // Update is called once per frame
 
     public void Start()
     {
+       
         slotName = Globals.NewAdventurerName;
         Debug.Log(slotName);
         if (Globals.SMENULOADPRESSED == true && !Globals.loadnewgame)
@@ -32,14 +34,20 @@ public class Player : MonoBehaviour
 
     public void SavePlayer()
     {
+       
         goldAmount = inventory.goldQuantity;
         MaxGasAmount = inventory.MaximumFuel;
       //  slotName = "OSSIN SAVEN";  //save here
         //GasAmount = Convert.ToInt32(SuperLamp.fuel);
         GasAmount = SuperLamp.fuel;
 
+        GoldCheck.GOLDCHECKER();
 
-        SaveSystem.SavePlayer(this,Globals.slot);
+        golds = GoldCheck.goldexits;
+
+      //  for (int i = 0; i < golds.Length; i++) Debug.Log(golds[i]);
+
+            SaveSystem.SavePlayer(this,Globals.slot);
       
     }
 
@@ -62,6 +70,10 @@ public class Player : MonoBehaviour
         position.z = data.position[2];
         transform.position = position;
         cc.enabled = true;
+
+        golds = data.golds;
+        GoldCheck.goldexits = golds;
+        GoldCheck.GOLDUPDATEPOSSOMETHING();
 
 
     }

@@ -10,7 +10,7 @@ public class PlayerData
     public int MaxGasAmount;
     public float[] position;
     public string slotName;
-
+    public bool[] golds;
     public PlayerData (Player player)
     {
         goldAmount = player.goldAmount;
@@ -18,6 +18,7 @@ public class PlayerData
         GasAmount = player.GasAmount;
         position = new float[3];
         slotName = player.slotName;
+        golds = player.golds; //golds
 
         position[0] = player.transform.position.x;
         position[1] = player.transform.position.y;

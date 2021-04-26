@@ -12,9 +12,15 @@ public class Player : MonoBehaviour
     public string slotName;
     public bool[] golds;
 
+    //ring key stuff
+    public bool RingCollected;
+    public bool PlayerHasKey;
+
     [Header("Garbage dependencies (fps player both)")]
     public Inventory inventory;
     public GoldCheck GoldCheck;
+    public DoorOpen DoorOpen;
+    public ItemPickup ItemPickup;
 
     // Update is called once per frame
 
@@ -37,7 +43,10 @@ public class Player : MonoBehaviour
        
         goldAmount = inventory.goldQuantity;
         MaxGasAmount = inventory.MaximumFuel;
-      //  slotName = "OSSIN SAVEN";  //save here
+
+        PlayerHasKey = DoorOpen.PlayerHasKey;
+        RingCollected = ItemPickup.RingCollected;
+        //  slotName = "OSSIN SAVEN";  //save here
         //GasAmount = Convert.ToInt32(SuperLamp.fuel);
         GasAmount = SuperLamp.fuel;
 
@@ -70,6 +79,16 @@ public class Player : MonoBehaviour
         position.z = data.position[2];
         transform.position = position;
         cc.enabled = true;
+        if (data.PlayerHasKey)
+        {
+            inventory.UpdateInventory("OldKey", 1);
+            DoorOpen.PlayerHasKey = true;
+        }
+        else if( data.RingCollected && !data.PlayerHasKey)
+        {
+            inventory.UpdateInventory("WeddingRing", 1);
+            ItemPickup.RingCollected = true;
+        }
 
         golds = data.golds;
         GoldCheck.goldexits = golds;

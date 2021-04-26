@@ -11,6 +11,9 @@ public class PlayerData
     public float[] position;
     public string slotName;
     public bool[] golds;
+
+    public bool RingCollected;
+    public bool PlayerHasKey;
     public PlayerData (Player player)
     {
         goldAmount = player.goldAmount;
@@ -19,6 +22,9 @@ public class PlayerData
         position = new float[3];
         slotName = player.slotName;
         golds = player.golds; //golds
+
+        PlayerHasKey = player.PlayerHasKey;
+        RingCollected = player.RingCollected;
 
         position[0] = player.transform.position.x;
         position[1] = player.transform.position.y;

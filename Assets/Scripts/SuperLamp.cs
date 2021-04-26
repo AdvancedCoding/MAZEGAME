@@ -46,7 +46,7 @@ public class SuperLamp : MonoBehaviour
     //https://answers.unity.com/questions/753481/ontriggerenter-not-working-tried-everything-c.html
     private void OnTriggerEnter(Collider enemyCollision)
     { 
-        if (enemyCollision.CompareTag("Enemy") && superLampIsOn==true) //requires rigidbody component for ai
+        if (enemyCollision.CompareTag("Enemy") && superLampIsOn==true && !NpcAttack.npcIsDead) //requires rigidbody component for ai
         {
             Debug.Log("Enemy destroyed /moved by  ENTER");
             
@@ -59,7 +59,7 @@ public class SuperLamp : MonoBehaviour
 
     private void OnTriggerStay(Collider enemyCollision)
     {
-        if (enemyCollision.CompareTag("Enemy") && superLampIsOn == true) //requires rigidbody component for ai
+        if (enemyCollision.CompareTag("Enemy") && superLampIsOn == true && !NpcAttack.npcIsDead) //requires rigidbody component for ai
         {
             Debug.Log("Enemy destroyed / moved by ontriggre stay");
 

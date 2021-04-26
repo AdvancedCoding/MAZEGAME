@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16846213, g: 0.16995102, b: 0.15358382, a: 1}
+  m_IndirectSpecularColor: {r: 0.5912687, g: 0.5985243, b: 0.5465261, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -36671,8 +36671,12 @@ MonoBehaviour:
   MaxGasAmount: 0
   slotName: 
   golds: 
+  RingCollected: 0
+  PlayerHasKey: 0
   inventory: {fileID: 1626729850}
   GoldCheck: {fileID: 663602007}
+  DoorOpen: {fileID: 2121378830}
+  ItemPickup: {fileID: 1543624620}
 --- !u!82 &1626729852
 AudioSource:
   m_ObjectHideFlags: 0

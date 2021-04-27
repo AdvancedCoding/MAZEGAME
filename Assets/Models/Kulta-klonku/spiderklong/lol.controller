@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: blind
-  m_Speed: 1
+  m_Speed: 1.4
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3969960091326097009}
@@ -82,7 +82,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: punch
-  m_Speed: 1
+  m_Speed: 1.2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8774003029249119470}
@@ -109,7 +109,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: walk1
-  m_Speed: 1
+  m_Speed: 1.9
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6656373502752661151}
@@ -199,7 +199,7 @@ AnimatorStateMachine:
     m_Position: {x: 320, y: 428, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5576219794997476753}
-    m_Position: {x: 844, y: 513, z: 0}
+    m_Position: {x: 840, y: 510, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8881805068319530968}
     m_Position: {x: 142, y: 567, z: 0}

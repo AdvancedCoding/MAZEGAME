@@ -26,7 +26,7 @@ public class NpcAttack : MonoBehaviour
 
     public static bool npcIsDead = false;
     public Animator klonkkuAnimator = null; //klonkun animation controller
-    public Animator playerShake; //kamera shake
+  //  public Animator playerShake; //kamera shake
     // public Object resetToScene;
     // Start is called before the first frame update
      private float counter = 0f;

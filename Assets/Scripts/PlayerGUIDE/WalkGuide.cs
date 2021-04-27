@@ -25,7 +25,7 @@ walkCheck=1;
 StartCoroutine(FinishCut());
 
 IEnumerator FinishCut(){ //Kameran vaihto takaisin 6s jälkeen
-yield return new WaitForSeconds(2);
+yield return new WaitForSeconds(5);
 niceText.SetActive(false); //hide hernandez text
 inventory.SetActive(true);
 }

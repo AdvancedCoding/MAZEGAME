@@ -35,6 +35,7 @@ public class Inventory : MonoBehaviour
         OldKeySprite.SetActive(false);
         ML = GameObject.Find("Main Camera").GetComponent<MouseLook>();
         UpdateInventory("fuel", Convert.ToInt32(SuperLamp.fuel));
+        UpdateInventory("buyHeal", 1);
     }
 
     public void UpdateInventory(string itemName, int amount)

@@ -34,6 +34,7 @@ public class Inventory : MonoBehaviour
         WeddingRingSprite.SetActive(false);
         OldKeySprite.SetActive(false);
         ML = GameObject.Find("Main Camera").GetComponent<MouseLook>();
+        UpdateInventory("fuel", Convert.ToInt32(SuperLamp.fuel));
     }
 
     public void UpdateInventory(string itemName, int amount)

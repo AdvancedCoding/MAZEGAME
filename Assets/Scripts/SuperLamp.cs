@@ -12,7 +12,7 @@ public class SuperLamp : MonoBehaviour
 
 
     [Header("Light stuff")]
-    public static float fuel = 60;
+    public static float fuel = 0;
     // public float fuel = 60;
     public bool superLampIsOn = false;
     public Light lightStrenght;
@@ -39,7 +39,7 @@ public class SuperLamp : MonoBehaviour
     private void Start()
     {
         lightStrenght.intensity = defaultLightStrenght;
-        fuel = 60; // when level is restarted this value is loaded
+        fuel = 0; // when level is restarted this value is loaded
     }
 
 

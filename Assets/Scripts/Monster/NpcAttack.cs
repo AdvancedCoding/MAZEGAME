@@ -13,7 +13,8 @@ public class NpcAttack : MonoBehaviour
 
     public float timerInsideMonster = 3f;
     public GameObject BloodStain;
-    public AudioClip NpcAttackAudio;
+   // public AudioClip NpcAttackAudio;
+    public AudioSource enemyAttackAudioSource;
 
     private float TimeToEscape;
     private bool NpcHasAttacked;
@@ -24,6 +25,7 @@ public class NpcAttack : MonoBehaviour
     // public Object resetToScene;
     // Start is called before the first frame update
      private float counter = 0f;
+    public GameObject enemy;
     void Start()
     {
         BloodStain.SetActive(false);
@@ -50,8 +52,9 @@ public class NpcAttack : MonoBehaviour
                     PlayerRemainingHP--;
                     BloodStain.SetActive(true);
                     Debug.Log("HP: " + PlayerRemainingHP);
-                    AudioSource.PlayClipAtPoint(NpcAttackAudio, gameObject.transform.position);
-                    playerShake.SetTrigger("shakeCam"); //tärisevä kamera
+                // AudioSource.PlayClipAtPoint(audioSource, enemy.transform.position);
+                enemyAttackAudioSource.Play();
+                  //  playerShake.SetTrigger("shakeCam"); //tärisevä kamera
 
                 }
 

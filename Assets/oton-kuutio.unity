@@ -7056,6 +7056,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 16895142723c998458d4a9c2c604c584, type: 3}
     - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1445677561}
+    - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
       propertyPath: MineText
       value: 
       objectReference: {fileID: 1184374608}
@@ -15677,6 +15681,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 16895142723c998458d4a9c2c604c584, type: 3}
     - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1445677561}
+    - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
       propertyPath: MineText
       value: 
       objectReference: {fileID: 1184374608}
@@ -17173,6 +17181,10 @@ PrefabInstance:
       propertyPath: clip
       value: 
       objectReference: {fileID: 8300000, guid: 16895142723c998458d4a9c2c604c584, type: 3}
+    - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1445677561}
     - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
       propertyPath: MineText
       value: 
@@ -19682,6 +19694,10 @@ PrefabInstance:
       propertyPath: clip
       value: 
       objectReference: {fileID: 8300000, guid: 16895142723c998458d4a9c2c604c584, type: 3}
+    - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1445677561}
     - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
       propertyPath: MineText
       value: 
@@ -24205,6 +24221,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 16895142723c998458d4a9c2c604c584, type: 3}
     - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1445677561}
+    - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
       propertyPath: MineText
       value: 
       objectReference: {fileID: 1184374608}
@@ -24572,6 +24592,10 @@ PrefabInstance:
       propertyPath: clip
       value: 
       objectReference: {fileID: 8300000, guid: 16895142723c998458d4a9c2c604c584, type: 3}
+    - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1445677561}
     - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
       propertyPath: MineText
       value: 
@@ -25870,6 +25894,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 16895142723c998458d4a9c2c604c584, type: 3}
     - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1445677561}
+    - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
       propertyPath: MineText
       value: 
       objectReference: {fileID: 1184374608}
@@ -26206,6 +26234,10 @@ PrefabInstance:
       propertyPath: clip
       value: 
       objectReference: {fileID: 8300000, guid: 16895142723c998458d4a9c2c604c584, type: 3}
+    - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1445677561}
     - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
       propertyPath: MineText
       value: 
@@ -26710,6 +26742,10 @@ PrefabInstance:
       propertyPath: clip
       value: 
       objectReference: {fileID: 8300000, guid: 16895142723c998458d4a9c2c604c584, type: 3}
+    - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1445677561}
     - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
       propertyPath: MineText
       value: 
@@ -28071,6 +28107,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 16895142723c998458d4a9c2c604c584, type: 3}
     - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1445677561}
+    - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
       propertyPath: MineText
       value: 
       objectReference: {fileID: 1184374608}
@@ -29371,6 +29411,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 16895142723c998458d4a9c2c604c584, type: 3}
     - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1445677561}
+    - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
       propertyPath: MineText
       value: 
       objectReference: {fileID: 1184374608}
@@ -29475,6 +29519,10 @@ PrefabInstance:
       propertyPath: clip
       value: 
       objectReference: {fileID: 8300000, guid: 16895142723c998458d4a9c2c604c584, type: 3}
+    - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1445677561}
     - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
       propertyPath: MineText
       value: 
@@ -50673,6 +50721,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 16895142723c998458d4a9c2c604c584, type: 3}
     - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1445677561}
+    - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
       propertyPath: MineText
       value: 
       objectReference: {fileID: 1184374608}
@@ -53749,6 +53801,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 16895142723c998458d4a9c2c604c584, type: 3}
     - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1445677561}
+    - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
       propertyPath: MineText
       value: 
       objectReference: {fileID: 1184374608}
@@ -53955,6 +54011,10 @@ PrefabInstance:
       propertyPath: clip
       value: 
       objectReference: {fileID: 8300000, guid: 16895142723c998458d4a9c2c604c584, type: 3}
+    - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1445677561}
     - target: {fileID: 8372519990722964926, guid: 81bf9de655f8e024fbcd6ffecd48392a, type: 3}
       propertyPath: MineText
       value: 

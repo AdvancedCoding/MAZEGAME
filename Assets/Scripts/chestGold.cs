@@ -8,6 +8,8 @@ public class chestGold : MonoBehaviour
     private bool ChestOpened;
     public GameObject OpenChestText;
 
+    public AudioClip chestOpenAudio;
+
 
     private void Start()
     {
@@ -17,19 +19,21 @@ public class chestGold : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        
-        
+              
         if (other.CompareTag("Player"))
         {
-            OpenChestText.SetActive(true);
+            if (!ChestOpened)
+            {
+                OpenChestText.SetActive(true);
+            }
 
-            if (Input.GetKeyDown(KeyCode.E) && ChestOpened == false) {
-               
+            if (Input.GetKey(KeyCode.E) && ChestOpened == false) {
+
+                AudioSource.PlayClipAtPoint(chestOpenAudio, gameObject.transform.position);
                 inventory.UpdateInventory("gold", 10);
                 ChestOpened = true;
                 Debug.Log("chest test 2");
                 OpenChestText.SetActive(false);
-                //AudioSource.PlayClipAtPoint(RingBing, gameObject.transform.position);
             }
 
             Debug.Log("chest test");

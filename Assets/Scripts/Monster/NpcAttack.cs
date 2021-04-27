@@ -34,8 +34,10 @@ public class NpcAttack : MonoBehaviour
     void Start()
     {
         BloodStain.SetActive(false);
+
         
-        PlayerRemainingHP = PlayerMaxHP;
+        //PlayerRemainingHP = PlayerMaxHP;
+                PlayerRemainingHP = 1;
         NpcHasAttacked = false;
         TimeToEscape = 3.0f;
       // PlayerRemainingHP--;

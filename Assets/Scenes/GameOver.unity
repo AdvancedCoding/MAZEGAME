@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.35872743, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -600,7 +600,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1188575477}
         m_TargetAssemblyTypeName: playagain, Assembly-CSharp
-        m_MethodName: PlayAgain
+        m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -663,6 +663,14 @@ MonoBehaviour:
   sceneName: Assets/oton-kuutio.unity
   gunSfx: {fileID: 1188575478}
   clickFx: {fileID: 8300000, guid: a4dde28756bb1e4ccbca47ae24318ed4, type: 3}
+  buttonslots: {fileID: 0}
+  credBox: {fileID: 0}
+  IPfieldObject: {fileID: 0}
+  inputField: {fileID: 0}
+  stNewGameButton: {fileID: 0}
+  butS1: {fileID: 0}
+  butS2: {fileID: 0}
+  butS3: {fileID: 0}
 --- !u!82 &1188575478
 AudioSource:
   m_ObjectHideFlags: 0

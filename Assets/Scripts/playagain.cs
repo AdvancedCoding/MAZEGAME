@@ -52,7 +52,7 @@ public class playagain : MonoBehaviour
         buttonslots.SetActive(buttonMenuOpened);
     }
 
-    private void LoadGame()
+    public void LoadGame()
     {
         gunSfx.PlayOneShot(clickFx);
         Globals.SMENULOADPRESSED = true;
@@ -147,7 +147,7 @@ public class playagain : MonoBehaviour
     {
      //   playB = GameObject.Find("ButtonPlay");
         loadB = GameObject.Find("ButtonLoad");
-        loadSlotsNames();
+       if(SceneManager.GetActiveScene().name=="MainMenu") loadSlotsNames();
        
         
        

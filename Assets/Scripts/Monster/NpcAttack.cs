@@ -38,8 +38,8 @@ public class NpcAttack : MonoBehaviour
         PlayerRemainingHP = PlayerMaxHP;
         NpcHasAttacked = false;
         TimeToEscape = 3.0f;
-      //  PlayerRemainingHP--;
-      //  damagedPlayer();
+      // PlayerRemainingHP--;
+      // damagedPlayer();
     }
 
     // private void OnCollisionEnter(Collision collision)
@@ -58,7 +58,7 @@ public class NpcAttack : MonoBehaviour
                     PlayerRemainingHP--;
                     BloodStain.SetActive(true);
                     Debug.Log("HP: " + PlayerRemainingHP);
-                    damagedPlayer();
+                    playerAS.Play();
                 // AudioSource.PlayClipAtPoint(audioSource, enemy.transform.position);
                 enemyAttackAudioSource.Play();
                   //  playerShake.SetTrigger("shakeCam"); //tärisevä kamera
@@ -69,6 +69,7 @@ public class NpcAttack : MonoBehaviour
                 {
                     //klonkkuAnimator.SetTrigger("punchMonster");
                     SceneManager.LoadScene(sceneName);
+              
                 }
 
             }
@@ -90,9 +91,6 @@ public class NpcAttack : MonoBehaviour
 
         }
 
-  
-
-
     }
 
     // private void OnCollisionExit(Collision collision)
@@ -105,11 +103,6 @@ public class NpcAttack : MonoBehaviour
     }
 
 
-    public void damagedPlayer()
-    {   
-        playerAS.Play();
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -117,8 +110,7 @@ public class NpcAttack : MonoBehaviour
         {
             playerAS.Stop();
         }
-
-          
+        
         if (NpcHasAttacked)
         {
             TimeToEscape -= Time.deltaTime;

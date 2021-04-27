@@ -26569,7 +26569,7 @@ MonoBehaviour:
   Ring: {fileID: 1543624620}
   shopUIButtonsScript: {fileID: 1485060247}
   inventory: {fileID: 1626729850}
-  doorOpen: {fileID: 2121378830}
+  doorOpen: {fileID: 404017581}
   storeObject: {fileID: 1326685725}
 --- !u!1 &1327978579
 GameObject:

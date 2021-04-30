@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class RatAttack : MonoBehaviour
 {
-    PlayerMovement playerMovement;
+    [Header("Max slow is 11, else bugs")]
     public int slowAmount = 2;
     public int slowTimer = 3;
-
+    public PlayerMovement playerMovement;
     private bool timerIsDone = true;
-    // Start is called before the first frame update
+  /*  private int slowamount;// advanced max value using clamping  too complicated xddd
+    public int slowAmount
+    {
+        get { return slowamount; }
+        set { slowamount = Mathf.Clamp(value, 0, 50); }
+    }*/
+
+ 
+   
     void Start()
     {
         

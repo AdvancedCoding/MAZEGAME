@@ -35,7 +35,7 @@ music.Play();
 StartCoroutine(FinishCut());
 
 IEnumerator FinishCut(){ //Kameran vaihto 5s jälkeen
-yield return new WaitForSeconds(15);
+yield return new WaitForSeconds(12);
 cutsceneCam2.SetActive(true);
 title.SetActive(true);	//TOTW title
 cutsceneCam.SetActive(false);

@@ -10,6 +10,7 @@ public class ShopUIButtonsScript : MonoBehaviour
     public int FuelPrice = 1;
     public int FuelCanisterPrice = 5;
     public int HealItemPrice;
+    public int CarryOilItemPrice = 1;
 
     public GameObject storeObject;
     public GameObject NotEnoughGoldText;
@@ -17,6 +18,7 @@ public class ShopUIButtonsScript : MonoBehaviour
     public AudioClip SmallOilAudio;
     public AudioClip BigOilAudio;
     public AudioClip HealItemAudio;
+    public AudioClip CarryOilItemAudio;
 
     public AudioClip NotEnoughGoldAudio;
 
@@ -81,6 +83,26 @@ public class ShopUIButtonsScript : MonoBehaviour
             NotEnoughGoldText.SetActive(true);
         }
     }
+
+    public void BuyCarryableOil()
+    {
+        if (Inventory.goldQuantity >= CarryOilItemPrice)
+        {
+            Inventory.UpdateInventory("buyCarryableOil", 1);
+            Inventory.UpdateInventory("gold", -CarryOilItemPrice);
+            Debug.Log("Heal price: " + CarryOilItemPrice);
+            Debug.Log("Carry Fuel OSTETTU");
+
+            AudioSource.PlayClipAtPoint(CarryOilItemAudio, storeObject.transform.position);
+
+        }
+        else
+        {
+            Debug.Log("EI OO TARPEEKS RAHAA (HIENO TEKSTI TÄHÄN) ");
+            AudioSource.PlayClipAtPoint(NotEnoughGoldAudio, storeObject.transform.position);
+            NotEnoughGoldText.SetActive(true);
+        }
+    } 
 
         // Update is called once per frame
         void Update()

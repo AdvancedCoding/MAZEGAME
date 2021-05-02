@@ -8,6 +8,9 @@ public class UseItem : MonoBehaviour
    public Inventory inventory;
    public NpcAttack npcAttack;
 
+   public AudioClip drinking;
+    public AudioClip CarryOilFill;
+
    public void HealItemUse()
     {
         if (inventory.HealItemAmount > 0 && npcAttack.PlayerRemainingHP < npcAttack.PlayerMaxHP)
@@ -15,6 +18,7 @@ public class UseItem : MonoBehaviour
             inventory.UpdateInventory("useHeal", 1);
             npcAttack.PlayerRemainingHP++;
             Debug.Log("Healed, HP is: " + npcAttack.PlayerRemainingHP);
+            AudioSource.PlayClipAtPoint(drinking, inventory.transform.position);
         }
 
         else if (inventory.HealItemAmount <= 0)
@@ -26,8 +30,17 @@ public class UseItem : MonoBehaviour
         {
             Debug.Log("Health already full");
         }
-
     }
+
+    public void OilItemUse()
+    {
+        if (inventory.OilItemAmount > 0 && SuperLamp.fuel < inventory.MaximumFuel)
+        {
+            inventory.UpdateInventory("oilItemFill", 15);
+            AudioSource.PlayClipAtPoint(CarryOilFill, inventory.transform.position); //Oil Audio Here
+        }
+    }
+
 
 
 }

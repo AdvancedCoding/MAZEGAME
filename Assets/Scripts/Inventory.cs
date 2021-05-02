@@ -26,6 +26,8 @@ public class Inventory : MonoBehaviour
 
     public int HealItemAmount = 0;
     public GameObject HealItemAmountText;
+    public int OilItemAmount = 0;
+    public GameObject OilItemAmountText;
     // public SuperLamp superLamp;
     MouseLook ML;
 
@@ -87,6 +89,19 @@ public class Inventory : MonoBehaviour
                 RingHelpText.SetActive(false);
                 WeddingRingSprite.SetActive(false);
                 OldKeySprite.SetActive(true);
+                break;
+
+            case "oilItemFill":           
+                SuperLamp.fuel += amount;
+                if (SuperLamp.fuel > MaximumFuel) SuperLamp.fuel = MaximumFuel;
+                fuelBar.SetFuelSlider(Convert.ToInt32(SuperLamp.fuel));
+                OilItemAmount--;
+                OilItemAmountText.GetComponent<Text>().text = OilItemAmount.ToString();
+                break;
+
+            case "buyCarryableOil":
+                OilItemAmount += amount;
+                OilItemAmountText.GetComponent<Text>().text = OilItemAmount.ToString();
                 break;
 
             default:

@@ -3,7 +3,10 @@ guid: e07bddea43766834694b0cc659c58469
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - inventory: {instanceID: 0}
+  - npcAttack: {instanceID: 0}
+  - drinking: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

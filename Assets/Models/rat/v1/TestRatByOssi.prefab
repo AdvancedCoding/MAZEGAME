@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 8572027315641362260}
   m_Layer: 0
   m_Name: SFX
-  m_TagString: Untagged
+  m_TagString: Rat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 3278200228066401318}
   m_Layer: 0
   m_Name: TestRatByOssi
-  m_TagString: Enemy
+  m_TagString: Rat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -287,7 +287,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   defaultAiDetectDistance: 15
+  isRat: 1
   aiDetectDistance: 20
+  ratDetectDistance: 0
 --- !u!54 &8560032441715541288
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -318,6 +320,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scream: {fileID: 8300000, guid: a5e452cd742b05f42aeb397b65515af3, type: 3}
   soundRange: {fileID: 0}
+--- !u!65 &3292735106899641367
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5118957760547828646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3522835, y: 3.3397298, z: 4.851663}
+  m_Center: {x: -0.39417222, y: 1.169866, z: 0.42204845}
 --- !u!114 &4438500966433059731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,19 +348,6 @@ MonoBehaviour:
   slowAmount: 2
   slowTimer: 3
   playerMovement: {fileID: 0}
---- !u!65 &3292735106899641367
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5118957760547828646}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.3522835, y: 3.3397298, z: 4.851663}
-  m_Center: {x: -0.39417222, y: 1.169866, z: 0.42204845}
 --- !u!1 &6005832886109854205
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,10 +486,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: rat-prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 2892171874482934492, guid: 966c070d326f9c1138f55af518a31e9f, type: 3}
+      propertyPath: m_TagString
+      value: Rat
+      objectReference: {fileID: 0}
     - target: {fileID: 3215203509551006231, guid: 966c070d326f9c1138f55af518a31e9f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e51ad24cc89c8cb8dac8072335db65a0, type: 2}
+    - target: {fileID: 6111537465911862229, guid: 966c070d326f9c1138f55af518a31e9f, type: 3}
+      propertyPath: m_TagString
+      value: Rat
+      objectReference: {fileID: 0}
     - target: {fileID: 7745043256528307644, guid: 966c070d326f9c1138f55af518a31e9f, type: 3}
       propertyPath: m_RootOrder
       value: 2

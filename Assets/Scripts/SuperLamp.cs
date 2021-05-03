@@ -34,7 +34,7 @@ public class SuperLamp : MonoBehaviour
     private AudioSource audioSource;
 
     public float ratBlindtime = 6f;
-    private bool ratIsBlind = false;
+  //  private bool ratIsBlind = false;
 
     private void Start()
     {
@@ -54,7 +54,7 @@ public class SuperLamp : MonoBehaviour
             //enemyBody.transform.position = new Vector3(56, 2, -43);  //THROW CUBE somewhere off map 
             //  Invoke("enemyDeath", enemyRespawnTimer);  //and wait for timer amount the spawn to new location
         }
-        if (enemyCollision.CompareTag("Rat") && superLampIsOn == true && !ratIsBlind) 
+        if (enemyCollision.CompareTag("Rat") && superLampIsOn == true && !NpcMove.ratIsBlind) 
         {
             blindRats();
         }
@@ -70,7 +70,7 @@ public class SuperLamp : MonoBehaviour
             enemyDeath();
         }
 
-        if (enemyCollision.CompareTag("Rat") && superLampIsOn == true && !ratIsBlind)
+        if (enemyCollision.CompareTag("Rat") && superLampIsOn == true && !NpcMove.ratIsBlind)
         {
             blindRats();
         }
@@ -79,17 +79,18 @@ public class SuperLamp : MonoBehaviour
 
     void blindRats()
     {
+        Debug.Log("Rotta sokeutettu");
         NpcMove.ratDetectDistance = 0.1f;
         StartCoroutine(timerRatBlinded()); //w
     }
 
     IEnumerator timerRatBlinded()
     {
-        ratIsBlind = true;
+        NpcMove.ratIsBlind = true;
         yield return new WaitForSecondsRealtime(ratBlindtime);
         NpcMove.ratDetectDistance = NpcMove.defaultAiDetectDistance;
 
-        ratIsBlind = false;
+        NpcMove.ratIsBlind = false;
     }
 
 

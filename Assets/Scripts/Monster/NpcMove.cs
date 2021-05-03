@@ -21,6 +21,7 @@ public class NpcMove : MonoBehaviour
     public float aiDetectDistance;
     public float ratDetectDistance;
 
+    public bool ratIsBlind = false;
     void Start()
     {
       aiDetectDistance = defaultAiDetectDistance;
@@ -94,7 +95,7 @@ public class NpcMove : MonoBehaviour
         }
         else if (isRat)
         {
-            if (_navMeshAgent != null && PlayerIsInRange() && !UseItem.ratRepellantIsOn) { SetDestination(); } //Debug.Log("AI Following player"); 
+            if (_navMeshAgent != null && PlayerIsInRange() && !UseItem.ratRepellantIsOn && !ratIsBlind) { SetDestination(); } //Debug.Log("AI Following player"); 
             else if (_navMeshAgent != null) SetPatrol(); //Debug.Log("AI Patrolling area");
         }
 

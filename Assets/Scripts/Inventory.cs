@@ -38,6 +38,7 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
+       
         WeddingRingSprite.SetActive(false);
         OldKeySprite.SetActive(false);
         ML = GameObject.Find("Main Camera").GetComponent<MouseLook>();
@@ -110,6 +111,11 @@ public class Inventory : MonoBehaviour
                 break;
             case "buyRatRepellant":
                 RatRepellantAmount += amount;
+                RatRepellantAmountText.GetComponent<Text>().text = OilItemAmount.ToString();
+                break;
+
+            case "useRatRepellant":
+                RatRepellantAmount -= amount;
                 RatRepellantAmountText.GetComponent<Text>().text = OilItemAmount.ToString();
                 break;
 

@@ -13,7 +13,7 @@ public GameObject cutsceneCam2;
 public GameObject PlayerCam;
 
 public AudioSource music;
-public AudioSource bgrmusic;
+//public AudioSource bgrmusic;
 
 public GameObject inventoryUI;
 public GameObject title;
@@ -30,15 +30,15 @@ inventoryUI.SetActive(false);
 cinematiBars.SetActive(true); //cinematic bars
 
 PlayerCam.SetActive(false);
-bgrmusic.Stop();
+//bgrmusic.Stop();
 music.Play();
 StartCoroutine(FinishCut());
 
 IEnumerator FinishCut(){ //Kameran vaihto 5s jälkeen
-yield return new WaitForSeconds(12);
-cutsceneCam2.SetActive(true);
+yield return new WaitForSeconds(16);
+//cutsceneCam2.SetActive(true);
 title.SetActive(true);	//TOTW title
-cutsceneCam.SetActive(false);
+//cutsceneCam.SetActive(false);
 }
 
 }

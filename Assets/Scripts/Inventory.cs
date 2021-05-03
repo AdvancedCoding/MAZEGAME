@@ -28,6 +28,11 @@ public class Inventory : MonoBehaviour
     public GameObject HealItemAmountText;
     public int OilItemAmount = 0;
     public GameObject OilItemAmountText;
+
+    [Header("Rat shit")]
+    public int RatRepellantAmount;
+    public GameObject RatRepellantAmountText;
+
     // public SuperLamp superLamp;
     MouseLook ML;
 
@@ -102,6 +107,10 @@ public class Inventory : MonoBehaviour
             case "buyCarryableOil":
                 OilItemAmount += amount;
                 OilItemAmountText.GetComponent<Text>().text = OilItemAmount.ToString();
+                break;
+            case "buyRatRepellant":
+                RatRepellantAmount += amount;
+                RatRepellantAmountText.GetComponent<Text>().text = OilItemAmount.ToString();
                 break;
 
             default:

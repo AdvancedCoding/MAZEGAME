@@ -12,7 +12,7 @@ public class UseItem : MonoBehaviour
     public AudioClip CarryOilFill;
 
     [Header ("Rat stuff")]
-    public float ratTimer = 30f;
+    public float ratTimer = 30f; //rats avoid you for x amount of time
     public static bool ratRepellantIsOn = false; // used for npcmove
 
    public void HealItemUse()

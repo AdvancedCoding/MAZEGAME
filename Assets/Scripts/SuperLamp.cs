@@ -33,8 +33,8 @@ public class SuperLamp : MonoBehaviour
     [SerializeField] private AudioClip deathScreechSfx; //sfx
     private AudioSource audioSource;
 
-
-
+    public float ratBlindtime = 6f;
+    private bool ratIsBlind = false;
 
     private void Start()
     {
@@ -54,6 +54,10 @@ public class SuperLamp : MonoBehaviour
             //enemyBody.transform.position = new Vector3(56, 2, -43);  //THROW CUBE somewhere off map 
             //  Invoke("enemyDeath", enemyRespawnTimer);  //and wait for timer amount the spawn to new location
         }
+        if (enemyCollision.CompareTag("Rat") && superLampIsOn == true && !ratIsBlind) 
+        {
+            blindRats();
+        }
 
     }
 
@@ -66,12 +70,32 @@ public class SuperLamp : MonoBehaviour
             enemyDeath();
         }
 
+        if (enemyCollision.CompareTag("Rat") && superLampIsOn == true && !ratIsBlind)
+        {
+            blindRats();
+        }
+
+    }
+
+    void blindRats()
+    {
+        NpcMove.ratDetectDistance = 0.1f;
+        StartCoroutine(timerRatBlinded()); //w
+    }
+
+    IEnumerator timerRatBlinded()
+    {
+        ratIsBlind = true;
+        yield return new WaitForSecondsRealtime(ratBlindtime);
+        NpcMove.ratDetectDistance = NpcMove.defaultAiDetectDistance;
+
+        ratIsBlind = false;
     }
 
 
     void enemyDeath()
     {
-        Debug.Log("Enemy spawned");
+       // Debug.Log("Enemy spawned");
         klonkkuAnimator.SetTrigger("blindMonster");
         NpcMove.aiDetectDistance = 0.1f;
         NpcAttack.npcIsDead = true;

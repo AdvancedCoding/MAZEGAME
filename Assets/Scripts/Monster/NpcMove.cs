@@ -19,10 +19,12 @@ public class NpcMove : MonoBehaviour
     public bool isRat = false;
     [HideInInspector]
     public float aiDetectDistance;
+    public float ratDetectDistance;
 
     void Start()
     {
       aiDetectDistance = defaultAiDetectDistance;
+      ratDetectDistance = defaultAiDetectDistance;
         _navMeshAgent = this.GetComponent<NavMeshAgent>();
 
         if (_navMeshAgent == null)
@@ -68,9 +70,18 @@ public class NpcMove : MonoBehaviour
     private bool PlayerIsInRange()
     {
         float distance = Vector3.Distance(_destination.transform.position, _navMeshAgent.transform.position);
-        if (distance <= aiDetectDistance) { return true; }
+        if (!isRat)
+        {
+            if (distance <= aiDetectDistance) { return true; }
+            else return false;
+        }
+        if (isRat)
+        {
+            if (distance <= ratDetectDistance) { return true; }
+            else return false;
+        }
+
         else return false;
-        
 
     }
 

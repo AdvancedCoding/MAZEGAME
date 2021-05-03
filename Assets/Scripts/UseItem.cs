@@ -41,6 +41,16 @@ public class UseItem : MonoBehaviour
         }
     }
 
+    public void RatRepellantUse()
+    {
+        if (inventory.RatRepellantAmount>0)
+        {
+            inventory.RatRepellantAmount--;
+            inventory.UpdateInventory("useRatRepellant", 1);
+           // AudioSource.PlayClipAtPoint(CarryOilFill, inventory.transform.position); //Oil Audio Here
+        }
+    }
+
 
 
 }

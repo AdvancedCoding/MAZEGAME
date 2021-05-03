@@ -79,13 +79,14 @@ public class SuperLamp : MonoBehaviour
 
     void blindRats()
     {
-        Debug.Log("Rotta sokeutettu");
-        NpcMove.ratDetectDistance = 0.1f;
+        
         StartCoroutine(timerRatBlinded()); //w
     }
 
     IEnumerator timerRatBlinded()
     {
+        Debug.Log("Rotta sokeutettu");
+        NpcMove.ratDetectDistance = 0.01f;
         NpcMove.ratIsBlind = true;
         yield return new WaitForSecondsRealtime(ratBlindtime);
         NpcMove.ratDetectDistance = NpcMove.defaultAiDetectDistance;

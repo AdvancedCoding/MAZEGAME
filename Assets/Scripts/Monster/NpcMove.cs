@@ -21,7 +21,7 @@ public class NpcMove : MonoBehaviour
     public float aiDetectDistance;
     public float ratDetectDistance;
 
-    public bool ratIsBlind = false;
+    public static bool ratIsBlind = false;
     void Start()
     {
       aiDetectDistance = defaultAiDetectDistance;

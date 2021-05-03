@@ -11,6 +11,10 @@ public class UseItem : MonoBehaviour
    public AudioClip drinking;
     public AudioClip CarryOilFill;
 
+    [Header ("Rat stuff")]
+    public float ratTimer = 30f;
+    public static bool ratRepellantIsOn = false; // used for npcmove
+
    public void HealItemUse()
     {
         if (inventory.HealItemAmount > 0 && npcAttack.PlayerRemainingHP < npcAttack.PlayerMaxHP)
@@ -47,10 +51,17 @@ public class UseItem : MonoBehaviour
         {
             inventory.RatRepellantAmount--;
             inventory.UpdateInventory("useRatRepellant", 1);
-           // AudioSource.PlayClipAtPoint(CarryOilFill, inventory.transform.position); //Oil Audio Here
+            // AudioSource.PlayClipAtPoint(CarryOilFill, inventory.transform.position); //Oil Audio Here
+            StartCoroutine(ratRepellantTimer());
         }
     }
 
+    IEnumerator ratRepellantTimer()
+    {
+        ratRepellantIsOn = true;
+        yield return new WaitForSecondsRealtime(ratTimer);
+        ratRepellantIsOn = false;
+    }
 
 
-}
+    }

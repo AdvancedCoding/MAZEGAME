@@ -16,7 +16,7 @@ public class NpcMove : MonoBehaviour
   
     private int nextPP;
     private bool isInPpDest = false;
-
+    public bool isRat = false;
     [HideInInspector]
     public float aiDetectDistance;
 
@@ -76,8 +76,16 @@ public class NpcMove : MonoBehaviour
 
     private void Update()
     {
-        if (_navMeshAgent != null && PlayerIsInRange()) { SetDestination(); } //Debug.Log("AI Following player"); 
-        else if (_navMeshAgent != null && !PlayerIsInRange()) SetPatrol(); //Debug.Log("AI Patrolling area");
+        if (!isRat) 
+        { 
+            if (_navMeshAgent != null && PlayerIsInRange()) { SetDestination(); } //Debug.Log("AI Following player"); 
+            else if (_navMeshAgent != null && !PlayerIsInRange()) SetPatrol(); //Debug.Log("AI Patrolling area");
+        }
+        else if (isRat)
+        {
+            if (_navMeshAgent != null && PlayerIsInRange() && !UseItem.ratRepellantIsOn) { SetDestination(); } //Debug.Log("AI Following player"); 
+            else if (_navMeshAgent != null) SetPatrol(); //Debug.Log("AI Patrolling area");
+        }
 
     }
 

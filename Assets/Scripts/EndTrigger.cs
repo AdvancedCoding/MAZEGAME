@@ -9,8 +9,8 @@ public class EndTrigger : MonoBehaviour
     public int maxGold = 3;
     public Inventory inventory;
     public GameObject cutsceneCam;
-    public GameObject cutsceneCam2;
     public GameObject PlayerCam;
+
 
     public AudioSource music;
     //public AudioSource bgrmusic;
@@ -28,7 +28,6 @@ public class EndTrigger : MonoBehaviour
 
             if (inventory.goldQuantity >= maxGold)
             {
-                Debug.Log("you won");
                 cutsceneCam.SetActive(true);
                 inventoryUI.SetActive(false);
                 cinematiBars.SetActive(true); //cinematic bars
@@ -37,14 +36,17 @@ public class EndTrigger : MonoBehaviour
                 //bgrmusic.Stop();
                 music.Play();
                 StartCoroutine(FinishCut());
+                
 
-                IEnumerator FinishCut()
-                { //Kameran vaihto 5s jälkeen
-                    yield return new WaitForSeconds(16);
-                    //cutsceneCam2.SetActive(true);
+                IEnumerator FinishCut() //SHOW TITLE
+                {
+                    yield return new WaitForSeconds(1);
                     title.SetActive(true);  //TOTW title
-                                            //cutsceneCam.SetActive(false);
+                    
                 }
+
+
+                
 
             }
 

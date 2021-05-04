@@ -8,6 +8,7 @@ TagManager:
   - Gold
   - Pickaxe
   - WeddingRing
+  - Rat
   layers:
   - Default
   - TransparentFX

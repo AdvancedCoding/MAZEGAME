@@ -32776,6 +32776,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 94233c8bdfe36464084ae5b857221dc2, type: 3}
   - {fileID: 8300000, guid: a746ac15d167b8a4ab298896af50f1ba, type: 3}
   - {fileID: 8300000, guid: 3a0d230db64b5cd4b945391effd0ea50, type: 3}
+  - {fileID: 8300000, guid: fa0a31cf686aa214e92faf5c5bebf83d, type: 3}
+  - {fileID: 8300000, guid: b36cd8e2943aa684ba05ef67f8b16324, type: 3}
   Hernandez: {fileID: 1374708764}
   Ring: {fileID: 1543624620}
   shopUIButtonsScript: {fileID: 1485060247}

@@ -11,6 +11,7 @@ public GameObject hernandezText;
 public GameObject inventory;
 public GameObject cinematicBars;
 public int shopCheck = 0;
+public Inventory Oilinventory;
 
 /*
 void OnTriggerEnter(){
@@ -22,7 +23,7 @@ thePlayer.SetActive(false);
 
 void OnTriggerEnter (Collider other){	//kun pelaaja kollidee ekan kerran näyttää mistä löytyy hernandezin kauppa
 
-if (shopCheck == 0){
+if (shopCheck == 0 && SuperLamp.fuel == 0){
 hernandezCam.SetActive(true);
 cinematicBars.SetActive(true);
 thePlayer.SetActive(false);
@@ -44,6 +45,7 @@ inventory.SetActive(true);
 
 else{
 Debug.Log("shop already seen");
+shopCheck=1;
 }
 
 }

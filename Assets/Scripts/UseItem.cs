@@ -49,7 +49,6 @@ public class UseItem : MonoBehaviour
     {
         if (inventory.RatRepellantAmount>0)
         {
-            inventory.RatRepellantAmount--;
             inventory.UpdateInventory("useRatRepellant", 1);
             // AudioSource.PlayClipAtPoint(CarryOilFill, inventory.transform.position); //Oil Audio Here
             StartCoroutine(ratRepellantTimer());

@@ -12,6 +12,9 @@ public class EndTrigger : MonoBehaviour
     public GameObject PlayerCam;
 
 
+    public AudioSource ringAudio;
+    public AudioSource playerAudio;
+
     public AudioSource music;
     //public AudioSource bgrmusic;
 
@@ -33,6 +36,10 @@ public class EndTrigger : MonoBehaviour
                 cinematiBars.SetActive(true); //cinematic bars
 
                 PlayerCam.SetActive(false);
+
+                ringAudio.Stop(); //if ring is not collected it is making noise in the end scene --> mute
+                playerAudio.Stop();  //if player is damaged when finishing game, breathing sound is active --> mute
+
                 //bgrmusic.Stop();
                 music.Play();
                 StartCoroutine(FinishCut());

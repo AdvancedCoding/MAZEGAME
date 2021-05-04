@@ -44,6 +44,8 @@ public class Inventory : MonoBehaviour
         ML = GameObject.Find("Main Camera").GetComponent<MouseLook>();
         UpdateInventory("fuel", Convert.ToInt32(SuperLamp.fuel));
         UpdateInventory("buyHeal", 1);
+
+
     }
 
     public void UpdateInventory(string itemName, int amount)
@@ -109,14 +111,15 @@ public class Inventory : MonoBehaviour
                 OilItemAmount += amount;
                 OilItemAmountText.GetComponent<Text>().text = OilItemAmount.ToString();
                 break;
+
             case "buyRatRepellant":
                 RatRepellantAmount += amount;
-                RatRepellantAmountText.GetComponent<Text>().text = OilItemAmount.ToString();
+                RatRepellantAmountText.GetComponent<Text>().text = RatRepellantAmount.ToString();
                 break;
 
             case "useRatRepellant":
                 RatRepellantAmount -= amount;
-                RatRepellantAmountText.GetComponent<Text>().text = OilItemAmount.ToString();
+                RatRepellantAmountText.GetComponent<Text>().text = RatRepellantAmount.ToString();
                 break;
 
             default:
@@ -167,6 +170,7 @@ public class Inventory : MonoBehaviour
         if (!inventoryEnabled)
         {
             inventory.SetActive(false);
+            
             ML.enabled = true;
             if (!shopScript.ShopEnabled)
             {

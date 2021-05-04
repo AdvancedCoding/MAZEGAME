@@ -12,6 +12,8 @@ public class ShopUIButtonsScript : MonoBehaviour
     public int HealItemPrice;
     public int CarryOilItemPrice = 1;
 
+    public int ratItemPrice = 2;
+
     public GameObject storeObject;
     public GameObject NotEnoughGoldText;
 
@@ -102,10 +104,32 @@ public class ShopUIButtonsScript : MonoBehaviour
             AudioSource.PlayClipAtPoint(NotEnoughGoldAudio, storeObject.transform.position);
             NotEnoughGoldText.SetActive(true);
         }
-    } 
+    }
 
-        // Update is called once per frame
-        void Update()
+    public void BuyRatRepellant()
+    {
+        if (Inventory.goldQuantity >= ratItemPrice)
+        {
+            Inventory.UpdateInventory("buyRatRepellant", 1);
+            Inventory.UpdateInventory("gold", -ratItemPrice);
+            Debug.Log("rat shit price: " + CarryOilItemPrice);
+            Debug.Log("rat Fuel OSTETTU");
+
+            //AudioSource.PlayClipAtPoint(CarryOilItemAudio, storeObject.transform.position); //rat item audio here
+
+        }
+        else
+        {
+            Debug.Log("EI OO TARPEEKS RAHAA (HIENO TEKSTI TÄHÄN) ");
+            AudioSource.PlayClipAtPoint(NotEnoughGoldAudio, storeObject.transform.position);
+            NotEnoughGoldText.SetActive(true);
+        }
+    }
+
+
+
+    // Update is called once per frame
+    void Update()
     {
        
     }

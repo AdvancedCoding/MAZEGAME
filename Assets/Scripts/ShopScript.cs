@@ -12,6 +12,7 @@ public class ShopScript : MonoBehaviour
     public bool playerIsInShop = false;
 
     public AudioClip HernandezShowsHisGratitude;
+    public AudioClip BlindedHernandezAudio;
 
     public AudioClip[] audioClipsGreet;
     public AudioClip[] audioClipsThanks;
@@ -101,7 +102,6 @@ public class ShopScript : MonoBehaviour
         }
         
     }
-
 
     void Update()
     {

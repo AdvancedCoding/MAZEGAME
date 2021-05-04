@@ -33,6 +33,12 @@ public class SuperLamp : MonoBehaviour
     [SerializeField] private AudioClip deathScreechSfx; //sfx
     private AudioSource audioSource;
 
+    public AudioSource Hernandez;
+    public AudioClip BlindedHernandez;
+    private bool hernandezIsBlind = false;
+
+    public ShopScript shopScript;
+
     public float ratBlindtime = 6f;
   //  private bool ratIsBlind = false;
 
@@ -75,6 +81,13 @@ public class SuperLamp : MonoBehaviour
             blindRats();
         }
 
+        if (enemyCollision.CompareTag("Hernandez") && superLampIsOn == true && !hernandezIsBlind)
+        {
+            Debug.Log("Hernandez is blinded");
+            blindHernandez();
+            
+        }
+
     }
 
     void blindRats()
@@ -92,6 +105,23 @@ public class SuperLamp : MonoBehaviour
         NpcMove.ratDetectDistance = NpcMove.defaultAiDetectDistance;
 
         NpcMove.ratIsBlind = false;
+    }
+
+    void blindHernandez()
+    {
+        StartCoroutine(hernandezTimer());
+    }
+
+    IEnumerator hernandezTimer()
+    {   if (shopScript.Hernandez.isPlaying)
+        {
+            shopScript.Hernandez.Stop();
+        }
+
+        hernandezIsBlind = true;
+        Hernandez.PlayOneShot(BlindedHernandez);
+        yield return new WaitForSeconds(5);
+        hernandezIsBlind = false;
     }
 
 

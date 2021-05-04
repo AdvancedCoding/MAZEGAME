@@ -43448,8 +43448,8 @@ MonoBehaviour:
   inventory: {fileID: 1626729850}
   cutsceneCam: {fileID: 1816103584}
   PlayerCam: {fileID: 1445677561}
-  ringAudio: {fileID: 0}
-  playerAudio: {fileID: 0}
+  ringAudio: {fileID: 2024797673}
+  playerAudio: {fileID: 921383371}
   music: {fileID: 1933868770}
   inventoryUI: {fileID: 2098481898}
   title: {fileID: 800176342}
@@ -59512,7 +59512,7 @@ AudioSource:
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -61274,6 +61274,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 966c070d326f9c1138f55af518a31e9f, type: 3}
+--- !u!82 &2024797673 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2776264043132433077, guid: f2484495aa3d67eaa885148076a65a26, type: 3}
+  m_PrefabInstance: {fileID: 158967302}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2027765458
 PrefabInstance:
   m_ObjectHideFlags: 0

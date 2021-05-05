@@ -11,7 +11,7 @@ public class EndTrigger : MonoBehaviour
     public GameObject cutsceneCam;
     public GameObject PlayerCam;
 
-
+	public ItemPickup Ring;
     public AudioSource ringAudio;
     public AudioSource playerAudio;
 
@@ -37,7 +37,11 @@ public class EndTrigger : MonoBehaviour
 
                 PlayerCam.SetActive(false);
 
-                ringAudio.Stop(); //if ring is not collected it is making noise in the end scene --> mute
+		if (Ring.RingCollected == false )
+       	{
+       		  ringAudio.Stop(); //if ring is not collected it is making noise in the end scene --> mute
+       	}
+               
                 playerAudio.Stop();  //if player is damaged when finishing game, breathing sound is active --> mute
 
                 //bgrmusic.Stop();

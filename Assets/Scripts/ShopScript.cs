@@ -27,6 +27,8 @@ public class ShopScript : MonoBehaviour
     public Inventory inventory;
 
     public DoorOpen doorOpen;
+
+    public GameObject oilFillText, waterText, carryOilText, ratItemText, betterLampText;
     
     
     //  public Collider ShopCollider;
@@ -41,6 +43,7 @@ public class ShopScript : MonoBehaviour
          ShopUIObject.SetActive(false);
          ML = GameObject.Find("Main Camera").GetComponent<MouseLook>();
         SL = GameObject.Find("HITBOXFORLIGHT").GetComponent<SuperLamp>();
+        
 
     }
 
@@ -123,6 +126,7 @@ public class ShopScript : MonoBehaviour
             ShopToolTip.SetActive(false);
 
             inventory.ShopInventory = true; //cant open/close inventory
+            
 
         }
 
@@ -133,8 +137,8 @@ public class ShopScript : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             ShopUIObject.SetActive(false);
-            ShopToolTip.SetActive(true);            
-
+            ShopToolTip.SetActive(true);
+            oilFillText.SetActive(false); waterText.SetActive(false); carryOilText.SetActive(false); ratItemText.SetActive(false); betterLampText.SetActive(false);
 
         }
         if (!playerIsInShop) {
@@ -146,9 +150,9 @@ public class ShopScript : MonoBehaviour
             ShopToolTip.SetActive(false);
             ShopEnabled = false;
 
-            inventory.ShopInventory = false; //inventory works normalluy
-          
-        }
+            inventory.ShopInventory = false; //inventory works normally
+            oilFillText.SetActive(false); waterText.SetActive(false); carryOilText.SetActive(false); ratItemText.SetActive(false); betterLampText.SetActive(false);
+}
 
        //cursor locked to screen 
     }

@@ -24,6 +24,8 @@ public class Inventory : MonoBehaviour
 
     public bool ShopInventory = false;
 
+    public GameObject goldHelpText, waterHelpText, carryOilHelpText, ratItemHelpText, ringHelpText, keyHelpText;
+
     private bool tabPressed = false;
     public GameObject playerHelp;
 
@@ -173,7 +175,14 @@ public class Inventory : MonoBehaviour
         if (!inventoryEnabled)
         {
             inventory.SetActive(false);
-            
+
+            goldHelpText.SetActive(false);
+            waterHelpText.SetActive(false);
+            carryOilHelpText.SetActive(false);
+            ratItemHelpText.SetActive(false);
+            ringHelpText.SetActive(false);
+            keyHelpText.SetActive(false);
+
             ML.enabled = true;
             if (!shopScript.ShopEnabled)
             {

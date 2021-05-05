@@ -24,6 +24,10 @@ public class ShopUIButtonsScript : MonoBehaviour
 
     public AudioClip NotEnoughGoldAudio;
 
+    public bool newLampBought = false;
+    public GameObject lampSprite;
+    public ShopScript shopScript;
+
    private void Start()
     {
         NotEnoughGoldText.SetActive(false);
@@ -50,14 +54,23 @@ public class ShopUIButtonsScript : MonoBehaviour
 
     public void BuyBigFuelCanister()
     {
-        if (Inventory.goldQuantity >= FuelCanisterPrice)
+        if (Inventory.goldQuantity >= FuelCanisterPrice && !newLampBought)
         {
             Inventory.UpdateInventory("buyCanister", 120);
             Inventory.UpdateInventory("gold", -FuelCanisterPrice);
             Debug.Log("Kanisteri OSTETTU: " + 120);
 
             AudioSource.PlayClipAtPoint(BigOilAudio, storeObject.transform.position);
+            lampSprite.SetActive(false);
+            shopScript.betterLampText.SetActive(false);
+            newLampBought = true;
         }
+
+        else if (newLampBought)
+        {
+            Debug.Log("already bought");
+        }
+
         else
         {
             Debug.Log("EI OO TARPEEKS RAHAA (HIENO TEKSTI TÄHÄN) ");

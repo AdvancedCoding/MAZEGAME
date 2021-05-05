@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class playagain : MonoBehaviour
 {
 
-    public string sceneName = "Assets/oton-kuutio";
+    public string sceneName = "oton-kuutio";
     public AudioSource gunSfx;
     public AudioClip clickFx;
 

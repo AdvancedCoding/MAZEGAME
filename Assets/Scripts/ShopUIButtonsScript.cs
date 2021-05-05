@@ -10,7 +10,7 @@ public class ShopUIButtonsScript : MonoBehaviour
     public int FuelPrice = 1;
     public int FuelCanisterPrice = 5;
     public int HealItemPrice;
-    public int CarryOilItemPrice = 1;
+    public int CarryOilItemPrice = 2;
 
     public int ratItemPrice = 2;
 
@@ -32,6 +32,7 @@ public class ShopUIButtonsScript : MonoBehaviour
     {
         NotEnoughGoldText.SetActive(false);
         HealItemPrice = 2;
+        CarryOilItemPrice = 2;
     }
 
     public void BuyFuel()
@@ -105,7 +106,7 @@ public class ShopUIButtonsScript : MonoBehaviour
         {
             Inventory.UpdateInventory("buyCarryableOil", 1);
             Inventory.UpdateInventory("gold", -CarryOilItemPrice);
-            Debug.Log("Heal price: " + CarryOilItemPrice);
+            Debug.Log("OIL price: " + CarryOilItemPrice);
             Debug.Log("Carry Fuel OSTETTU");
 
             AudioSource.PlayClipAtPoint(CarryOilItemAudio, storeObject.transform.position);

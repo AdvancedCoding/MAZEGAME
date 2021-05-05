@@ -37136,7 +37136,7 @@ MonoBehaviour:
   FuelPrice: 1
   FuelCanisterPrice: 5
   HealItemPrice: 3
-  CarryOilItemPrice: 1
+  CarryOilItemPrice: 2
   ratItemPrice: 2
   storeObject: {fileID: 1326685725}
   NotEnoughGoldText: {fileID: 1522381889}
@@ -62135,7 +62135,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 2
 --- !u!222 &2013411665
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -43,7 +43,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 165e83ec459cb1aecad63a4d99716477, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.654
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -286,7 +286,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  defaultAiDetectDistance: 15
+  defaultAiDetectDistance: 8
   isRat: 1
   aiDetectDistance: 20
   ratDetectDistance: 0
@@ -391,7 +391,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 72a172a5792631b589f5f5c5a54a1de2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.876
+  m_Volume: 0.369
   m_Pitch: 1
   Loop: 1
   Mute: 0

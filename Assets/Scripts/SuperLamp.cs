@@ -32,6 +32,7 @@ public class SuperLamp : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioClip deathScreechSfx; //sfx
     private AudioSource audioSource;
+    public AudioClip ratScreech;
 
     public AudioSource Hernandez;
     public AudioClip BlindedHernandez;
@@ -101,6 +102,8 @@ public class SuperLamp : MonoBehaviour
         Debug.Log("Rotta sokeutettu");
         NpcMove.ratDetectDistance = 0.01f;
         NpcMove.ratIsBlind = true;
+        audioSource = GetComponent<AudioSource>(); //play sfx
+        audioSource.PlayOneShot(ratScreech);
         yield return new WaitForSecondsRealtime(ratBlindtime);
         NpcMove.ratDetectDistance = NpcMove.defaultAiDetectDistance;
 

@@ -24,6 +24,9 @@ public class Inventory : MonoBehaviour
 
     public bool ShopInventory = false;
 
+    private bool tabPressed = false;
+    public GameObject playerHelp;
+
     public int HealItemAmount = 0;
     public GameObject HealItemAmountText;
     public int OilItemAmount = 0;
@@ -135,7 +138,7 @@ public class Inventory : MonoBehaviour
         if (Input.GetKey(KeyCode.Tab) && !ShopInventory)
         {
             inventoryEnabled = true;
-           
+            tabPressed = true;
         }
 
         else if (!shopScript.playerIsInShop)
@@ -179,6 +182,11 @@ public class Inventory : MonoBehaviour
             }
          //   Cursor.visible = false;
           //  Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        if (tabPressed)
+        {
+            playerHelp.SetActive(false);
         }
 
        

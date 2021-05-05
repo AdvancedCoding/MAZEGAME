@@ -83,12 +83,11 @@ public Animator animator; //for mining animation
 
     void Pickup()
     {
-     
         inventory.UpdateInventory("gold", 1);
         Debug.Log("picked"); // coin++;
 
         AudioSource.PlayClipAtPoint(clip, gameObject.transform.position);
-        Instantiate(particleprefab, gameObject.transform.position, Quaternion.identity);
+        Instantiate(particleprefab, gameObject.transform.position + new Vector3(0,1,0), Quaternion.identity);
         Destroy(gameObject);
 
         

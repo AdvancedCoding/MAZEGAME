@@ -15,6 +15,7 @@ public Animator animator; //for mining animation
     public GameObject MineText;
 
     public GameObject player;
+    public GameObject particleprefab;
 
     public void Start()
     {
@@ -87,7 +88,7 @@ public Animator animator; //for mining animation
         Debug.Log("picked"); // coin++;
 
         AudioSource.PlayClipAtPoint(clip, gameObject.transform.position);
-
+        Instantiate(particleprefab, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
 
         

@@ -212,6 +212,7 @@ MonoBehaviour:
   timeToBreakGold: 3
   MineText: {fileID: 0}
   player: {fileID: 0}
+  particleprefab: {fileID: 4206643173066299553, guid: 6a1303fef95120143aa746d688b426be, type: 3}
 --- !u!1001 &5409866954105411637
 PrefabInstance:
   m_ObjectHideFlags: 0

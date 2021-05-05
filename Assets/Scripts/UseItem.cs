@@ -10,6 +10,7 @@ public class UseItem : MonoBehaviour
 
    public AudioClip drinking;
     public AudioClip CarryOilFill;
+    public AudioClip ratItemAudio;
 
     [Header ("Rat stuff")]
     public float ratTimer = 30f; //rats avoid you for x amount of time
@@ -50,7 +51,7 @@ public class UseItem : MonoBehaviour
         if (inventory.RatRepellantAmount>0)
         {
             inventory.UpdateInventory("useRatRepellant", 1);
-            // AudioSource.PlayClipAtPoint(CarryOilFill, inventory.transform.position); //Oil Audio Here
+            AudioSource.PlayClipAtPoint(ratItemAudio, inventory.transform.position); //Oil Audio Here
             StartCoroutine(ratRepellantTimer());
         }
     }

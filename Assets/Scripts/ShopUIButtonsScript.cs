@@ -21,6 +21,8 @@ public class ShopUIButtonsScript : MonoBehaviour
     public AudioClip BigOilAudio;
     public AudioClip HealItemAudio;
     public AudioClip CarryOilItemAudio;
+    public AudioClip ratItemAudio;
+
 
     public AudioClip NotEnoughGoldAudio;
 
@@ -129,7 +131,7 @@ public class ShopUIButtonsScript : MonoBehaviour
             Debug.Log("rat shit price: " + CarryOilItemPrice);
             Debug.Log("rat Fuel OSTETTU");
 
-            //AudioSource.PlayClipAtPoint(CarryOilItemAudio, storeObject.transform.position); //rat item audio here
+            AudioSource.PlayClipAtPoint(ratItemAudio, storeObject.transform.position); //rat item audio here
 
         }
         else

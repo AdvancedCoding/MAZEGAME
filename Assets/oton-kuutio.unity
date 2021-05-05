@@ -37144,6 +37144,7 @@ MonoBehaviour:
   BigOilAudio: {fileID: 8300000, guid: 3d6278e4ebd8ee64488c398290f84c8b, type: 3}
   HealItemAudio: {fileID: 8300000, guid: eac6834299ad7314a9f6917b13ad9b42, type: 3}
   CarryOilItemAudio: {fileID: 8300000, guid: 193b8c9fc22f3394892b035e06fdcefa, type: 3}
+  ratItemAudio: {fileID: 8300000, guid: da84e0f157708894582d6effc26a27ae, type: 3}
   NotEnoughGoldAudio: {fileID: 8300000, guid: 96c60db68f1e21444967c35d1eb9927f, type: 3}
   newLampBought: 0
   lampSprite: {fileID: 601496121}
@@ -44700,6 +44701,7 @@ MonoBehaviour:
   npcAttack: {fileID: 1700926831}
   drinking: {fileID: 8300000, guid: 082c131685dd6604f95306dd10afee40, type: 3}
   CarryOilFill: {fileID: 8300000, guid: 193b8c9fc22f3394892b035e06fdcefa, type: 3}
+  ratItemAudio: {fileID: 8300000, guid: da84e0f157708894582d6effc26a27ae, type: 3}
   ratTimer: 30
 --- !u!1 &1627166456 stripped
 GameObject:

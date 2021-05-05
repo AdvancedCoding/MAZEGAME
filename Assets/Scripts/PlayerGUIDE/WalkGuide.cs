@@ -22,13 +22,14 @@ if (walkCheck == 0){
 guideText.SetActive(false);
 niceText.SetActive(true); //show hernandez text
 walkCheck=1;
-StartCoroutine(FinishCut());
+inventory.SetActive(true);
+/*StartCoroutine(FinishCut());
 
 IEnumerator FinishCut(){ //Kameran vaihto takaisin 6s jälkeen
-yield return new WaitForSeconds(5);
-niceText.SetActive(false); //hide hernandez text
+yield return new WaitForSeconds(1);
+//niceText.SetActive(false); //hide hernandez text
 inventory.SetActive(true);
-}
+}*/
 
 }
 

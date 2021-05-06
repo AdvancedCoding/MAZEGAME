@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public int MaxGasAmount;
     public string slotName;
     public bool[] golds;
-
+    public int RatRepellantAmount;
     //ring key stuff
     public bool RingCollected;
     public bool PlayerHasKey;
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
        
         goldAmount = inventory.goldQuantity;
         MaxGasAmount = inventory.MaximumFuel;
-
+        RatRepellantAmount = inventory.RatRepellantAmount;
         PlayerHasKey = DoorOpen.PlayerHasKey;
         RingCollected = ItemPickup.RingCollected;
         //  slotName = "OSSIN SAVEN";  //save here
@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
     {
         PlayerData data = SaveSystem.LoadPlayer(Globals.slot);
 
+        inventory.RatRepellantAmount = data.RatRepellantAmount;
         inventory.goldQuantity = 0;
         inventory.UpdateInventory("gold", data.goldAmount);
         inventory.MaximumFuel = data.MaxGasAmount;

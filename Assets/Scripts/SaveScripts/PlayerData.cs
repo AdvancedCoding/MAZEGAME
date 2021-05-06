@@ -11,6 +11,7 @@ public class PlayerData
     public float[] position;
     public string slotName;
     public bool[] golds;
+    public int RatRepellantAmount;
 
     public bool RingCollected;
     public bool PlayerHasKey;
@@ -22,7 +23,7 @@ public class PlayerData
         position = new float[3];
         slotName = player.slotName;
         golds = player.golds; //golds
-
+        RatRepellantAmount = player.RatRepellantAmount;
         PlayerHasKey = player.PlayerHasKey;
         RingCollected = player.RingCollected;
 

@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public string slotName;
     public bool[] golds;
     public int RatRepellantAmount;
+    public int OilItemAmount;
     //ring key stuff
     public bool RingCollected;
     public bool PlayerHasKey;
@@ -46,7 +47,7 @@ public class Player : MonoBehaviour
 
     public void SavePlayer()
     {
-       
+        OilItemAmount = inventory.OilItemAmount;
         goldAmount = inventory.goldQuantity;
         MaxGasAmount = inventory.MaximumFuel;
         RatRepellantAmount = inventory.RatRepellantAmount;
@@ -76,9 +77,10 @@ public class Player : MonoBehaviour
         WalkGuide.walkCheck = data.walkCheck;
         PlayerGuide.shopCheck = data.shopCheck;
         //
-
+        inventory.OilItemAmount = 0;
         inventory.RatRepellantAmount = 0;
         inventory.goldQuantity = 0;
+        inventory.UpdateInventory("buyCarryableOil", data.OilItemAmount);
         inventory.UpdateInventory("buyRatRepellant", data.RatRepellantAmount);
         inventory.UpdateInventory("gold", data.goldAmount);
         inventory.MaximumFuel = data.MaxGasAmount;

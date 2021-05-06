@@ -12,6 +12,7 @@ public class PlayerData
     public string slotName;
     public bool[] golds;
     public int RatRepellantAmount;
+    public int OilItemAmount;
 
     public bool RingCollected;
     public bool PlayerHasKey;
@@ -29,6 +30,7 @@ public class PlayerData
         slotName = player.slotName;
         golds = player.golds; //golds
         RatRepellantAmount = player.RatRepellantAmount;
+        OilItemAmount = player.OilItemAmount;
         PlayerHasKey = player.PlayerHasKey;
         RingCollected = player.RingCollected;
 

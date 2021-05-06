@@ -11,14 +11,22 @@ public class PlayerGuide : MonoBehaviour
     public GameObject inventory;
     public GameObject cinematicBars;
     public int shopCheck = 0;
-    public Inventory Oilinventory;
+   // public Inventory Oilinventory;
 
+    public GameObject gameLore;
     /*
     void OnTriggerEnter(){
     hernandezCam.SetActive(true);
     thePlayer.SetActive(false);
     }
     */
+    private void Start()
+    {
+        if (shopCheck == 1) {
+            gameLore.SetActive(false);
+            inventory.SetActive(true); 
+        }
+    }
 
 
     void OnTriggerEnter(Collider other)

@@ -45027,7 +45027,7 @@ MonoBehaviour:
   inventory: {fileID: 2098481898}
   cinematicBars: {fileID: 13704630}
   shopCheck: 0
-  Oilinventory: {fileID: 0}
+  gameLore: {fileID: 1780192748}
 --- !u!1001 &1080799823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66058,12 +66058,17 @@ MonoBehaviour:
   MaxGasAmount: 0
   slotName: 
   golds: 
+  RatRepellantAmount: 0
   RingCollected: 0
   PlayerHasKey: 0
+  walkCheck: 0
+  shopCheck: 0
   inventory: {fileID: 1626729850}
   GoldCheck: {fileID: 663602007}
   DoorOpen: {fileID: 2121378830}
   ItemPickup: {fileID: 1543624620}
+  PlayerGuide: {fileID: 1075162242}
+  WalkGuide: {fileID: 2009529323}
 --- !u!82 &1626729852
 AudioSource:
   m_ObjectHideFlags: 0

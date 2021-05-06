@@ -16,11 +16,17 @@ public class Player : MonoBehaviour
     public bool RingCollected;
     public bool PlayerHasKey;
 
-    [Header("Garbage dependencies (fps player both)")]
+    //guides
+    public int walkCheck;
+    public int shopCheck;
+
+   [Header("Garbage dependencies (fps player both)")]
     public Inventory inventory;
     public GoldCheck GoldCheck;
     public DoorOpen DoorOpen;
     public ItemPickup ItemPickup;
+    public PlayerGuide PlayerGuide;
+    public WalkGuide WalkGuide;
 
     // Update is called once per frame
 
@@ -46,8 +52,11 @@ public class Player : MonoBehaviour
         RatRepellantAmount = inventory.RatRepellantAmount;
         PlayerHasKey = DoorOpen.PlayerHasKey;
         RingCollected = ItemPickup.RingCollected;
-        //  slotName = "OSSIN SAVEN";  //save here
-        //GasAmount = Convert.ToInt32(SuperLamp.fuel);
+
+        //guides
+        walkCheck = WalkGuide.walkCheck;
+        shopCheck = PlayerGuide.shopCheck;
+        //
         GasAmount = SuperLamp.fuel;
 
         GoldCheck.GOLDCHECKER();
@@ -63,6 +72,10 @@ public class Player : MonoBehaviour
     public void LoadPlayer()
     {
         PlayerData data = SaveSystem.LoadPlayer(Globals.slot);
+        //guides
+        WalkGuide.walkCheck = data.walkCheck;
+        PlayerGuide.shopCheck = data.shopCheck;
+        //
 
         inventory.RatRepellantAmount = 0;
         inventory.goldQuantity = 0;

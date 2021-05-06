@@ -15,6 +15,11 @@ public class PlayerData
 
     public bool RingCollected;
     public bool PlayerHasKey;
+
+    //guides
+    public int walkCheck;
+    public int shopCheck;
+
     public PlayerData (Player player)
     {
         goldAmount = player.goldAmount;
@@ -26,6 +31,10 @@ public class PlayerData
         RatRepellantAmount = player.RatRepellantAmount;
         PlayerHasKey = player.PlayerHasKey;
         RingCollected = player.RingCollected;
+
+        //guides
+        walkCheck = player.walkCheck;
+        shopCheck = player.shopCheck;
 
         position[0] = player.transform.position.x;
         position[1] = player.transform.position.y;

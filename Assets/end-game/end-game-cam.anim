@@ -1709,13 +1709,6 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 35.8
-    functionName: sadHernandezMariaSNGLE
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 40.783333
     functionName: hideMaria
     data: 
@@ -1732,6 +1725,13 @@ AnimationClip:
     messageOptions: 0
   - time: 46.633335
     functionName: sadHernandez
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 56.566666
+    functionName: showCredits
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

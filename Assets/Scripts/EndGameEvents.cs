@@ -38,7 +38,7 @@ public class EndGameEvents : MonoBehaviour
                 }
                 
                 public void showCredits(){ //called from camera end-game-animation EVENT
-              //  creditA.SetTrigger("show");
+                creditA.SetTrigger("show");
                 }
                 
                  public void showTotw(){ //called from camera end-game-animation EVENT

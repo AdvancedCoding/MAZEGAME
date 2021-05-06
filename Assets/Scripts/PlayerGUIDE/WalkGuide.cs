@@ -13,7 +13,11 @@ public class WalkGuide : MonoBehaviour
 
     void Start()
     {
-        if (walkCheck == 1) inventory.SetActive(true);
+        if (walkCheck == 1) { 
+            inventory.SetActive(true);
+            guideText.SetActive(false);
+            niceText.SetActive(false); //show hernandez text
+        }
 
         else { guideText.SetActive(true); }
     }

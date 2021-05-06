@@ -20,7 +20,7 @@ public class PlayerGuide : MonoBehaviour
     thePlayer.SetActive(false);
     }
     */
-    private void Start()
+    public void Start()
     {
         if (shopCheck == 1) {
             gameLore.SetActive(false);

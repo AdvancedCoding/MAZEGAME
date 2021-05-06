@@ -64,8 +64,9 @@ public class Player : MonoBehaviour
     {
         PlayerData data = SaveSystem.LoadPlayer(Globals.slot);
 
-        inventory.RatRepellantAmount = data.RatRepellantAmount;
+        inventory.RatRepellantAmount = 0;
         inventory.goldQuantity = 0;
+        inventory.UpdateInventory("buyRatRepellant", data.RatRepellantAmount);
         inventory.UpdateInventory("gold", data.goldAmount);
         inventory.MaximumFuel = data.MaxGasAmount;
         SuperLamp.fuel = data.GasAmount;

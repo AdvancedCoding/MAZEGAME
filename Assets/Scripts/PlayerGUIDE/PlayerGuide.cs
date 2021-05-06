@@ -11,9 +11,9 @@ public class PlayerGuide : MonoBehaviour
     public GameObject inventory;
     public GameObject cinematicBars;
     public int shopCheck = 0;
-   // public Inventory Oilinventory;
+    // public Inventory Oilinventory;
 
-    public GameObject gameLore;
+    public Inventory inventory2;
     /*
     void OnTriggerEnter(){
     hernandezCam.SetActive(true);
@@ -23,8 +23,10 @@ public class PlayerGuide : MonoBehaviour
     public void Start()
     {
         if (shopCheck == 1) {
-            gameLore.SetActive(false);
-            inventory.SetActive(true); 
+          
+            inventory.SetActive(true);
+            inventory2.WeddingRingSprite.SetActive(false);
+            inventory2.OldKeySprite.SetActive(false);
         }
     }
 

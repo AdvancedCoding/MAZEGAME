@@ -106,6 +106,12 @@ public class Player : MonoBehaviour
             inventory.UpdateInventory("WeddingRing", 1);
             ItemPickup.RingCollected = true;
         }
+        else if (!data.RingCollected && !data.PlayerHasKey)
+        {
+            inventory.RingHelpText.SetActive(false);
+            inventory.WeddingRingSprite.SetActive(false);
+            inventory.OldKeySprite.SetActive(false);
+        }
 
         golds = data.golds;
         GoldCheck.goldexits = golds;

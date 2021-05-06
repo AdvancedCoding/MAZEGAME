@@ -45027,7 +45027,7 @@ MonoBehaviour:
   inventory: {fileID: 2098481898}
   cinematicBars: {fileID: 13704630}
   shopCheck: 0
-  gameLore: {fileID: 1780192748}
+  inventory2: {fileID: 1626729850}
 --- !u!1001 &1080799823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66059,6 +66059,7 @@ MonoBehaviour:
   slotName: 
   golds: 
   RatRepellantAmount: 0
+  OilItemAmount: 0
   RingCollected: 0
   PlayerHasKey: 0
   walkCheck: 0
@@ -73501,7 +73502,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4106564743749865552, guid: 46fe25aff3feca54b8845d8df94fe49a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4546843235432188721, guid: 46fe25aff3feca54b8845d8df94fe49a, type: 3}
       propertyPath: m_Pivot.x
@@ -74388,6 +74389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerGuide: {fileID: 1075162242}
+  wk: {fileID: 2009529323}
 --- !u!1 &1781071979
 GameObject:
   m_ObjectHideFlags: 0
@@ -87696,7 +87698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1951327671
 RectTransform:
   m_ObjectHideFlags: 0
@@ -88604,6 +88606,7 @@ MonoBehaviour:
   guideText: {fileID: 1616901486}
   niceText: {fileID: 633275464}
   inventory: {fileID: 2098481898}
+  inventory2: {fileID: 1626729850}
   walkCheck: 0
 --- !u!65 &2009529324
 BoxCollider:

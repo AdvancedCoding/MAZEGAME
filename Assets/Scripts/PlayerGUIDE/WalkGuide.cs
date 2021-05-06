@@ -9,6 +9,7 @@ public class WalkGuide : MonoBehaviour
     public GameObject guideText;
     public GameObject niceText;
     public GameObject inventory;
+    public Inventory inventory2;
     public int walkCheck = 0;
 
     void Start()
@@ -17,6 +18,9 @@ public class WalkGuide : MonoBehaviour
             inventory.SetActive(true);
             guideText.SetActive(false);
             niceText.SetActive(false); //show hernandez text
+            inventory2.WeddingRingSprite.SetActive(false);
+            inventory2.OldKeySprite.SetActive(false);
+
         }
 
         else { guideText.SetActive(true); }

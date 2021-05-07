@@ -25,6 +25,7 @@ public class Inventory : MonoBehaviour
     public bool ShopInventory = false;
 
     public GameObject goldHelpText, waterHelpText, carryOilHelpText, ratItemHelpText, ringHelpText, keyHelpText;
+    public GameObject enoughGoldText;
 
     private bool tabPressed = false;
     public GameObject playerHelp;
@@ -49,7 +50,7 @@ public class Inventory : MonoBehaviour
         ML = GameObject.Find("Main Camera").GetComponent<MouseLook>();
         UpdateInventory("fuel", Convert.ToInt32(SuperLamp.fuel));
         UpdateInventory("buyHeal", 1);
-
+        enoughGoldText.SetActive(false);
 
     }
 
@@ -182,6 +183,7 @@ public class Inventory : MonoBehaviour
             ratItemHelpText.SetActive(false);
             ringHelpText.SetActive(false);
             keyHelpText.SetActive(false);
+            enoughGoldText.SetActive(false);
 
             ML.enabled = true;
             if (!shopScript.ShopEnabled)
@@ -198,6 +200,11 @@ public class Inventory : MonoBehaviour
             playerHelp.SetActive(false);
         }
 
+        if (goldQuantity >= 10)
+        {
+            enoughGoldText.SetActive(true);
+            goldHelpText.SetActive(false);
+        }
        
     }
 }

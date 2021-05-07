@@ -25,8 +25,8 @@ public class PlayerGuide : MonoBehaviour
         if (shopCheck == 1) {
           
             inventory.SetActive(true);
-            inventory2.WeddingRingSprite.SetActive(false);
-            inventory2.OldKeySprite.SetActive(false);
+       //     inventory2.WeddingRingSprite.SetActive(false);
+         //   inventory2.OldKeySprite.SetActive(false);
         }
     }
 

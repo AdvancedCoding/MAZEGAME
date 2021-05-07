@@ -18,8 +18,8 @@ public class WalkGuide : MonoBehaviour
             inventory.SetActive(true);
             guideText.SetActive(false);
             niceText.SetActive(false); //show hernandez text
-            inventory2.WeddingRingSprite.SetActive(false);
-            inventory2.OldKeySprite.SetActive(false);
+       //     inventory2.WeddingRingSprite.SetActive(false);
+        //    inventory2.OldKeySprite.SetActive(false);
 
         }
 

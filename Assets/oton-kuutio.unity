@@ -42942,6 +42942,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 3702d14766a3fe0da87005a86c5f3125, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4448683137441624826, guid: 3702d14766a3fe0da87005a86c5f3125, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -66721,7 +66725,7 @@ MonoBehaviour:
   shopCheck: 0
   inventory: {fileID: 1626729850}
   GoldCheck: {fileID: 663602007}
-  DoorOpen: {fileID: 2121378830}
+  DoorOpen: {fileID: 404017581}
   ItemPickup: {fileID: 1543624620}
   PlayerGuide: {fileID: 1075162242}
   WalkGuide: {fileID: 2009529323}
@@ -92353,25 +92357,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4423045620967985251, guid: 3702d14766a3fe0da87005a86c5f3125, type: 3}
   m_PrefabInstance: {fileID: 929502902}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2121378830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121378826}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f610844e514014949b0cc61eea50fd5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GetKeyText: {fileID: 1585719257}
-  PlayerHasKey: 1
-  door: {fileID: 0}
-  OpenedDoor: {fileID: 0}
-  inventory: {fileID: 1626729850}
-  OpenedDoorAS: {fileID: 0}
-  doorAudio: {fileID: 0}
 --- !u!65 &2121378831
 BoxCollider:
   m_ObjectHideFlags: 0

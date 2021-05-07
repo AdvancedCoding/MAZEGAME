@@ -30,17 +30,17 @@ test version == 2020.3.0f1
 ## Built With
 
 * [Unity](https://unity.com/) - Program used
-* []() - Something
-* []() - 
+* [Blender](https://www.blender.org/) - 3d models made with
 
-![.jpg]()
+![twobrohers.jpg](readme-two-brothers.jpg)
+![insidethecave.jpg](readme-inside-thecave.jpg)
 
 
 ## Authors
 
 * **Ossi H** - *Initial work, programming* - [ossi1801](https://github.com/ossi1801)
-* **Otto L** - *3d design* - [OttoLeivo](https://github.com/OttoLeivo)
-* **Joona** - *Sound design, miscellaneous  work* - [joona1808](https://github.com/joona1808)
+* **Otto L** - *3d design, animation* - [OttoLeivo](https://github.com/OttoLeivo)
+* **Joona** - *Sound design, UI, miscellaneous  work* - [joona1808](https://github.com/joona1808)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
@@ -50,6 +50,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-* [Avoin data](https://www.avoindata.fi/)
-* 
+* [Adobe mixamo](https://www.mixamo.com/)
+* [Community page in unity](https://answers.unity.com/)
 * 

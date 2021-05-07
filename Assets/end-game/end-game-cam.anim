@@ -1730,15 +1730,22 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 56.566666
+  - time: 56.283333
     functionName: showCredits
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 57.066666
+  - time: 56.916668
     functionName: fadeBlack1
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 58.983334
+    functionName: showMainMenuButton
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

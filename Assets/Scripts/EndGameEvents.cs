@@ -7,12 +7,13 @@ public class EndGameEvents : MonoBehaviour
 {
 	public AudioSource mariaSFX;
 	public AudioSource mariaSFX2;
-
+      public GameObject mainMenuButton;
     public GameObject MariaCanvas;
     public Animator totw;
     public VideoPlayer Video;
       public Animator fadeBlack;
       public Animator creditA;
+
     
                   public void playMaria(){ //called from camera end-game-animation EVENT
                    MariaCanvas.SetActive(true);  
@@ -42,6 +43,11 @@ public class EndGameEvents : MonoBehaviour
                 }
                 
                  public void showTotw(){ //called from camera end-game-animation EVENT
+               // totw.SetTrigger("show");
+                }
+                 public void showMainMenuButton(){ //called from camera end-game-animation EVENT
+                 Cursor.visible = true;
+                 mainMenuButton.SetActive(true);
                // totw.SetTrigger("show");
                 }
 

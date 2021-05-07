@@ -54,6 +54,7 @@ public class NpcAttack : MonoBehaviour
            // Debug.Log(collision.);
                 NpcHasAttacked = true;
                 klonkkuAnimator.SetTrigger("punchMonster"); //monster punch animation
+                TimeToEscape = 3.0f;    
 
                 if (PlayerRemainingHP <= PlayerMaxHP && PlayerRemainingHP > 0)
                 {

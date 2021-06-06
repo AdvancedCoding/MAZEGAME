@@ -32,9 +32,10 @@ test version == 2020.3.0f1
 * [Unity](https://unity.com/) - Program used
 * [Blender](https://www.blender.org/) - 3d models made with
 
+[Game Trailer Video](https://www.youtube.com/watch?v=iRzVDQLxADk)
 ![twobrohers.jpg](readme-two-brothers.jpg)
 ![insidethecave.jpg](readme-inside-thecave.jpg)
-[Video](https://www.youtube.com/watch?v=iRzVDQLxADk)
+
 
 
 ## Authors
